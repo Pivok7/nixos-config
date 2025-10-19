@@ -4,7 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/media/nomacs.nix
+      ../../modules/media.nix
     ];
 
   # Bootloader.
@@ -12,6 +12,8 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.useOSProber = true;
+  # Keep only x last generations
+  boot.loader.grub.configurationLimit = 10;
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "nvidia-x11"
