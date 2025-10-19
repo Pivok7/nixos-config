@@ -13,6 +13,32 @@
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.useOSProber = true;
 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "nvidia-x11"
+    "nvidia-settings"
+    "nvidia-persistanced"
+    "discord"
+    "steam"
+    "steam-unwrapped"
+  ];
+
+  # Enable OpenGL
+  hardware.graphics = {
+    enable = true;
+  };
+
+  # Load nvidia driver for Xorg and Wayland
+  services.xserver.videoDrivers = ["nvidia"];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -97,12 +123,6 @@
   # Enable non-nix dynamically linked libraries
   programs.nix-ld.enable = false;
   programs.nix-ld.libraries = with pkgs; [];
-
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "discord"
-    "steam"
-    "steam-unwrapped"
-  ];
 
   modMedia.nomacs.enable = true;
 
