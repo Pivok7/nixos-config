@@ -16,6 +16,7 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable networking
@@ -93,6 +94,10 @@
     packages = with pkgs; [];
   };
 
+  # Enable non-nix dynamically linked libraries
+  programs.nix-ld.enable = false;
+  programs.nix-ld.libraries = with pkgs; [];
+
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"
     "steam"
@@ -122,19 +127,26 @@
 
   # Packages installed in system profile
   environment.systemPackages = with pkgs; [
-    handlr-regex
-    nushell
     floorp
-    discord
-    git
-    yazi
-    lazygit
-    kitty
-    wget
-    btop
-    wineWowPackages.stable
     keepassxc
     mpv
+    kitty
+    nushell
+    yazi
+    git
+    lazygit
+    btop
+    wineWowPackages.stable
+    handlr-regex
+    wget
+
+    discord
+    prismlauncher
+
+    gcc
+    rustc
+    cargo
+    python3
   ];
 
   # Enable the OpenSSH daemon.
