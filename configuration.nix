@@ -11,7 +11,7 @@
     ];
 
   # Bootloader.
-  boot.loader.timeout = 3;
+  boot.loader.timeout = 2;
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.useOSProber = true;
@@ -131,6 +131,7 @@
     floorp
     discord
     git
+    yazi
     lazygit
     kitty
     wget
