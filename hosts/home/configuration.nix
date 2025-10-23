@@ -176,6 +176,8 @@
     handlr-regex
     wget
     wl-clipboard
+    zip
+    unzip
 
     discord
     prismlauncher
@@ -185,6 +187,7 @@
     rustc
     cargo
     python3
+    nodejs
   ];
 
   # Enable the OpenSSH daemon.
