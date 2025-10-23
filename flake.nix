@@ -1,16 +1,27 @@
 {
-	description = "Main Config";
+    description = "My Flake";
 
-	inputs = {
-		nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-	};
+    inputs = {
+	nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+	nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    };
 
-	outputs = { nixpkgs, ... }: {
-		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-			system = "x86_64-linux";
-			modules = [
-				./hosts/home/configuration.nix
-			];
+    outputs = { nixpkgs, nixpkgs-unstable, ... }:
+	let
+	    system = "x86_64-linux";
+	    lib = nixpkgs.lib;
+	    pkgs = nixpkgs.legacyPackages.${system};
+	    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+	in {
+	    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+		inherit system;
+		modules = [
+		    ./hosts/home/configuration.nix
+		    ./modules/media.nix
+		];
+		specialArgs = {
+		    inherit pkgs-unstable;
 		};
+	    };
 	};
 }

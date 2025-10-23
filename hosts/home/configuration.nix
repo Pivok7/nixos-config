@@ -1,10 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgs-unstable, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/media.nix
+      ../../modules/dev.nix
     ];
 
   # Bootloader.
@@ -138,12 +139,14 @@
 
   modMedia.nomacs.enable = true;
 
+    #modDev.neovim.enable = true;
+    #modDev.lsp-clangd.enable = true;
+
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "pivok";
 
   programs.firefox.enable = true;
-  programs.neovim.enable = true;
 
   virtualisation.docker.enable = true;
 
@@ -162,33 +165,46 @@
   ];
 
   # Packages installed in system profile
-  environment.systemPackages = with pkgs; [
-    floorp
-    keepassxc
-    mpv
-    kitty
-    nushell
-    yazi
-    git
-    lazygit
-    btop
-    wineWowPackages.stable
-    handlr-regex
-    wget
-    wl-clipboard
-    zip
-    unzip
+  environment.systemPackages =
+    (with pkgs; [
+      floorp
+      keepassxc
+      mpv
+      kitty
+      nushell
+      yazi
+      git
+      lazygit
+      btop
+      wineWowPackages.stable
+      handlr-regex
+      wget
+      wl-clipboard
+      zip
+      unzip
 
-    discord
-    prismlauncher
+      discord
+      prismlauncher
 
-    gcc
-    gnumake
-    rustc
-    cargo
-    python3
-    nodejs
-  ];
+      clang-tools
+      lua53Packages.lua-lsp
+      rust-analyzer
+      pyright
+
+      gcc
+      gnumake
+      rustc
+      cargo
+      python3
+      nodejs
+    ])
+
+    ++
+
+    (with pkgs-unstable; [
+      zig
+      zls
+    ]);
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

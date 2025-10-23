@@ -10,7 +10,7 @@ in
   };
 
   config = lib.mkIf (cfg.enable || cfg.defaultViewer) {
-    assertions = 
+    assertions =
     [{
       assertion = !(cfg.defaultViewer && !cfg.enable);
       message = "programs.nomacs.defaultViewer will only work if programs.nomacs.enable is enable";
