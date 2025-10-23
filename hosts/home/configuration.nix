@@ -15,6 +15,16 @@
   # Keep only x last generations
   boot.loader.grub.configurationLimit = 10;
 
+  fileSystems."/mnt/SSD_120GB" = {
+    device = "/dev/sda3";
+    fsType = "ext4";
+  };
+
+  fileSystems."/mnt/HDD_500GB" = {
+    device = "/dev/sdb1";
+    fsType = "ext4";
+  };
+
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "nvidia-x11"
     "nvidia-settings"
@@ -147,6 +157,10 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  fonts.packages = with pkgs; [
+    iosevka-bin
+  ];
+
   # Packages installed in system profile
   environment.systemPackages = with pkgs; [
     floorp
@@ -161,11 +175,13 @@
     wineWowPackages.stable
     handlr-regex
     wget
+    wl-clipboard
 
     discord
     prismlauncher
 
     gcc
+    gnumake
     rustc
     cargo
     python3
