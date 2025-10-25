@@ -13,10 +13,10 @@
 	    pkgs = nixpkgs.legacyPackages.${system};
 	    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
 	in {
-	    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+	    nixosConfigurations.home-pc = nixpkgs.lib.nixosSystem {
 		inherit system;
 		modules = [
-		    ./hosts/home/configuration.nix
+		    ./hosts/home-pc/configuration.nix
 		    ./modules/media.nix
 		];
 		specialArgs = {

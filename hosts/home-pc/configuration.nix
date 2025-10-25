@@ -1,6 +1,9 @@
 { config, lib, pkgs, pkgs-unstable, ... }:
 
 {
+  networking.hostName = "home-pc"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -51,9 +54,6 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -139,8 +139,10 @@
 
   modMedia.nomacs.enable = true;
 
-    #modDev.neovim.enable = true;
-    #modDev.lsp-clangd.enable = true;
+  modDev.neovim.enable = true;
+  modDev.lsp.clangd.enable = true;
+  modDev.lsp.rust-analyzer.enable = true;
+  modDev.lsp.zls.enable = true;
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
@@ -183,12 +185,12 @@
       zip
       unzip
 
+      fd
+
       discord
       prismlauncher
 
-      clang-tools
       lua53Packages.lua-lsp
-      rust-analyzer
       pyright
 
       gcc
@@ -203,7 +205,6 @@
 
     (with pkgs-unstable; [
       zig
-      zls
     ]);
 
   # Enable the OpenSSH daemon.
