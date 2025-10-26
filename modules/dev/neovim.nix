@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.modDev.neovim;
@@ -10,7 +15,7 @@ in
 
   config = lib.mkIf (cfg.enable) {
     environment = {
-    	systemPackages = [ pkgs.neovim ];
+      systemPackages = [ pkgs.neovim ];
     };
   };
 }

@@ -1,24 +1,31 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
-    cfg = config.modDev.bundle.rust;
+  cfg = config.modDev.bundle.rust;
 in
 {
-    imports = [
-	../lsp.nix
-    ];
+  imports = [
+    ../lsp.nix
+    ../fmt.nix
+  ];
 
-    options.modDev.bundle.rust = {
-	enable = lib.mkEnableOption "Rust bundle";
-    };
+  options.modDev.bundle.rust = {
+    enable = lib.mkEnableOption "Rust bundle";
+  };
 
-    config = lib.mkIf (cfg.enable) {
-	modDev.lsp.rust.enable = true;
-	environment = {
-	    systemPackages = with pkgs; [
-		rustc
-		cargo
-	    ];
-	};
+  config = lib.mkIf (cfg.enable) {
+    modDev.lsp.rust.enable = true;
+    modDev.fmt.rust.enable = true;
+    environment = {
+      systemPackages = with pkgs; [
+        rustc
+        cargo
+      ];
     };
+  };
 }

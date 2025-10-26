@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.modMedia.nomacs;
@@ -10,13 +15,14 @@ in
   };
 
   config = lib.mkIf (cfg.enable || cfg.defaultViewer) {
-    assertions =
-    [{
-      assertion = !(cfg.defaultViewer && !cfg.enable);
-      message = "programs.nomacs.defaultViewer will only work if programs.nomacs.enable is enable";
-    }];
+    assertions = [
+      {
+        assertion = !(cfg.defaultViewer && !cfg.enable);
+        message = "programs.nomacs.defaultViewer will only work if programs.nomacs.enable is enable";
+      }
+    ];
     environment = {
-    	systemPackages = [ pkgs.nomacs ];
+      systemPackages = [ pkgs.nomacs ];
     };
   };
 }

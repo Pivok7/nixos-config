@@ -1,4 +1,5 @@
-{...} : {
+{ ... }:
+{
   imports = [
     ./dev/root.nix
     ./media/root.nix

@@ -1,8 +1,10 @@
-{...} : {
-    imports = [
-	./neovim.nix
-	./lsp.nix
-	./bundles/root.nix
-	./bundles/favourite.nix
-    ];
+{ ... }:
+{
+  imports = [
+    ./neovim.nix
+    ./lsp.nix
+    ./fmt.nix
+    ./bundles/root.nix
+    ./bundles/favourite.nix
+  ];
 }
