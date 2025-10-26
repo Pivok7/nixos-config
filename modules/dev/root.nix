@@ -2,6 +2,7 @@
     imports = [
 	./neovim.nix
 	./lsp.nix
-	./bundles/c.nix
+	./bundles/root.nix
+	./bundles/favourite.nix
     ];
 }

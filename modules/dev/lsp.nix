@@ -11,6 +11,7 @@ in
     rust.enable = lib.mkEnableOption "Enable Rust LSP";
     python.enable = lib.mkEnableOption "Enable Python LSP";
     lua.enable = lib.mkEnableOption "Enable Lua LSP";
+    typescript.enable = lib.mkEnableOption "Enable Typescript LSP";
   };
 
   config = {
@@ -22,6 +23,7 @@ in
         (if cfg.rust.enable then [ pkgs.rust-analyzer ] else [])
         (if cfg.python.enable then [ pkgs.pyright ] else [])
         (if cfg.lua.enable then [ pkgs.lua-language-server ] else [])
+        (if cfg.typescript.enable then [ pkgs.typescript-language-server ] else [])
       ];
     };
   };

@@ -1,26 +1,23 @@
 { config, lib, pkgs, ... }:
 
 let
-    cfg = config.modDev.bundle.c;
+    cfg = config.modDev.bundle.rust;
 in
 {
     imports = [
 	../lsp.nix
     ];
 
-    options.modDev.bundle.c = {
-	enable = lib.mkEnableOption "C/C++ bundle";
+    options.modDev.bundle.rust = {
+	enable = lib.mkEnableOption "Rust bundle";
     };
 
     config = lib.mkIf (cfg.enable) {
-	modDev.lsp.c.enable = true;
+	modDev.lsp.rust.enable = true;
 	environment = {
 	    systemPackages = with pkgs; [
-		gcc
-		gnumake
-		cmake
-		meson
-		ninja
+		rustc
+		cargo
 	    ];
 	};
     };

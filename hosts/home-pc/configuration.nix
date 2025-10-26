@@ -121,9 +121,6 @@
     jack.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.pivok = {
     isNormalUser = true;
@@ -132,18 +129,18 @@
     #packages = with pkgs; [];
   };
 
-  modMedia.nomacs.enable = true;
-
-  modDev.neovim.enable = true;
-  modDev.bundle.c.enable = true;
-
-  modTools.latex.enable = true;
-
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "pivok";
 
   programs.firefox.enable = true;
+
+  modMedia.nomacs.enable = true;
+
+  modDev.bundle.favourite.enable = true;
+  modDev.bundle.web.enable = true;
+
+  modTools.latex.enable = true;
 
   virtualisation.docker.enable = true;
 
@@ -182,11 +179,6 @@
 
       discord
       prismlauncher
-
-      zed-editor
-      rustc
-      cargo
-      python3
     ])
 
     ++
