@@ -17,7 +17,7 @@
 		inherit system;
 		modules = [
 		    ./hosts/home-pc/configuration.nix
-		    ./modules/media.nix
+		    ./modules/root.nix
 		];
 		specialArgs = {
 		    inherit pkgs-unstable;

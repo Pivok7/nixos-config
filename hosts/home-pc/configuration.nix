@@ -132,9 +132,10 @@
     #packages = with pkgs; [];
   };
 
-    #modMedia.nomacs.enable = true;
+  modMedia.nomacs.enable = true;
 
   modDev.neovim.enable = true;
+  modDev.bundle.c.enable = true;
 
   modTools.latex.enable = true;
 
@@ -183,8 +184,6 @@
       prismlauncher
 
       zed-editor
-      gcc
-      gnumake
       rustc
       cargo
       python3
