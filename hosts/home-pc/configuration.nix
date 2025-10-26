@@ -34,6 +34,7 @@
     fsType = "ext4";
   };
 
+  # Allow unfree packages
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
@@ -153,12 +154,9 @@
 
   modDev.bundle.favourite.enable = true;
   modDev.bundle.web.enable = true;
-
-  modTools.latex.enable = true;
-
   virtualisation.docker.enable = true;
 
-  # Allow unfree packages
+  modTools.latex.enable = true;
 
   programs.steam = {
     enable = true;
@@ -198,12 +196,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   system.stateVersion = "25.05"; # Nixos version
 }
