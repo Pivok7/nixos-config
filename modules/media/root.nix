@@ -1,5 +1,5 @@
 {...} : {
   imports = [
-    ./media/nomacs.nix
+    ./nomacs.nix
   ];
 }

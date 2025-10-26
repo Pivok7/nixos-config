@@ -7,8 +7,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/media.nix
-      ../../modules/dev.nix
+      ../../modules/root.nix
     ];
 
   # Bootloader.
@@ -130,19 +129,14 @@
     isNormalUser = true;
     description = "Pivok";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [];
+    #packages = with pkgs; [];
   };
 
-  # Enable non-nix dynamically linked libraries
-  programs.nix-ld.enable = false;
-  programs.nix-ld.libraries = with pkgs; [];
-
-  modMedia.nomacs.enable = true;
+    #modMedia.nomacs.enable = true;
 
   modDev.neovim.enable = true;
-  modDev.lsp.clangd.enable = true;
-  modDev.lsp.rust-analyzer.enable = true;
-  modDev.lsp.zls.enable = true;
+
+  modTools.latex.enable = true;
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
@@ -179,26 +173,21 @@
       lazygit
       btop
       wineWowPackages.stable
-      handlr-regex
       wget
+      handlr-regex
       wl-clipboard
       zip
       unzip
 
-      fd
-
       discord
       prismlauncher
 
-      lua53Packages.lua-lsp
-      pyright
-
+      zed-editor
       gcc
       gnumake
       rustc
       cargo
       python3
-      nodejs
     ])
 
     ++
