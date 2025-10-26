@@ -9,10 +9,6 @@ let
   cfg = config.modDev.bundle.web;
 in
 {
-  imports = [
-    ../lsp.nix
-  ];
-
   options.modDev.bundle.web = {
     enable = lib.mkEnableOption "Web development bundle";
   };

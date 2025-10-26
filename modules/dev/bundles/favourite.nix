@@ -1,25 +1,28 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 
 let
   cfg = config.modDev.bundle.favourite;
 in
 {
-  imports = [
-    ../lsp.nix
-    ./root.nix
-  ];
-
   options.modDev.bundle.favourite = {
     enable = lib.mkEnableOption "My favourite bundle";
   };
 
   config = lib.mkIf (cfg.enable) {
-    modDev.neovim.enable = true;
-    modDev.bundle.nix.enable = true;
-    modDev.bundle.c.enable = true;
-    modDev.bundle.zig.enable = true;
-    modDev.bundle.rust.enable = true;
-    modDev.bundle.python.enable = true;
-    modDev.bundle.lua.enable = true;
+	#modDev.kitty.enable = lib.mkDefault true;
+    modDev.yazi.enable = lib.mkDefault true;
+    modDev.nushell.enable = lib.mkDefault true;
+    modDev.neovim.enable = lib.mkDefault true;
+
+    modDev.bundle.nix.enable = lib.mkDefault true;
+    modDev.bundle.c.enable = lib.mkDefault true;
+    modDev.bundle.zig.enable = lib.mkDefault true;
+    modDev.bundle.rust.enable = lib.mkDefault true;
+    modDev.bundle.python.enable = lib.mkDefault true;
+    modDev.bundle.lua.enable = lib.mkDefault true;
   };
 }

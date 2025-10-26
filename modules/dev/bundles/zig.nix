@@ -9,10 +9,6 @@ let
   cfg = config.modDev.bundle.zig;
 in
 {
-  imports = [
-    ../lsp.nix
-  ];
-
   options.modDev.bundle.zig = {
     enable = lib.mkEnableOption "Zig bundle";
   };

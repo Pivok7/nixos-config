@@ -9,10 +9,6 @@ let
   cfg = config.modDev.bundle.c;
 in
 {
-  imports = [
-    ../lsp.nix
-  ];
-
   options.modDev.bundle.c = {
     enable = lib.mkEnableOption "C/C++ bundle";
   };

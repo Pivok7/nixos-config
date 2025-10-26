@@ -1,14 +1,20 @@
-{ config, lib, pkgs, pkgs-unstable, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   networking.hostName = "home-pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../modules/root.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../modules/root.nix
+  ];
 
   # Bootloader.
   boot.loader.timeout = 2;
@@ -28,14 +34,16 @@
     fsType = "ext4";
   };
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "nvidia-x11"
-    "nvidia-settings"
-    "nvidia-persistanced"
-    "discord"
-    "steam"
-    "steam-unwrapped"
-  ];
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "nvidia-x11"
+      "nvidia-settings"
+      "nvidia-persistanced"
+      "discord"
+      "steam"
+      "steam-unwrapped"
+    ];
 
   # Enable OpenGL
   hardware.graphics = {
@@ -43,7 +51,7 @@
   };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -55,7 +63,10 @@
   };
 
   # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -91,7 +102,7 @@
     layout = "pl";
     variant = "";
   };
-  
+
   # Enable printer autodiscovery
   console.keyMap = "pl2";
   services.avahi = {
@@ -109,7 +120,6 @@
     ];
   };
 
-
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -125,7 +135,11 @@
   users.users.pivok = {
     isNormalUser = true;
     description = "Pivok";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     #packages = with pkgs; [];
   };
 
@@ -152,8 +166,6 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
   fonts.packages = with pkgs; [
     iosevka-bin
   ];
@@ -164,9 +176,6 @@
       floorp
       keepassxc
       mpv
-      kitty
-      nushell
-      yazi
       git
       lazygit
       btop
@@ -183,9 +192,9 @@
 
     ++
 
-    (with pkgs-unstable; [
-      zig
-    ]);
+      (with pkgs-unstable; [
+        zig
+      ]);
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

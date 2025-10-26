@@ -9,11 +9,6 @@ let
   cfg = config.modDev.bundle.python;
 in
 {
-  imports = [
-    ../lsp.nix
-    ../fmt.nix
-  ];
-
   options.modDev.bundle.python = {
     enable = lib.mkEnableOption "Python bundle";
   };

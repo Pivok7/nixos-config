@@ -10,7 +10,7 @@ let
 in
 {
   options.modDev.neovim = {
-    enable = lib.mkEnableOption "Neovim text editor";
+    enable = lib.mkEnableOption "Enable Neovim text editor";
   };
 
   config = lib.mkIf (cfg.enable) {

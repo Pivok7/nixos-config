@@ -8,11 +8,6 @@ let
   cfg = config.modDev.bundle.nix;
 in
 {
-  imports = [
-    ../lsp.nix
-    ../fmt.nix
-  ];
-
   options.modDev.bundle.nix = {
     enable = lib.mkEnableOption "Nix bundle";
   };

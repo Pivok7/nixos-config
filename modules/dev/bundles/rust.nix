@@ -9,11 +9,6 @@ let
   cfg = config.modDev.bundle.rust;
 in
 {
-  imports = [
-    ../lsp.nix
-    ../fmt.nix
-  ];
-
   options.modDev.bundle.rust = {
     enable = lib.mkEnableOption "Rust bundle";
   };
