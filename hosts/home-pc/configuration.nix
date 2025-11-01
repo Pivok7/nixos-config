@@ -3,6 +3,7 @@
   lib,
   pkgs,
   pkgs-unstable,
+  home-manager,
   ...
 }:
 
@@ -11,10 +12,17 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/root.nix
+    home-manager.nixosModules.home-manager
   ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.pivok = import ./home.nix;
+	#users.anno = import ./home-anno.nix;
+  };
 
   # Bootloader.
   boot.loader.timeout = 2;
@@ -141,7 +149,6 @@
       "wheel"
       "docker"
     ];
-    #packages = with pkgs; [];
   };
 
   # Enable automatic login for the user.
