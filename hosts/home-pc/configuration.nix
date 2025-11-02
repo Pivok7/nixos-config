@@ -16,11 +16,11 @@
     home-manager.nixosModules.home-manager
   ];
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.pivok = import ../../home-manager/pivok/desktop-kde.nix;
-  };
+    #home-manager = {
+    #  useGlobalPkgs = true;
+    #  useUserPackages = true;
+    #  users.pivok = import ../../home-manager/pivok/desktop-kde.nix;
+    #};
 
   # Bootloader.
   boot.loader.timeout = 2;
