@@ -14,8 +14,8 @@ in
   };
 
   config = lib.mkIf (cfg.enable) {
-    environment = {
-      systemPackages = [ pkgs.yazi ];
-    };
+    environment.systemPackages = [
+      pkgs.yazi
+    ];
   };
 }

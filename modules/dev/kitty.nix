@@ -10,12 +10,12 @@ let
 in
 {
   options.modDev.kitty = {
-    enable = lib.mkEnableOption "Kitty terminal";
+    enable = lib.mkEnableOption "Enable Kitty terminal";
   };
 
   config = lib.mkIf (cfg.enable) {
-    environment = {
-      systemPackages = [ pkgs.kitty ];
-    };
+    environment.systemPackages = [
+      pkgs.kitty
+    ];
   };
 }

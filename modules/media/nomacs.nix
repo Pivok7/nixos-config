@@ -18,11 +18,11 @@ in
     assertions = [
       {
         assertion = !(cfg.defaultViewer && !cfg.enable);
-        message = "programs.nomacs.defaultViewer will only work if programs.nomacs.enable is enable";
+        message = "programs.nomacs.defaultViewer will only work if programs.nomacs.enable is true";
       }
     ];
-    environment = {
-      systemPackages = [ pkgs.nomacs ];
-    };
+    environment.systemPackages = [
+      pkgs.nomacs
+    ];
   };
 }

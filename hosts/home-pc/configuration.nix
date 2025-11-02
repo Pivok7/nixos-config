@@ -20,7 +20,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.pivok = import ./home-pivok.nix;
+    users.pivok = import ../../home-manager/pivok/desktop-kde.nix;
   };
 
   # Bootloader.
@@ -29,7 +29,7 @@
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.useOSProber = true;
   # Keep only x last generations
-  boot.loader.grub.configurationLimit = 10;
+  boot.loader.grub.configurationLimit = 20;
 
   fileSystems."/mnt/SSD_120GB" = {
     device = "/dev/sda3";
@@ -160,9 +160,12 @@
 
   modDev.bundle.favourite.enable = true;
   modDev.bundle.web.enable = true;
-  virtualisation.docker.enable = true;
 
   modTools.latex.enable = true;
+  modTools.tor.enable = true;
+  modTools.qbittorrent.enable = true;
+
+  virtualisation.docker.enable = true;
 
   programs.steam = {
     enable = true;

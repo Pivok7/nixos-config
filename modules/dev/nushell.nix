@@ -14,8 +14,8 @@ in
   };
 
   config = lib.mkIf (cfg.enable) {
-    environment = {
-      systemPackages = [ pkgs.nushell ];
-    };
+    environment.systemPackages = [
+      pkgs.nushell
+    ];
   };
 }
