@@ -11,11 +11,13 @@ in
 {
   options.modDev.neovim = {
     enable = lib.mkEnableOption "Enable Neovim text editor";
+    defaultEditor = lib.mkEnableOption "Make Neovim the default editor";
   };
 
   config = lib.mkIf (cfg.enable) {
-    environment = {
-      systemPackages = [ pkgs.neovim ];
-    };
+      programs.neovim = {
+        enable = cfg.enable;
+        defaultEditor = cfg.defaultEditor;
+      };
   };
 }

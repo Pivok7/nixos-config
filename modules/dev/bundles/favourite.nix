@@ -16,6 +16,7 @@ in
     modDev.kitty.enable = lib.mkDefault true;
     modDev.yazi.enable = lib.mkDefault true;
     modDev.nushell.enable = lib.mkDefault true;
+
     modDev.neovim.enable = lib.mkDefault true;
 
     modDev.bundle.nix.enable = lib.mkDefault true;

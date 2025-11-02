@@ -20,8 +20,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.pivok = import ./home.nix;
-	#users.anno = import ./home-anno.nix;
+    users.pivok = import ./home-pivok.nix;
   };
 
   # Bootloader.
