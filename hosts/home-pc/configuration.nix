@@ -189,6 +189,7 @@
       wl-clipboard
       zip
       unzip
+      libreoffice
 
       discord
       prismlauncher
