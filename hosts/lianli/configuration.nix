@@ -47,11 +47,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Set display manager and auto login
-  services.displayManager.ly = {
-    enable = true;
-  };
-
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
@@ -73,6 +68,11 @@
     ];
   };
 
+  # Set display manager and auto login
+  services.displayManager.ly = {
+    enable = true;
+  };
+
   modDesktop.hyprland.enable = true;
 
   modSys.pipewire.enable = true;
@@ -87,8 +87,6 @@
 
   virtualisation.docker.enable = true;
 
-  programs.git.enable = true;
-
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
@@ -99,6 +97,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    git
     floorp
     wofi
     lazygit
