@@ -16,6 +16,7 @@ in
   config = lib.mkIf (cfg.enable) {
     environment.systemPackages = [
       pkgs.yazi
+      pkgs.dragon-drop
     ];
   };
 }

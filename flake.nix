@@ -32,5 +32,17 @@
           inherit home-manager;
         };
       };
+
+      nixosConfigurations.lianli = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/lianli/configuration.nix
+          ./modules/root.nix
+        ];
+        specialArgs = {
+          inherit pkgs-unstable;
+          inherit home-manager;
+        };
+      };
     };
 }

@@ -7,14 +7,4 @@
     userName = "Pivok";
     userEmail = "pivoc@protonmail.com";
   };
-
-  gtk = {
-    enable = true;
-  };
-
-  #xdg.configFile = {
-  #  "nushell/config.nu" = {
-  #    source = ../../dots/nushell/config.nu;
-  #  };
-  #};
 }

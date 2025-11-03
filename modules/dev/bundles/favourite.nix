@@ -19,6 +19,7 @@ in
 
     modDev.neovim.enable = lib.mkDefault true;
     modDev.neovim.defaultEditor = lib.mkDefault true;
+    modDev.neovim.clipboardWl = lib.mkDefault true;
 
     modDev.bundle.nix.enable = lib.mkDefault true;
     modDev.bundle.c.enable = lib.mkDefault true;
