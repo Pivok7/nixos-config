@@ -12,7 +12,7 @@
 
   imports = [
     ./hardware-configuration.nix
-    ../../modules/root.nix
+    ../../modules/default.nix
     home-manager.nixosModules.home-manager
   ];
 

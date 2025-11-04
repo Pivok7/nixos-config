@@ -2,14 +2,15 @@
 {
   imports = [
     ./neovim.nix
-    ./kitty.nix
+    ./terminal.nix
+    ./versioning.nix
     ./yazi.nix
-    ./nushell.nix
+    ./shell.nix
 
     ./lsp.nix
     ./fmt.nix
 
-    ./bundles/root.nix
+    ./bundles/default.nix
     ./bundles/favourite.nix
   ];
 }

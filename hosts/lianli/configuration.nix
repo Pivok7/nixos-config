@@ -16,7 +16,7 @@
 
   imports = [
     ./hardware-configuration.nix
-    ../../modules/root.nix
+    ../../modules/default.nix
     home-manager.nixosModules.home-manager
   ];
 
@@ -78,6 +78,9 @@
 
   modSys.pipewire.enable = true;
 
+  modGaming.steam.enable = true;
+  modGaming.rpcs3.enable = true;
+
   modMedia.nomacs.enable = true;
 
   modDev.bundle.favourite.enable = true;
@@ -92,9 +95,17 @@
     NIXOS_OZONE_WL = "1";
   };
 
+  programs.hyprlock.enable = true;
+  security.pam.services.hyprlock = {
+    enable = true;
+  };
+
   fonts.packages = with pkgs; [
     nerd-fonts.symbols-only
+    agave
     iosevka-bin
+    monoid
+    mononoki
   ];
 
   environment.systemPackages = with pkgs; [
@@ -104,7 +115,6 @@
     lazygit
     wlogout
     hyprpaper
-    hyprlock
     hypridle
     hyprsunset
     flameshot
