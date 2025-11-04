@@ -82,6 +82,7 @@
   modGaming.rpcs3.enable = true;
 
   modMedia.nomacs.enable = true;
+  modMedia.discord.enable = true;
 
   modDev.bundle.favourite.enable = true;
 
@@ -102,17 +103,12 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.symbols-only
-    agave
     iosevka-bin
-    monoid
-    mononoki
   ];
 
   environment.systemPackages = with pkgs; [
-    git
     floorp
     wofi
-    lazygit
     wlogout
     hyprpaper
     hypridle
@@ -125,6 +121,7 @@
     keepassxc
     lact
     kew
+    p7zip
   ];
 
   # Before changing this value read the documentation for this option

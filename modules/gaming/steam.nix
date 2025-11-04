@@ -10,7 +10,7 @@ let
 in
 {
   options.modGaming.steam = {
-    enable = lib.mkEnableOption "Enable Steam by Valve";
+    enable = lib.mkEnableOption "Enable Steam by Valve (unfree)";
   };
 
   config = lib.mkIf (cfg.enable) {
