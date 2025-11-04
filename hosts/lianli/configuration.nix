@@ -74,6 +74,7 @@
   };
 
   modDesktop.hyprland.enable = true;
+  modDesktop.eww.enable = true;
 
   modSys.pipewire.enable = true;
 
@@ -102,8 +103,6 @@
     wofi
     lazygit
     wlogout
-    eww
-    socat
     hyprpaper
     hyprlock
     hypridle
@@ -114,6 +113,7 @@
     networkmanagerapplet
     dash
     keepassxc
+    lact
   ];
 
   # Before changing this value read the documentation for this option

@@ -8,5 +8,6 @@
     ./rust.nix
     ./web.nix
     ./zig.nix
+    ./neovim.nix
   ];
 }
