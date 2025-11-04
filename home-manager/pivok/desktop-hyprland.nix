@@ -11,6 +11,7 @@
   dconf.settings."org/gnome/desktop/interface" = {
     gtk-theme = lib.mkForce "Adwaita";
     icon-theme = lib.mkForce "Papirus";
+    cursor-theme = lib.mkForce "phinger-cursors-dark";
     color-scheme = "prefer-dark";
   };
 
@@ -19,6 +20,10 @@
     iconTheme = {
       name = "Papirus";
       package = pkgs.papirus-icon-theme;
+    };
+    cursorTheme = {
+      name = "Phinger";
+      package = pkgs.phinger-cursors;
     };
   };
 
@@ -30,6 +35,10 @@
       package = pkgs.adwaita-qt;
     };
   };
+
+  home.packages = [
+    pkgs.rose-pine-hyprcursor
+  ];
 
   programs.git = {
     enable = true;

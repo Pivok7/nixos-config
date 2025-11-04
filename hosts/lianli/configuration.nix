@@ -130,6 +130,7 @@
     kew
     p7zip
     dconf-editor
+	nwg-look
   ];
 
   # Before changing this value read the documentation for this option
