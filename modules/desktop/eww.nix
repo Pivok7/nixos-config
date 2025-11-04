@@ -14,10 +14,11 @@ in
   };
 
   config = lib.mkIf (cfg.enable) {
-    nixpkgs.config.pulseaudio = true;
     environment.systemPackages = with pkgs; [
       eww
       socat
+      pulseaudio
+      playerctl
     ];
   };
 }

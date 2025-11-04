@@ -114,6 +114,7 @@
     dash
     keepassxc
     lact
+    kew
   ];
 
   # Before changing this value read the documentation for this option
