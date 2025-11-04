@@ -17,6 +17,7 @@ in
       enable = lib.mkDefault true;
       defaultEditor = lib.mkDefault true;
       clipboardWl = lib.mkDefault true;
+      ripgrep = lib.mkDefault true;
     };
   };
 }
