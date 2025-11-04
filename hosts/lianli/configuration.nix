@@ -76,7 +76,14 @@
   modDesktop.hyprland.enable = true;
   modDesktop.eww.enable = true;
 
-  modSys.pipewire.enable = true;
+  modSys.pipewire = {
+	enable = true;
+	gui.enable = true;
+    };
+  modSys.bluetooth = {
+    enable = true;
+    gui.enable = true;
+  };
 
   modGaming.steam.enable = true;
   modGaming.rpcs3.enable = true;
@@ -122,6 +129,7 @@
     lact
     kew
     p7zip
+    dconf-editor
   ];
 
   # Before changing this value read the documentation for this option
