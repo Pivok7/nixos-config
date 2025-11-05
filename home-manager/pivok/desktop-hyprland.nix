@@ -7,6 +7,10 @@
 {
   home.stateVersion = "25.05";
 
+  imports = [
+    ../../home-modules/default.nix
+  ];
+
   # GTK4 Setup
   dconf.settings."org/gnome/desktop/interface" = {
     gtk-theme = lib.mkForce "Adwaita";
@@ -38,6 +42,7 @@
 
   home.packages = [
     pkgs.rose-pine-hyprcursor
+    pkgs.hyprsunset
   ];
 
   programs.git = {
@@ -46,11 +51,25 @@
     userEmail = "pivoc@protonmail.com";
   };
 
-  home.file.".config/nushell/config.nu".text = ''
-    $env.config.show_banner = false
-    $env.config.edit_mode = 'vi'
-    $env.EDITOR = 'nvim'
+  homeModDots.hyprland.enable = true;
+  homeModDots.eww.enable = true;
+  homeModDots.nvim.enable = true;
+  homeModDots.yazi.enable = true;
 
-    alias hsct = hyprctl hyprsunset temperature
-  '';
+  homeModDesktop.hypridle.enable = true;
+  homeModDesktop.hyprlock.enable = true;
+  homeModDesktop.hyprpaper = {
+    enable = true;
+    wallpaper = "/home/pivok/Obrazy/wallpaper.png";
+  };
+  homeModDesktop.screenshot.grimSlurpSwappy.enable = true;
+
+  homeModGui.firefox.enable = true;
+
+  homeModTui.kitty.enable = true;
+
+  homeModTui.nushell = {
+    enable = true;
+    hyprsunset.enable = true;
+  };
 }

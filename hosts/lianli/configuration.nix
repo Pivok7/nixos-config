@@ -77,9 +77,9 @@
   modDesktop.eww.enable = true;
 
   modSys.pipewire = {
-	enable = true;
-	gui.enable = true;
-    };
+    enable = true;
+    gui.enable = true;
+  };
   modSys.bluetooth = {
     enable = true;
     gui.enable = true;
@@ -103,24 +103,14 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  programs.hyprlock.enable = true;
-  security.pam.services.hyprlock = {
-    enable = true;
-  };
-
   fonts.packages = with pkgs; [
     nerd-fonts.symbols-only
     iosevka-bin
   ];
 
   environment.systemPackages = with pkgs; [
-    floorp
     wofi
     wlogout
-    hyprpaper
-    hypridle
-    hyprsunset
-    flameshot
     swaynotificationcenter
     udiskie
     networkmanagerapplet
@@ -130,7 +120,7 @@
     kew
     p7zip
     dconf-editor
-	nwg-look
+    nwg-look
   ];
 
   # Before changing this value read the documentation for this option

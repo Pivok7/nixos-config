@@ -1,0 +1,230 @@
+* {
+  all: unset;
+  font-family: Iosevka Semibold Extended;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+$opaque: rgba(12, 12, 12, 0.6);
+$background: #3a3a3a;
+$dark: #202828;
+$medium: #778877;
+$light: #ccddcc;
+
+// Global Styles
+.bar {
+  background-color: $background;
+  padding: 4px;
+  border-radius: 0px;
+  color: $light;
+}
+
+.workspaces .buttons button {
+  all: unset;
+  border-radius: 10px;
+  min-width: 33px;
+  color: $light;
+  background-color: $dark;
+}
+
+.workspaces .buttons button:hover {
+  color: $dark;
+  background-color: $medium;
+}
+
+.workspaces .buttons .active {
+  color: $dark;
+  background-color: $light;
+}
+
+.workspaces .window_title .empty {
+  all: unset;
+  color: transparent;
+  background-color: transparent;
+}
+
+.workspaces .window_title .active {
+  all: unset;
+  border-radius: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: $light;
+  background-color: $dark;
+}
+
+.music {
+  all: unset;
+  border-radius: 10px;
+  color: $light;
+  background-color: $dark;
+
+  .music_bar {
+    all: unset;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: $light;
+    background-color: $dark;
+  }
+
+  .music_next, .music_prev {
+    border-radius: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: $light;
+    background-color: $dark;
+  }
+}
+
+.music_paused {
+  all: unset;
+  border-radius: 10px;
+  color: $light;
+  background-color: $dark;
+
+  .music_bar {
+    all: unset;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: $medium;
+    background-color: $dark;
+  }
+
+  .music_next, .music_prev {
+    all: unset;
+    border-radius: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: $medium;
+    background-color: $dark;
+  }
+}
+
+.music_bar:hover {
+  all: unset;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $dark;
+  background-color: $light;
+}
+
+.music_next:hover, .music_prev:hover {
+  padding-left: 6px;
+  padding-right: 6px;
+  color: $dark;
+  background-color: $light;
+}
+
+.no_music {
+  all: unset;
+  color: transparent;
+  background-color: transparent;
+
+  .music_next:hover, .music_prev:hover {
+    all: unset;
+    color: transparent;
+    background-color: transparent;
+  }
+}
+
+.audio, .mic {
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $light;
+  background-color: $dark;
+}
+
+.audio_muted, .mic_muted {
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $medium;
+  background-color: $dark;
+}
+
+.audio:hover, .audio_muted:hover,
+.mic:hover, .mic_muted:hover {
+  color: $dark;
+  background-color: $light;
+}
+
+.battery {
+  all: unset;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $light;
+  background-color: $dark;
+}
+
+.systray {
+  all: unset;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 10px;
+  color: $light;
+  background-color: $dark;
+
+  menuitem {
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    min-width: 300px;
+    color: $light;
+    background-color: $dark;
+  }
+
+  menuitem:hover {
+    color: $dark;
+    background-color: $light;
+  }
+
+  menuitem:disabled label {
+    color: $medium;
+    background-color: $dark;
+  }
+
+  separator {
+    min-height: 1px;
+    margin: 5px;
+    color: $medium;
+    background-color: $light;
+  }
+}
+
+.systray menu {
+  all: unset;
+  border-style: solid;
+  border-color: $light;
+  border-width: 1px;
+  border-radius: 14px;
+  padding: 6px;
+  color: $light;
+  background-color: $dark;
+}
+
+.time, .battery {
+  all: unset;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $light;
+  background-color: $dark;
+}
+
+.session, .systray_menu {
+  all: unset;
+  border-radius: 10px;
+  min-width: 33px;
+  color: $light;
+  background-color: $dark;
+}
+
+.session:hover, .systray_menu:hover {
+  color: $dark;
+  background-color: $light;
+}
