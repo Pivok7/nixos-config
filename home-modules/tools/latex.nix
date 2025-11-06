@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.modTools.latex;
+  cfg = config.homeModTools.latex;
 
   tex = pkgs.texlive.combine {
     inherit (pkgs.texlive)
@@ -16,12 +16,12 @@ let
   };
 in
 {
-  options.modTools.latex = {
+  options.homeModTools.latex = {
     enable = lib.mkEnableOption "LaTeX essentials";
   };
 
   config = lib.mkIf (cfg.enable) {
-    environment.systemPackages = [
+    home.packages = [
       tex
     ];
   };

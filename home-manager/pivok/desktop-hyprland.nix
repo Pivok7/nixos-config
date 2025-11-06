@@ -67,7 +67,6 @@
   homeModGui.firefox.enable = true;
 
   homeModTui.kitty.enable = true;
-
   homeModTui.nushell = {
     enable = true;
     hyprsunset.enable = true;

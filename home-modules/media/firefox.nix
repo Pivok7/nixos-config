@@ -5,7 +5,7 @@
 }:
 
 let
-  cfg = config.homeModGui.firefox;
+  cfg = config.homeModMedia.firefox;
 
   lock-false = {
     Value = false;
@@ -17,7 +17,7 @@ let
   };
 in
 {
-  options.homeModGui.firefox = {
+  options.homeModMedia.firefox = {
     enable = lib.mkEnableOption "Setup firefox";
   };
 
@@ -48,7 +48,7 @@ in
           OverrideFirstRunPage = "";
           OverridePostUpdatePage = "";
           DontCheckDefaultBrowser = true;
-          DisplayBookmarksToolbar = "never"; # alternatives: "always" or "newtab"
+          DisplayBookmarksToolbar = "newtab"; # alternatives: "always" or "newtab"
           DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
           SearchBar = "unified"; # alternative: "separate"
 

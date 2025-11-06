@@ -1,49 +1,49 @@
 -- Standalone plugins that are not essential
 return {
     {
-	"asiryk/auto-hlsearch.nvim",
+        "asiryk/auto-hlsearch.nvim",
 
-	config = function()
-	    require("auto-hlsearch").setup()
-	end
+        config = function()
+            require("auto-hlsearch").setup()
+        end,
     },
     {
-	-- Hints keybinds
-	'folke/which-key.nvim',
-	opts = {
-	    win = {
-		border = {
-		    { '╭', 'FloatBorder' },
-		    { '─', 'FloatBorder' },
-		    { '╮', 'FloatBorder' },
-		    { '│', 'FloatBorder' },
-		    { '╯', 'FloatBorder' },
-		    { '─', 'FloatBorder' },
-		    { '╰', 'FloatBorder' },
-		    { '│', 'FloatBorder' },
-		},
-	    },
-	},
+        -- Hints keybinds
+        "folke/which-key.nvim",
+        opts = {
+            win = {
+                border = {
+                    { "╭", "FloatBorder" },
+                    { "─", "FloatBorder" },
+                    { "╮", "FloatBorder" },
+                    { "│", "FloatBorder" },
+                    { "╯", "FloatBorder" },
+                    { "─", "FloatBorder" },
+                    { "╰", "FloatBorder" },
+                    { "│", "FloatBorder" },
+                },
+            },
+        },
     },
     {
-	-- Autoclose parentheses, brackets, quotes, etc.
-	'windwp/nvim-autopairs',
-	event = 'InsertEnter',
-	config = true,
-	opts = {},
+        -- Autoclose parentheses, brackets, quotes, etc.
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = true,
+        opts = {},
     },
     {
-	-- Highlight todo, notes, etc in comments
-	'folke/todo-comments.nvim',
-	event = 'VimEnter',
-	dependencies = { 'nvim-lua/plenary.nvim' },
-	opts = { signs = false },
+        -- Highlight todo, notes, etc in comments
+        "folke/todo-comments.nvim",
+        event = "VimEnter",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = { signs = false },
     },
     {
-	-- high-performance color highlighter
-	'norcalli/nvim-colorizer.lua',
-	config = function()
-	    require('colorizer').setup()
-	end,
+        -- high-performance color highlighter
+        "norcalli/nvim-colorizer.lua",
+        config = function()
+            require("colorizer").setup()
+        end,
     },
 }

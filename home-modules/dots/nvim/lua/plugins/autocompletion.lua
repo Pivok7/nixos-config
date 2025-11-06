@@ -2,7 +2,7 @@ return {
     {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
-	'hrsh7th/cmp-cmdline',
+        "hrsh7th/cmp-cmdline",
         "hrsh7th/cmp-async-path",
         "https://codeberg.org/FelipeLema/cmp-async-path",
     },
@@ -32,14 +32,13 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
-		    { name = "async_path" },
+                    { name = "async_path" },
                     { name = "buffer" },
                 }),
 
-
-		enabled = function()
-		    return vim.g.cmptoggle
-		end,
+                enabled = function()
+                    return vim.g.cmptoggle
+                end,
             })
             cmp.setup.cmdline(":", {
                 mapping = cmp.mapping.preset.cmdline(),
@@ -50,11 +49,12 @@ return {
                 matching = { disallow_symbol_nonprefix_matching = false },
             })
 
-	    vim.keymap.set(
-		"n", "<leader>a",
-		"<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>",
-		{ desc = "Toggle autocompletion" }
-	    )
+            vim.keymap.set(
+                "n",
+                "<leader>a",
+                "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>",
+                { desc = "Toggle autocompletion" }
+            )
         end,
     },
 }

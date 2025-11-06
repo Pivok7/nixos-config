@@ -8,7 +8,7 @@
 }:
 
 {
-  networking.hostName = "home-pc";
+  networking.hostName = "family-pc";
 
   imports = [
     ./hardware-configuration.nix
@@ -16,19 +16,21 @@
     home-manager.nixosModules.home-manager
   ];
 
-    #home-manager = {
-    #  useGlobalPkgs = true;
-    #  useUserPackages = true;
-    #  users.pivok = import ../../home-manager/pivok/desktop-kde.nix;
-    #};
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit pkgs-unstable; };
+    users.pivok = import ../../home-manager/pivok/desktop-family.nix;
+  };
 
   # Bootloader.
   boot.loader.timeout = 2;
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/nvme0n1";
-  boot.loader.grub.useOSProber = true;
-  # Keep only x last generations
-  boot.loader.grub.configurationLimit = 20;
+  boot.loader.grub = {
+    enable = true;
+    device = "/dev/nvme0n1";
+    useOSProber = true;
+    configurationLimit = 20;
+  };
 
   fileSystems."/mnt/SSD_120GB" = {
     device = "/dev/sda3";
@@ -47,7 +49,6 @@
       "nvidia-x11"
       "nvidia-settings"
       "nvidia-persistanced"
-      "discord"
       "steam"
       "steam-unwrapped"
     ];
@@ -103,23 +104,13 @@
     ];
   };
 
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "pivok";
-
-  programs.firefox.enable = true;
-
+  # Enable essential services
   modSys.pipewire.enable = true;
   modSys.printer.enable = true;
 
-  modMedia.nomacs.enable = true;
-
-  modDev.bundle.favourite.enable = true;
-  modDev.bundle.web.enable = true;
-
-  modTools.latex.enable = true;
-  modTools.tor.enable = true;
-  modTools.qbittorrent.enable = true;
+  # Enable automatic login for the user.
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "pivok";
 
   virtualisation.docker.enable = true;
 
@@ -134,31 +125,9 @@
   ];
 
   # Packages installed in system profile
-  environment.systemPackages =
-    (with pkgs; [
-      floorp
-      keepassxc
-      mpv
-      git
-      lazygit
-      btop
-      wineWowPackages.stable
-      wget
-      handlr-regex
-      wl-clipboard
-      zip
-      unzip
-      libreoffice
-
-      discord
-      prismlauncher
-    ])
-
-    ++
-
-      (with pkgs-unstable; [
-        zig
-      ]);
+  environment.systemPackages = with pkgs; [
+    wineWowPackages.stable
+  ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

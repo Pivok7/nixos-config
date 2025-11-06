@@ -6,16 +6,18 @@ return {
         conform.setup({
             formatters_by_ft = {
                 lua = { "stylua" },
-		c = { "clang_format" },
-		cpp = { "clang_format" },
+                c = { "clang_format" },
+                cpp = { "clang_format" },
                 rust = { "rustfmt", lsp_format = "fallback" },
-		zig = { "zigfmt" },
-		nix = { "nixfmt" },
+                zig = { "zigfmt" },
+                python = { "black" },
 
                 html = { "prettier" },
                 css = { "prettier" },
                 javascript = { "prettier" },
                 typescript = { "prettier" },
+
+                nix = { "nixfmt" },
             },
         })
 

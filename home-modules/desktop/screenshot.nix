@@ -14,17 +14,17 @@ in
   };
 
   config = {
-      home.packages = lib.concatLists [
-        (
-          if cfg.grimSlurpSwappy.enable then
-            [
-              pkgs.grim
-              pkgs.slurp
-              pkgs.swappy
-            ]
-          else
-            [ ]
-        )
-      ];
+    home.packages = lib.concatLists [
+      (
+        if cfg.grimSlurpSwappy.enable then
+          [
+            pkgs.grim
+            pkgs.slurp
+            pkgs.swappy
+          ]
+        else
+          [ ]
+      )
+    ];
   };
 }

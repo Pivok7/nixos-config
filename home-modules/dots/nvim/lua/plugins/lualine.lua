@@ -14,6 +14,6 @@ return {
             },
         })
 
-	require('lualine').setup()
+        require("lualine").setup()
     end,
 }

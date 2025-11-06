@@ -21,10 +21,10 @@
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     in
     {
-      nixosConfigurations.home-pc = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.family-pc = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./hosts/home-pc/configuration.nix
+          ./hosts/family-pc/configuration.nix
         ];
         specialArgs = {
           inherit pkgs-unstable;
