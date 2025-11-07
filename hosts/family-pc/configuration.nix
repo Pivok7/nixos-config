@@ -17,7 +17,6 @@
   ];
 
   home-manager = {
-    useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit pkgs-unstable; };
     users.pivok = import ../../home-manager/pivok/desktop-family.nix;
@@ -43,6 +42,7 @@
   };
 
   # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
