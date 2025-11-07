@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 
@@ -11,22 +10,15 @@ in
 {
   options.modSys.pipewire = {
     enable = lib.mkEnableOption "Enable Pipewire";
-    gui.enable = lib.mkEnableOption "Enable pwvucontrol";
   };
 
   config = lib.mkIf (cfg.enable) {
-    security.rtkit.enable = cfg.enable;
+    security.rtkit.enable = true;
     services.pipewire = {
-      enable = cfg.enable;
-      alsa.enable = cfg.enable;
-      alsa.support32Bit = cfg.enable;
-      jack.enable = cfg.enable;
-    };
-
-    environment = {
-      systemPackages = lib.concatLists [
-        (if cfg.gui.enable then [ pkgs.pwvucontrol ] else [ ])
-      ];
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      jack.enable = true;
     };
   };
 }
