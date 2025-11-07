@@ -8,6 +8,12 @@
 {
   networking.hostName = "vm";
 
+  # Enable flakes
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   imports = [
     ./hardware-configuration.nix
     ../../modules/default.nix
