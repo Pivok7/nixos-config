@@ -14,7 +14,7 @@ in
     gui.enable = lib.mkEnableOption "Enable pwvucontrol";
   };
 
-  config = {
+  config = lib.mkIf (cfg.enable) {
     security.rtkit.enable = cfg.enable;
     services.pipewire = {
       enable = cfg.enable;
