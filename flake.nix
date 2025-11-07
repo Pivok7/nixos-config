@@ -41,5 +41,16 @@
           inherit home-manager;
         };
       };
+
+      nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/vm/configuration.nix
+        ];
+        specialArgs = {
+          inherit pkgs-unstable;
+          inherit home-manager;
+        };
+      };
     };
 }
