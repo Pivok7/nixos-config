@@ -34,7 +34,17 @@
 
   modHomeTools.latex.enable = true;
 
-  modHomeMedia.firefox.enable = true;
+  modHomeMedia.firefox = {
+    enable = true;
+    addons = [
+      "ublock"
+      "dark-reader"
+      "bandcamp-volume"
+      "bandcamp-killer"
+      "youtube-dislike"
+      "youtube-unhook"
+    ];
+  };
 
   home.packages =
     (with pkgs; [
