@@ -7,7 +7,7 @@
   home.stateVersion = "25.05";
 
   imports = [
-    ../../home-modules/default.nix
+    ../../modules/home/default.nix
   ];
 
   programs.git = {
@@ -16,30 +16,31 @@
     userEmail = "pivoc@protonmail.com";
   };
 
-  homeModDots.neovim = {
+  modHomeDots.neovim = {
     enable = true;
     defaultEditor.enable = true;
     clipboardWl.enable = true;
     ripgrep.enable = true;
   };
-  homeModDots.yazi = {
+  modHomeDots.yazi = {
     enable = true;
     dragAndDrop.enable = true;
   };
 
-  homeModTui.kitty.enable = true;
-  homeModTui.nushell.enable = true;
+  modHomeTui.kitty.enable = true;
+  modHomeTui.nushell.enable = true;
 
-  homeModDev.bundle.favourite.enable = true;
+  modHomeDev.bundle.favourite.enable = true;
 
-  homeModTools.latex.enable = true;
+  modHomeTools.latex.enable = true;
 
-  homeModMedia.firefox.enable = true;
+  modHomeMedia.firefox.enable = true;
 
   home.packages =
     (with pkgs; [
       # Gui
       ungoogled-chromium
+      discord
       libreoffice
       keepassxc
 
