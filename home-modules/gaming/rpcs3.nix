@@ -14,7 +14,7 @@ in
   };
 
   config = lib.mkIf (cfg.enable) {
-    environment.systemPackages = [
+    home.packages = [
       pkgs.rpcs3
     ];
   };

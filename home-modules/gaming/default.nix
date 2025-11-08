@@ -1,6 +1,6 @@
 { ... }:
 {
   imports = [
-    ./firefox.nix
+    ./rpcs3.nix
   ];
 }

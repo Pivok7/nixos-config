@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./gaming/default.nix
     ./system/default.nix
+    ./unfree/default.nix
   ];
 }

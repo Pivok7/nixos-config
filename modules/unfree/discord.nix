@@ -1,16 +1,15 @@
 {
-  lib,
   config,
-  pkgs,
+  lib,
   ...
 }:
 
 let
-  cfg = config.homeModMedia.discord;
+  cfg = config.modUnfree.discord;
 in
 {
-  options.homeModMedia.discord = {
-    enable = lib.mkEnableOption "Setup discord (unfree)";
+  options.modUnfree.discord = {
+    enable = lib.mkEnableOption "Enable unfree predicate required by Discord";
   };
 
   config = lib.mkIf (cfg.enable) {
@@ -19,9 +18,5 @@ in
       builtins.elem (lib.getName pkg) [
         "discord"
       ];
-
-    home.packages = [
-      pkgs.discord
-    ];
   };
 }

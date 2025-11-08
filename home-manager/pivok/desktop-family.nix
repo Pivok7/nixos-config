@@ -35,7 +35,6 @@
   homeModTools.latex.enable = true;
 
   homeModMedia.firefox.enable = true;
-  homeModMedia.discord.enable = true;
 
   home.packages =
     (with pkgs; [

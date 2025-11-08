@@ -1,7 +1,8 @@
 { ... }:
 {
   imports = [
-    ./rpcs3.nix
+    ./nvidia.nix
+    ./discord.nix
     ./steam.nix
   ];
 }

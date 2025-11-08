@@ -1,27 +1,21 @@
+# Steam only seems to work when it's installed system wide ???
+# That's unfortunate
+
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 
 let
-  cfg = config.modGaming.steam;
+  cfg = config.modSys.steam;
 in
 {
-  options.modGaming.steam = {
+  options.modSys.steam = {
     enable = lib.mkEnableOption "Enable Steam by Valve (unfree)";
   };
 
   config = lib.mkIf (cfg.enable) {
-    nixpkgs.config.allowUnfreePredicate =
-      pkg:
-      builtins.elem (lib.getName pkg) [
-        "steam"
-        "steam-original"
-        "steam-unwrapped"
-        "steam-run"
-      ];
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play

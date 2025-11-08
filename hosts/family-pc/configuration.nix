@@ -1,6 +1,5 @@
 {
   config,
-  lib,
   pkgs,
   pkgs-unstable,
   home-manager,
@@ -16,7 +15,14 @@
     home-manager.nixosModules.home-manager
   ];
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+  modUnfree.nvidia.enable = true;
+  modUnfree.steam.enable = true;
+  modUnfree.discord.enable = true;
+
   home-manager = {
+    useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit pkgs-unstable; };
     users.pivok = import ../../home-manager/pivok/desktop-family.nix;
@@ -40,18 +46,6 @@
     device = "/dev/sdb1";
     fsType = "ext4";
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "nvidia-x11"
-      "nvidia-settings"
-      "nvidia-persistanced"
-      "steam"
-      "steam-unwrapped"
-    ];
 
   # Enable OpenGL
   hardware.graphics = {
@@ -107,6 +101,7 @@
   # Enable essential services
   modSys.pipewire.enable = true;
   modSys.printer.enable = true;
+  modSys.steam.enable = true;
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
