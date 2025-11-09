@@ -67,6 +67,8 @@
       discord
       libreoffice
       keepassxc
+      qbittorrent
+      inkscape
 
       # Tui
       lazygit

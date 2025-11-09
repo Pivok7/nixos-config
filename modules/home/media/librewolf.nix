@@ -40,14 +40,17 @@ in
       enable = true;
       settings = {
         "webgl.disabled" = false;
-        "privacy.clearOnShutdown.cookies" = false;
-        "network.cookie.lifetimePolicy" = 0;
+        "privacy.clearOnShutdown_v2.browsingHistoryAndDownloads" = true;
+        "privacy.clearOnShutdown_v2.cache" = true;
+        "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
+        "privacy.clearOnShutdown_v2.formdata" = true;
+        "privacy.clearOnShutdown_v2.historyFormDataAndDownloads" = true;
       };
 
       # ---- POLICIES ----
       # Check about:policies#documentation for options.
       policies = {
-	# Bookmarks
+        # Bookmarks
         NoDefaultBookmarks = !cfg.bookmarks.enable;
         Preferences = {
           "browser.bookmarks.file" = cfg.bookmarks.path;
