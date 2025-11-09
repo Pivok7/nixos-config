@@ -36,6 +36,20 @@
 
   modHomeMedia.firefox = {
     enable = true;
+    bookmarks.enable = true;
+    addons = [
+      "ublock"
+      "dark-reader"
+      "bandcamp-volume"
+      "bandcamp-killer"
+      "youtube-dislike"
+      "youtube-unhook"
+    ];
+  };
+
+  modHomeMedia.librewolf = {
+    enable = true;
+    bookmarks.enable = true;
     addons = [
       "ublock"
       "dark-reader"

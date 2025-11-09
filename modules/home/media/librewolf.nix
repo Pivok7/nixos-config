@@ -5,20 +5,11 @@
 }:
 
 let
-  cfg = config.modHomeMedia.firefox;
-
-  lock-false = {
-    Value = false;
-    Status = "locked";
-  };
-  lock-true = {
-    Value = true;
-    Status = "locked";
-  };
+  cfg = config.modHomeMedia.librewolf;
 in
 {
-  options.modHomeMedia.firefox = {
-    enable = lib.mkEnableOption "Setup firefox";
+  options.modHomeMedia.librewolf = {
+    enable = lib.mkEnableOption "Setup Librewolf";
     bookmarks = {
       enable = lib.mkEnableOption "Enable bookmarks";
       path = lib.mkOption {
@@ -45,35 +36,17 @@ in
   };
 
   config = lib.mkIf (cfg.enable) {
-    programs.firefox = {
+    programs.librewolf = {
       enable = true;
-      languagePacks = [
-        "pl"
-        "en-US"
-      ];
+      settings = {
+        "webgl.disabled" = false;
+        "privacy.clearOnShutdown.cookies" = false;
+        "network.cookie.lifetimePolicy" = 0;
+      };
 
       # ---- POLICIES ----
       # Check about:policies#documentation for options.
       policies = {
-        DisableTelemetry = true;
-        DisableFirefoxStudies = true;
-        EnableTrackingProtection = {
-          Value = true;
-          Locked = true;
-          Cryptomining = true;
-          Fingerprinting = true;
-        };
-        DisablePocket = true;
-        DisableFirefoxAccounts = true;
-        DisableAccounts = true;
-        DisableFirefoxScreenshots = true;
-        OverrideFirstRunPage = "";
-        OverridePostUpdatePage = "";
-        DontCheckDefaultBrowser = true;
-        DisplayBookmarksToolbar = "newtab"; # alternatives: "always" or "newtab"
-        DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
-        SearchBar = "unified"; # alternative: "separate"
-
 	# Bookmarks
         NoDefaultBookmarks = !cfg.bookmarks.enable;
         Preferences = {
@@ -121,31 +94,6 @@ in
             install_url = "https://addons.mozilla.org/firefox/downloads/file/4263531/youtube_recommended_videos-1.6.7.xpi";
             installation_mode = "force_installed";
           };
-        };
-
-        # ---- PREFERENCES ----
-        # Check about:config for options.
-        Preferences = {
-          "browser.contentblocking.category" = {
-            Value = "strict";
-            Status = "locked";
-          };
-          "extensions.pocket.enabled" = lock-false;
-          "browser.topsites.contile.enabled" = lock-false;
-          "browser.formfill.enable" = lock-false;
-          "browser.search.suggest.enabled" = lock-false;
-          "browser.search.suggest.enabled.private" = lock-false;
-          "browser.urlbar.suggest.searches" = lock-false;
-          "browser.urlbar.showSearchSuggestionsFirst" = lock-false;
-          "browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
-          "browser.newtabpage.activity-stream.feeds.snippets" = lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includePocket" = lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includeVisited" = lock-false;
-          "browser.newtabpage.activity-stream.showSponsored" = lock-false;
-          "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
-          "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
         };
       };
     };
