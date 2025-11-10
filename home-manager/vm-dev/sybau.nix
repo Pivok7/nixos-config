@@ -13,6 +13,9 @@
     enable = true;
     userName = "Sybauinator3000";
     userEmail = "krystiankap39@gmail.com";
+    extraConfig = {
+      pull.rebase = false;
+    };
   };
 
   modHomeDots.neovim = {

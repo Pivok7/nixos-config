@@ -14,6 +14,9 @@
     enable = true;
     userName = "Pivok";
     userEmail = "pivoc@protonmail.com";
+    extraConfig = {
+      pull.rebase = false;
+    };
   };
 
   modHomeDots.neovim = {
