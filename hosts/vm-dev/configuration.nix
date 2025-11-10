@@ -52,14 +52,7 @@
   console.keyMap = "pl2";
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
+  modSys.pipewire.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sybau = {
@@ -70,10 +63,6 @@
       "wheel"
     ];
   };
-
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "sybau";
 
   # Docker
   virtualisation.docker.enable = true;
