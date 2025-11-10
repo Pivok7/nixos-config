@@ -49,6 +49,5 @@
       # Media
       mpv
       nomacs
-
     ]);
 }
