@@ -34,6 +34,7 @@
   modHomeTui.nushell.enable = true;
 
   modHomeDev.bundle.favourite.enable = true;
+  modHomeDev.bundle.web.enable = true;
 
   modHomeTools.latex.enable = true;
 
