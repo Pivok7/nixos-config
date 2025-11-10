@@ -32,15 +32,7 @@
   modHomeDev.bundle.web.enable = true;
   modHomeDev.bundle.rust.enable = true;
 
-  modHomeBrowser.firefox = {
-    enable = true;
-    addons = [
-      "ublock"
-      "clean-urls"
-      "dark-reader"
-      "youtube-dislike"
-    ];
-  };
+  programs.firefox.enable = true;
 
   home.packages =
     (with pkgs; [
