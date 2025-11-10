@@ -62,8 +62,6 @@
     ];
   };
 
-  modHomeBrowser.ladybird.enable = true;
-
   home.packages =
     (with pkgs; [
       # Gui
