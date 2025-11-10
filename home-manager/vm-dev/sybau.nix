@@ -39,6 +39,7 @@
       # Tui
       lazygit
       btop
+      vim
 
       # Utils
       wget
