@@ -80,6 +80,7 @@
       wget
       zip
       unzip
+      openssl
 
       # Media
       mpv
