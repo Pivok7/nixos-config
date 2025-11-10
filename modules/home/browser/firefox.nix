@@ -5,31 +5,25 @@
 }:
 
 let
-  cfg = config.modHomeMedia.firefox;
+  cfg = config.modHomeBrowser.firefox;
+  extensions = import ./firefox/extensions.nix {
+    inherit lib;
+    inherit cfg;
+  };
 in
 {
-  options.modHomeMedia.firefox = {
+  options.modHomeBrowser.firefox = {
     enable = lib.mkEnableOption "Setup firefox";
     bookmarks = {
       enable = lib.mkEnableOption "Enable bookmarks";
       path = lib.mkOption {
         type = lib.types.path;
-        default = ./bookmarks.html;
+        default = ./firefox/bookmarks.html;
         description = "Bookmarks path";
       };
     };
     addons = lib.mkOption {
-      type = lib.types.listOf (
-        lib.types.enum [
-          "ublock"
-          "adnauseam"
-          "dark-reader"
-          "bandcamp-volume"
-          "bandcamp-killer"
-          "youtube-dislike"
-          "youtube-unhook"
-        ]
-      );
+      type = lib.types.listOf extensions.extensionsEnum;
       default = [ ];
       description = "Enables addons";
     };
@@ -43,7 +37,7 @@ in
         "en-US"
       ];
 
-      # ---- POLICIES ----
+      # Policies
       # Check about:policies#documentation for options.
       policies = {
         SearchEngines = {
@@ -72,9 +66,11 @@ in
         # Bookmarks
         NoDefaultBookmarks = !cfg.bookmarks.enable;
 
-        # ---- PREFERENCES ----
+        # Preferences
         # Check about:config for options.
+	# Inspired by https://brainfucksec.github.io/firefox-hardening-guide-2025
         Preferences = {
+          # Bookmarks pt2
           "browser.bookmarks.file" = cfg.bookmarks.path;
           "browser.places.importBookmarksHTML" = cfg.bookmarks.enable;
 
@@ -88,12 +84,8 @@ in
 
           "browser.newtab.preload" = false;
           "browser.newtabpage.activity-stream.feeds.snippets" = false;
+          "browser.newtabpage.activity-stream.feeds.topsites" = false;
           "browser.newtabpage.activity-stream.feeds.discoverystreamfeed" = false;
-          "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
-          "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
-          "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
-          "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = false;
-          "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
 
           "geo.provider.use_geoclue" = false;
           "intl.accept_languages" = "en-US, en";
@@ -205,11 +197,7 @@ in
           "browser.download.useDownloadDir" = false;
           "browser.download.manager.addToRecentDocs" = false;
           "browser.download.always_ask_before_handling_new_types" = false;
-
-          "browser.contentblocking.category" = {
-            Value = "strict";
-            Status = "locked";
-          };
+          "browser.contentblocking.category" = "strict";
 
           "dom.popup_allowed_events" = "click dblclick mousedown pointerdown";
           "pdfjs.enableScripting" = false;
@@ -220,8 +208,6 @@ in
           "extensions.postDownloadThirdPartyPrompt" = false;
 
           "privacy.sanitize.sanitizeOnShutdown" = true;
-          "privacy.clearOnShutdown.cookies" = true;
-          "privacy.clearOnShutdown.offlineApps" = true;
           "privacy.sanitize.timeSpan" = true;
 
           "privacy.clearOnShutdown_v2.browsingHistoryAndDownloads" = true;
@@ -237,48 +223,12 @@ in
           "widget.non-native-theme.use-theme-accent" = false;
           "browser.link.open_newwindow.restriction" = 0;
         };
-        # ---- EXTENSIONS ----
-        # Check about:support for extension/add-on ID strings.
-        # Valid strings for installation_mode are "allowed", "blocked",
-        # "force_installed" and "normal_installed".
+
+        # Extensions
         ExtensionSettings = {
           "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
-          # uBlock Origin:
-          "uBlock0@raymondhill.net" = lib.mkIf (lib.elem "ublock" cfg.addons) {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-            installation_mode = "force_installed";
-          };
-          # AdNauseum
-          "adnauseam@rednoise.org" = lib.mkIf (lib.elem "adnauseam" cfg.addons) {
-            install_url = "https://addons.mozilla.org/firefox/downloads/file/4592803/adnauseam-3.26.0.xpi";
-            installation_mode = "force_installed";
-          };
-          # Dark reader
-          "addon@darkreader.org" = lib.mkIf (lib.elem "dark-reader" cfg.addons) {
-            install_url = "https://addons.mozilla.org/firefox/downloads/file/4598977/darkreader-4.9.112.xpi";
-            installation_mode = "force_installed";
-          };
-          # Bandcamp volume control
-          "{308ec088-284a-40fe-ae14-7c917526f694}" = lib.mkIf (lib.elem "bandcamp-volume" cfg.addons) {
-            install_url = "https://addons.mozilla.org/firefox/downloads/file/4084124/bandcamp_player_volume_control-1.0.3.xpi";
-            installation_mode = "force_installed";
-          };
-          # Bandcamp killer
-          "{1bac25ad-d6dd-44c9-bc95-628027e5e126}" = lib.mkIf (lib.elem "bandcamp-killer" cfg.addons) {
-            install_url = "https://addons.mozilla.org/firefox/downloads/file/3499802/bandcamp_killer_1_0-1.0.xpi";
-            installation_mode = "force_installed";
-          };
-          # Return youtube dislike
-          "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = lib.mkIf (lib.elem "youtube-dislike" cfg.addons) {
-            install_url = "https://addons.mozilla.org/firefox/downloads/file/4371820/return_youtube_dislikes-3.0.0.18.xpi";
-            installation_mode = "force_installed";
-          };
-          # Youtube unhook
-          "myallychou@gmail.com" = lib.mkIf (lib.elem "youtube-unhook" cfg.addons) {
-            install_url = "https://addons.mozilla.org/firefox/downloads/file/4263531/youtube_recommended_videos-1.6.7.xpi";
-            installation_mode = "force_installed";
-          };
-        };
+        }
+        // extensions.extensionsList;
       };
     };
   };

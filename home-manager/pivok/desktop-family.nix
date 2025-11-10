@@ -34,11 +34,12 @@
 
   modHomeTools.latex.enable = true;
 
-  modHomeMedia.firefox = {
+  modHomeBrowser.firefox = {
     enable = true;
     bookmarks.enable = true;
     addons = [
       "ublock"
+      "clean-urls"
       "dark-reader"
       "bandcamp-volume"
       "bandcamp-killer"
@@ -47,11 +48,12 @@
     ];
   };
 
-  modHomeMedia.librewolf = {
+  modHomeBrowser.librewolf = {
     enable = true;
     bookmarks.enable = true;
     addons = [
       "ublock"
+      "clean-urls"
       "dark-reader"
       "bandcamp-volume"
       "bandcamp-killer"
@@ -59,6 +61,8 @@
       "youtube-unhook"
     ];
   };
+
+  modHomeBrowser.ladybird.enable = true;
 
   home.packages =
     (with pkgs; [
