@@ -78,6 +78,10 @@
   # Docker
   virtualisation.docker.enable = true;
 
+  fonts.packages = with pkgs; [
+    iosevka-bin
+  ];
+
   environment.systemPackages = [ ];
 
   # Before changing this value read the documentation for this option
