@@ -42,10 +42,10 @@
         };
       };
 
-      nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.vm-dev = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./hosts/vm/configuration.nix
+          ./hosts/vm-dev/configuration.nix
         ];
         specialArgs = {
           inherit pkgs-unstable;

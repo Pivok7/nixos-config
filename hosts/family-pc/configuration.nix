@@ -9,17 +9,17 @@
 {
   networking.hostName = "family-pc";
 
+  # Enable flakes
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   imports = [
     ./hardware-configuration.nix
     ../../modules/default.nix
     home-manager.nixosModules.home-manager
   ];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  modUnfree.nvidia.enable = true;
-  modUnfree.steam.enable = true;
-  modUnfree.discord.enable = true;
 
   home-manager = {
     useGlobalPkgs = true;
@@ -27,6 +27,12 @@
     extraSpecialArgs = { inherit pkgs-unstable; };
     users.pivok = import ../../home-manager/pivok/desktop-family.nix;
   };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+  modUnfree.nvidia.enable = true;
+  modUnfree.steam.enable = true;
+  modUnfree.discord.enable = true;
 
   # Bootloader.
   boot.loader.timeout = 2;
@@ -47,11 +53,6 @@
     fsType = "ext4";
   };
 
-  # Enable OpenGL
-  hardware.graphics = {
-    enable = true;
-  };
-
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
 
@@ -64,11 +65,10 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  # Enable flakes
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  # Enable OpenGL
+  hardware.graphics = {
+    enable = true;
+  };
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -101,28 +101,22 @@
   # Enable essential services
   modSys.pipewire.enable = true;
   modSys.printer.enable = true;
+  modSys.wine.enable = true;
   modSys.steam.enable = true;
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "pivok";
 
+  # Docker
   virtualisation.docker.enable = true;
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
 
   fonts.packages = with pkgs; [
     iosevka-bin
   ];
 
   # Packages installed in system profile
-  environment.systemPackages = with pkgs; [
-    wineWowPackages.stable
-  ];
+  environment.systemPackages = [ ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

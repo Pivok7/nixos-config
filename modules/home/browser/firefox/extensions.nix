@@ -27,7 +27,7 @@
     };
     # CleanURLs
     "{74145f27-f039-47ce-a470-a662b129930a}" = lib.mkIf (lib.elem "dark-reader" cfg.addons) {
-      install_url = "https://addons.mozilla.org/firefox/downloads/file/4598977/darkreader-4.9.112.xpi";
+      install_url = "https://addons.mozilla.org/firefox/downloads/file/4432106/clearurls-1.27.3.xpi";
       installation_mode = "force_installed";
     };
     # Dark reader

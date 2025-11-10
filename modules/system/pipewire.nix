@@ -10,6 +10,7 @@ in
 {
   options.modSys.pipewire = {
     enable = lib.mkEnableOption "Enable Pipewire";
+    jack.enable = lib.mkEnableOption "Enable JACK";
   };
 
   config = lib.mkIf (cfg.enable) {
@@ -18,7 +19,7 @@ in
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
-      jack.enable = true;
+      jack.enable = cfg.jack.enable;
     };
   };
 }

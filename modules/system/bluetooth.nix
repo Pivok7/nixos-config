@@ -10,19 +10,17 @@ in
 {
   options.modSys.bluetooth = {
     enable = lib.mkEnableOption "Enable bluetooth";
-    gui.enable = lib.mkEnableOption "Enable blueman";
   };
 
-  config = {
+  config = lib.mkIf (cfg.enable) {
     hardware.bluetooth = {
-      enable = cfg.enable;
-      powerOnBoot = cfg.enable;
+      enable = true;
+      powerOnBoot = true;
       settings = {
         General = {
-          Experimental = cfg.enable;
+          Experimental = true;
         };
       };
     };
-    services.blueman.enable = cfg.gui.enable;
   };
 }

@@ -1,12 +1,12 @@
 {
-  config,
   pkgs,
+  pkgs-unstable,
   home-manager,
   ...
 }:
 
 {
-  networking.hostName = "vm";
+  networking.hostName = "vm-dev";
 
   # Enable flakes
   nix.settings.experimental-features = [
@@ -20,6 +20,13 @@
     home-manager.nixosModules.home-manager
   ];
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit pkgs-unstable; };
+    users.sybau = import ../../home-manager/vm-dev/sybau.nix;
+  };
+
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
@@ -30,6 +37,9 @@
   # Regional settings
   time.timeZone = "Europe/Warsaw";
   i18n.defaultLocale = "pl_PL.UTF-8";
+  services.xserver.xkb = {
+    layout = "pl";
+  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -37,12 +47,6 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "pl";
-    variant = "";
-  };
 
   # Configure console keymap
   console.keyMap = "pl2";
@@ -58,9 +62,9 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.vm-user = {
+  users.users.sybau = {
     isNormalUser = true;
-    description = "VM User";
+    description = "Sybau";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -69,19 +73,14 @@
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "vm-user";
+  services.displayManager.autoLogin.user = "sybau";
 
-  # Install firefox.
-  programs.firefox.enable = true;
+  # Docker
+  virtualisation.docker.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    git
-    yazi
-    kitty
-  ];
+  environment.systemPackages = [ ];
 
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }

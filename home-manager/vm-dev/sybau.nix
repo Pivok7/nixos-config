@@ -1,0 +1,62 @@
+{
+  pkgs,
+  ...
+}:
+{
+  home.stateVersion = "25.05";
+
+  imports = [
+    ../../modules/home/default.nix
+  ];
+
+  programs.git = {
+    enable = true;
+    userName = "Sybauinator3000";
+    userEmail = "krystiankap39@gmail.com";
+  };
+
+  modHomeDots.neovim = {
+    enable = true;
+    defaultEditor.enable = true;
+    clipboardWl.enable = true;
+    ripgrep.enable = true;
+  };
+  modHomeDots.yazi = {
+    enable = true;
+    dragAndDrop.enable = true;
+  };
+
+  modHomeTui.kitty.enable = true;
+  modHomeTui.nushell.enable = true;
+
+  modHomeDev.bundle.web.enable = true;
+  modHomeDev.bundle.rust.enable = true;
+
+  modHomeBrowser.firefox = {
+    enable = true;
+    bookmarks.enable = true;
+    addons = [
+      "ublock"
+      "clean-urls"
+      "dark-reader"
+      "youtube-dislike"
+    ];
+  };
+
+  home.packages =
+    (with pkgs; [
+      # Tui
+      lazygit
+      btop
+
+      # Utils
+      wget
+      zip
+      unzip
+
+      # Media
+      mpv
+      nomacs
+
+    ]);
+}

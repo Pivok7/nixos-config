@@ -5,5 +5,6 @@
     ./pipewire.nix
     ./printer.nix
     ./steam.nix
+    ./wine.nix
   ];
 }
