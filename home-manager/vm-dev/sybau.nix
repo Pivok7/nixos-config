@@ -34,7 +34,6 @@
 
   modHomeBrowser.firefox = {
     enable = true;
-    bookmarks.enable = true;
     addons = [
       "ublock"
       "clean-urls"
