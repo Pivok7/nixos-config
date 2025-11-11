@@ -16,6 +16,8 @@ in
   config = lib.mkIf (cfg.enable) {
     home.packages = [
       pkgs.eww
+      pkgs.socat
+      pkgs.networkmanagerapplet
     ];
 
     home.file = {

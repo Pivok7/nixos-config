@@ -1,14 +1,14 @@
 {
-  config,
   lib,
   pkgs,
+  pkgs-unstable,
   ...
 }:
 {
   home.stateVersion = "25.05";
 
   imports = [
-    ../../home-modules/default.nix
+    ../../modules/home/default.nix
   ];
 
   # GTK4 Setup
@@ -40,35 +40,96 @@
     };
   };
 
-  home.packages = [
-    pkgs.rose-pine-hyprcursor
-    pkgs.hyprsunset
-  ];
-
   programs.git = {
     enable = true;
     userName = "Pivok";
     userEmail = "pivoc@protonmail.com";
   };
 
-  homeModDots.hyprland.enable = true;
-  homeModDots.eww.enable = true;
-  homeModDots.nvim.enable = true;
-  homeModDots.yazi.enable = true;
+  modHomeDots.hyprland.enable = true;
+  modHomeDots.eww.enable = true;
+  modHomeDots.neovim = {
+    enable = true;
+    defaultEditor.enable = true;
+    clipboardWl.enable = true;
+    ripgrep.enable = true;
+  };
+  modHomeDots.yazi = {
+    enable = true;
+    dragAndDrop.enable = true;
+  };
 
-  homeModDesktop.hypridle.enable = true;
-  homeModDesktop.hyprlock.enable = true;
-  homeModDesktop.hyprpaper = {
+  modHomeDesktop.hypridle.enable = true;
+  modHomeDesktop.hyprlock.enable = true;
+  modHomeDesktop.hyprpaper = {
     enable = true;
     wallpaper = "/home/pivok/Obrazy/wallpaper.png";
   };
-  homeModDesktop.screenshot.grimSlurpSwappy.enable = true;
+  modHomeDesktop.screenshot.grimSlurpSwappy.enable = true;
 
-  homeModGui.firefox.enable = true;
-
-  homeModTui.kitty.enable = true;
-  homeModTui.nushell = {
+  modHomeTui.kitty.enable = true;
+  modHomeTui.nushell = {
     enable = true;
     hyprsunset.enable = true;
   };
+
+  modHomeDev.bundle.favourite.enable = true;
+  modHomeDev.bundle.web.enable = true;
+
+  modHomeTools.latex.enable = true;
+
+  modHomeBrowser.librewolf = {
+    enable = true;
+    bookmarks.enable = true;
+    addons = [
+      "ublock"
+      "clean-urls"
+      "dark-reader"
+      "bandcamp-volume"
+      "bandcamp-killer"
+      "youtube-dislike"
+      "youtube-unhook"
+    ];
+  };
+
+  home.packages =
+    (with pkgs; [
+      # Desktop
+      rose-pine-hyprcursor
+      hyprsunset
+      wofi
+      wlogout
+      swaynotificationcenter
+      udiskie
+
+      # Gui
+      blueman
+      pwvucontrol
+      lact
+      discord
+      libreoffice
+      keepassxc
+      qbittorrent
+      inkscape
+
+      # Tui
+      lazygit
+      btop
+      kew
+      tmux
+
+      # Utils
+      wget
+      dash
+      zip
+      unzip
+      openssl
+
+      # Media
+      mpv
+      nomacs
+    ])
+    ++ (with pkgs-unstable; [
+      tor-browser
+    ]);
 }

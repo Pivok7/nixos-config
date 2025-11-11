@@ -1,6 +1,6 @@
 {
-  config,
   pkgs,
+  pkgs-unstable,
   home-manager,
   ...
 }:
@@ -23,8 +23,14 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    extraSpecialArgs = { inherit pkgs-unstable; };
     users.pivok = import ../../home-manager/pivok/desktop-hyprland.nix;
   };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+  modUnfree.steam.enable = true;
+  modUnfree.discord.enable = true;
 
   # Bootloader.
   boot.loader.timeout = 3;
@@ -41,17 +47,17 @@
     };
   };
 
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
+
+  # Enable networking
+  networking.networkmanager.enable = true;
+
+  # Desktops
+  programs.hyprland.enable = true;
 
   # Regional settings
   time.timeZone = "Europe/Warsaw";
@@ -73,30 +79,13 @@
     enable = true;
   };
 
-  modDesktop.hyprland.enable = true;
-  modDesktop.eww.enable = true;
+  # Enable essential services
+  modSys.pipewire.enable = true;
+  modSys.bluetooth.enable = true;
+  modSys.wine.enable = true;
+  modSys.steam.enable = true;
 
-  modSys.pipewire = {
-    enable = true;
-    gui.enable = true;
-  };
-  modSys.bluetooth = {
-    enable = true;
-    gui.enable = true;
-  };
-
-  modGaming.steam.enable = true;
-  modGaming.rpcs3.enable = true;
-
-  modMedia.nomacs.enable = true;
-  modMedia.discord.enable = true;
-
-  modDev.bundle.favourite.enable = true;
-
-  modTools.latex.enable = true;
-  modTools.tor.enable = true;
-  modTools.qbittorrent.enable = true;
-
+  # Enable essential services
   virtualisation.docker.enable = true;
 
   environment.sessionVariables = {
@@ -108,20 +97,7 @@
     iosevka-bin
   ];
 
-  environment.systemPackages = with pkgs; [
-    wofi
-    wlogout
-    swaynotificationcenter
-    udiskie
-    networkmanagerapplet
-    dash
-    keepassxc
-    lact
-    kew
-    p7zip
-    dconf-editor
-    nwg-look
-  ];
+  environment.systemPackages = with pkgs; [ ];
 
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
