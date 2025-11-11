@@ -79,6 +79,7 @@
       # Tui
       lazygit
       btop
+      tmux
 
       # Utils
       wget

@@ -16,7 +16,11 @@ in
 
   config = lib.mkIf (cfg.enable) {
     home.packages = lib.concatLists [
-      [pkgs.yazi]
+      [
+        pkgs.yazi
+	pkgs.ripgrep
+	pkgs.fd
+      ]
       (if cfg.dragAndDrop.enable then [ pkgs.dragon-drop ] else [ ])
     ];
 
