@@ -49,6 +49,11 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  #Disable DrKonqi
+  systemd.services.drkonqi-coredump-processor = {
+    enable = false;
+  };
+
   # Configure console keymap
   console.keyMap = "pl2";
 
