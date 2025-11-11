@@ -92,12 +92,7 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.symbols-only
-    iosevka-bin
-  ];
-
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = [ ];
 
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).

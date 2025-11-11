@@ -17,6 +17,7 @@ in
     home.packages = [
       pkgs.eww
       pkgs.socat
+      pkgs.playerctl
       pkgs.networkmanagerapplet
     ];
 

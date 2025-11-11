@@ -92,6 +92,8 @@
     ];
   };
 
+  modHomeGaming.rpcs3.enable = true;
+
   home.packages =
     (with pkgs; [
       # Desktop
@@ -128,6 +130,12 @@
       # Media
       mpv
       nomacs
+
+      # Fonts
+      nerd-fonts.symbols-only
+      iosevka-bin
+      roboto
+      roboto-serif
     ])
     ++ (with pkgs-unstable; [
       tor-browser

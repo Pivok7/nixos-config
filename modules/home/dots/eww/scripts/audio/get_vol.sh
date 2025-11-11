@@ -1,5 +1,23 @@
 #!/bin/sh
 
+pipevol() {
+    mute=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep 'MUTED')
+
+    val=$(
+	wpctl get-volume @DEFAULT_AUDIO_SINK@ \
+	| awk '{print $2}' \
+	| sed 's/\.//g' \
+	| sed 's/^0//'
+    )
+
+    wpctl get-volume @DEFAULT_AUDIO_SINK@
+    if [ "$mute" = "" ]; then
+	echo "$val"
+    else
+	echo "$(( -val - 1 ))"
+    fi
+}
+
 pulsevol() {
     mute=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
 
@@ -30,6 +48,15 @@ alsavol() {
     fi
 }
 
+# Pure pipewire and wireplumber
+pipewire() {
+    pw-mon -oa | while read -r line; do
+	if echo "$line" | grep -q "changed"; then
+	    pipevol
+	fi
+    done
+}
+
 # PulseAudio or pipewire-pulse
 pulseaudio() {
     pactl subscribe sink | while read -r line; do
@@ -47,9 +74,13 @@ alsa() {
     done
 }
 
-if command -v pactl >/dev/null 2>&1; then
+if command -v pw-mon >/dev/null 2>&1 && command -v wpctl >/dev/null 2>&1; then
+    pipevol
+    pipewire
+elif command -v pactl >/dev/null 2>&1; then
     pulsevol
     pulseaudio
 else
     alsa
 fi
+
