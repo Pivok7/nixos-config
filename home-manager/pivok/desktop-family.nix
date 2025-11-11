@@ -93,6 +93,9 @@
 
       # Games
       prismlauncher
+
+      # Fonts
+      iosevka-bin
     ])
     ++ (with pkgs-unstable; [
       tor-browser

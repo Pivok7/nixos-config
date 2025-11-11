@@ -136,6 +136,7 @@
       iosevka-bin
       roboto
       roboto-serif
+      roboto-slab
     ])
     ++ (with pkgs-unstable; [
       tor-browser

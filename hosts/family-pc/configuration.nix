@@ -111,10 +111,6 @@
   # Docker
   virtualisation.docker.enable = true;
 
-  fonts.packages = with pkgs; [
-    iosevka-bin
-  ];
-
   # Packages installed in system profile
   environment.systemPackages = [ ];
 
