@@ -76,7 +76,10 @@
   modHomeDev.bundle.favourite.enable = true;
   modHomeDev.bundle.web.enable = true;
 
-  modHomeTools.latex.enable = true;
+  modHomeTools.latex = {
+    enable = true;
+    lsp.enable = true;
+  };
 
   modHomeBrowser.librewolf = {
     enable = true;
@@ -130,6 +133,7 @@
       # Media
       mpv
       nomacs
+      zathura
 
       # Fonts
       nerd-fonts.symbols-only

@@ -7,6 +7,7 @@ return {
     vim.lsp.enable("pyright"),
     vim.lsp.enable("rust_analyzer"),
     vim.lsp.enable("zls"),
+    vim.lsp.enable("texlab"),
     vim.lsp.enable("ts_ls"),
     vim.lsp.enable("tailwindcss"),
 }
