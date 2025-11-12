@@ -7,6 +7,7 @@ pipevol() {
 	wpctl get-volume @DEFAULT_AUDIO_SINK@ \
 	| awk '{print $2}' \
 	| sed 's/\.//g' \
+	| sed 's/^0//' \
 	| sed 's/^0//'
     )
 
