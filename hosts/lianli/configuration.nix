@@ -48,8 +48,11 @@
   };
 
   fileSystems."/mnt/Windows" = {
-    device = "/dev/nvme1n1p3";
+    device = "/dev/disk/by-uuid/10866BEE866BD2B0";
     fsType = "ntfs";
+    options = [
+      "nofail" # Prevent system from failing if this drive doesn't mount
+    ];
   };
 
   # Enable OpenGL
