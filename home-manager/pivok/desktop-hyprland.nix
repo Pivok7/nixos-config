@@ -50,7 +50,7 @@
   modHomeDots.eww.enable = true;
   modHomeDots.neovim = {
     enable = true;
-    defaultEditor.enable = true;
+    defaultEditor = true;
     clipboardWl.enable = true;
     ripgrep.enable = true;
   };
@@ -75,6 +75,16 @@
 
   modHomeDev.bundle.favourite.enable = true;
   modHomeDev.bundle.web.enable = true;
+
+  modHomeMedia.nomacs = {
+    enable = true;
+    defaultViewer = true;
+  };
+  modHomeMedia.mpv = {
+    enable = true;
+    defaultVideoPlayer = true;
+    defaultAudioPlayer = true;
+  };
 
   modHomeTools.latex = {
     enable = true;
@@ -115,7 +125,11 @@
       libreoffice
       keepassxc
       qbittorrent
+
+      # Creative
+      gimp
       inkscape
+      ardour
 
       # Tui
       lazygit
@@ -131,8 +145,6 @@
       openssl
 
       # Media
-      mpv
-      nomacs
       zathura
 
       # Fonts

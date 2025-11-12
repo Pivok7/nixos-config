@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 
@@ -14,10 +13,6 @@ in
   };
 
   config = lib.mkIf (cfg.enable) {
-    home.packages = [
-      pkgs.hyprland
-    ];
-
     home.file = {
       ".config/hypr/hyprland.conf" = {
         source = ./hyprland.conf;

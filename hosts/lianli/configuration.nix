@@ -47,6 +47,11 @@
     };
   };
 
+  fileSystems."/mnt/Windows" = {
+    device = "/dev/nvme1n1p3";
+    fsType = "ntfs";
+  };
+
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
@@ -57,7 +62,11 @@
   networking.networkmanager.enable = true;
 
   # Desktops
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
+  };
 
   # Regional settings
   time.timeZone = "Europe/Warsaw";
@@ -80,7 +89,10 @@
   };
 
   # Enable essential services
-  modSys.pipewire.enable = true;
+  modSys.pipewire = {
+    enable = true;
+    jack.enable = true;
+  };
   modSys.bluetooth.enable = true;
   modSys.wine.enable = true;
   modSys.steam.enable = true;

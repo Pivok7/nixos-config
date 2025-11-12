@@ -20,7 +20,7 @@
 
   modHomeDots.neovim = {
     enable = true;
-    defaultEditor.enable = true;
+    defaultEditor = true;
     clipboardWl.enable = true;
     ripgrep.enable = true;
   };
@@ -35,10 +35,21 @@
   modHomeDev.bundle.web.enable = true;
   modHomeDev.bundle.rust.enable = true;
 
+  modHomeMedia.nomacs = {
+    enable = true;
+    defaultViewer = true;
+  };
+  modHomeMedia.vlc = {
+    enable = true;
+    defaultVideoPlayer = true;
+    defaultAudioPlayer = true;
+  };
+
   programs.firefox.enable = true;
 
-  home.packages =
-    (with pkgs; [
+  home.packages = (
+    with pkgs;
+    [
       # Tui
       lazygit
       btop
@@ -49,9 +60,6 @@
       zip
       unzip
       openssl
-
-      # Media
-      mpv
-      nomacs
-    ]);
+    ]
+  );
 }

@@ -21,7 +21,7 @@
 
   modHomeDots.neovim = {
     enable = true;
-    defaultEditor.enable = true;
+    defaultEditor = true;
     clipboardWl.enable = true;
     ripgrep.enable = true;
   };
@@ -35,6 +35,16 @@
 
   modHomeDev.bundle.favourite.enable = true;
   modHomeDev.bundle.web.enable = true;
+
+  modHomeMedia.nomacs = {
+    enable = true;
+    defaultViewer = true;
+  };
+  modHomeMedia.vlc = {
+    enable = true;
+    defaultVideoPlayer = true;
+    defaultAudioPlayer = true;
+  };
 
   modHomeTools.latex.enable = true;
 
