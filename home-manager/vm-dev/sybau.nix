@@ -35,15 +35,8 @@
   modHomeDev.bundle.web.enable = true;
   modHomeDev.bundle.rust.enable = true;
 
-  modHomeMedia.nomacs = {
-    enable = true;
-    defaultViewer = true;
-  };
-  modHomeMedia.vlc = {
-    enable = true;
-    defaultVideoPlayer = true;
-    defaultAudioPlayer = true;
-  };
+  modHomeMedia.nomacs.enable = true;
+  modHomeMedia.vlc.enable = true;
 
   programs.firefox.enable = true;
 

@@ -44,13 +44,19 @@
   };
 
   fileSystems."/mnt/SSD_120GB" = {
-    device = "/dev/sda3";
+    device = "/dev/disk/by-uuid/c8e4f54d-1163-4dbb-b439-2c62a720be0b";
     fsType = "ext4";
+    options = [
+      "nofail" # Prevent system from failing if this drive doesn't mount
+    ];
   };
 
   fileSystems."/mnt/HDD_500GB" = {
-    device = "/dev/sdb1";
+    device = "/dev/disk/by-uuid/9cbcc89c-1a13-4f3b-b6a1-6d54c09a68ea";
     fsType = "ext4";
+    options = [
+      "nofail" # Prevent system from failing if this drive doesn't mount
+    ];
   };
 
   # Load nvidia driver for Xorg and Wayland
@@ -113,9 +119,6 @@
 
   # Packages installed in system profile
   environment.systemPackages = [ ];
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   system.stateVersion = "25.05"; # Nixos version
 }

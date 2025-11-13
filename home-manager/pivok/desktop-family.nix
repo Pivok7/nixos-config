@@ -36,15 +36,8 @@
   modHomeDev.bundle.favourite.enable = true;
   modHomeDev.bundle.web.enable = true;
 
-  modHomeMedia.nomacs = {
-    enable = true;
-    defaultViewer = true;
-  };
-  modHomeMedia.vlc = {
-    enable = true;
-    defaultVideoPlayer = true;
-    defaultAudioPlayer = true;
-  };
+  modHomeMedia.nomacs.enable = true;
+  modHomeMedia.vlc.enable = true;
 
   modHomeTools.latex.enable = true;
 
@@ -84,7 +77,10 @@
       libreoffice
       keepassxc
       qbittorrent
+
+      # Creative
       inkscape
+      gimp
 
       # Tui
       lazygit
@@ -96,10 +92,6 @@
       zip
       unzip
       openssl
-
-      # Media
-      mpv
-      nomacs
 
       # Games
       prismlauncher
