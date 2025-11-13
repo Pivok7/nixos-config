@@ -12,7 +12,7 @@ in
     default = lib.mkOption {
       type = lib.types.str;
       default = "";
-      description = "Set default audio viewer";
+      description = "Set default audio opener";
     };
   };
 

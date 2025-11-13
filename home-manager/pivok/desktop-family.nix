@@ -38,6 +38,7 @@
 
   modHomeMedia.nomacs.enable = true;
   modHomeMedia.vlc.enable = true;
+  modHomeMedia.zathura.enable = true;
 
   modHomeTools.latex.enable = true;
 

@@ -5,5 +5,6 @@
     ./mpv.nix
     ./nomacs.nix
     ./vlc.nix
+    ./zathura.nix
   ];
 }
