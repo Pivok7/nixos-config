@@ -28,7 +28,6 @@
     in
     {
       nixosConfigurations.family-pc = nixpkgs.lib.nixosSystem {
-        inherit system;
         modules = [
           ./hosts/family-pc/configuration.nix
         ];
@@ -41,7 +40,6 @@
       };
 
       nixosConfigurations.lianli = nixpkgs.lib.nixosSystem {
-        inherit system;
         modules = [
           ./hosts/lianli/configuration.nix
         ];
@@ -52,7 +50,6 @@
       };
 
       nixosConfigurations.vm-dev = nixpkgs.lib.nixosSystem {
-        inherit system;
         modules = [
           ./hosts/vm-dev/configuration.nix
         ];
