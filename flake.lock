@@ -52,11 +52,32 @@
         "type": "indirect"
       }
     },
+    "nur-pivok": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1763108454,
+        "narHash": "sha256-6c5MZtIJqDuLRu1oXpcN1HjJfByfci8YPK1akdcqBWU=",
+        "owner": "Pivok7",
+        "repo": "nur-packages",
+        "rev": "cd4b06858b00cf4b248647241ca351c4aba194ff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Pivok7",
+        "repo": "nur-packages",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "nur-pivok": "nur-pivok"
       }
     }
   },

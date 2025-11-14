@@ -5,8 +5,12 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager = {
-	url = "github:nix-community/home-manager/release-25.05";
-	inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nur-pivok = {
+      url = "github:Pivok7/nur-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -15,6 +19,7 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
+      nur-pivok,
       ...
     }:
     let
@@ -27,9 +32,11 @@
         modules = [
           ./hosts/family-pc/configuration.nix
         ];
+
         specialArgs = {
           inherit pkgs-unstable;
           inherit home-manager;
+          inherit nur-pivok;
         };
       };
 

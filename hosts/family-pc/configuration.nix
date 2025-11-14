@@ -3,6 +3,7 @@
   pkgs,
   pkgs-unstable,
   home-manager,
+  nur-pivok,
   ...
 }:
 
@@ -118,7 +119,7 @@
   virtualisation.docker.enable = true;
 
   # Packages installed in system profile
-  environment.systemPackages = [ ];
+  environment.systemPackages = [ nur-pivok.packages.${pkgs.system}.hello-nur ];
 
   system.stateVersion = "25.05"; # Nixos version
 }
