@@ -105,8 +105,6 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  fonts.enableDefaultPackages = true;
-
   environment.systemPackages = [ ];
 
   # Before changing this value read the documentation for this option
