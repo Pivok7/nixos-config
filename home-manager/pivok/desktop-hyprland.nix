@@ -14,7 +14,8 @@
     gtk-theme = lib.mkForce "Adwaita";
     icon-theme = lib.mkForce "Papirus";
     cursor-theme = lib.mkForce "phinger-cursors-dark";
-    color-scheme = "prefer-dark";
+    font-name = lib.mkForce "Iosevka Etoile 11";
+    color-scheme = lib.mkForce "prefer-dark";
   };
 
   gtk = {
@@ -27,14 +28,20 @@
       name = "Phinger";
       package = pkgs.phinger-cursors;
     };
+    font = {
+      name = "Iosevka Etoile";
+      package = pkgs.iosevka-bin.override {
+        variant = "Etoile";
+      };
+    };
   };
 
   qt = {
     enable = true;
-    platformTheme.name = "Adwaita";
+    platformTheme.name = "Breeze";
     style = {
-      name = "Adwaita";
-      package = pkgs.adwaita-qt;
+      name = "Breeze";
+      package = pkgs.kdePackages.breeze;
     };
   };
 
@@ -111,6 +118,9 @@
 
   home.packages =
     (with pkgs; [
+      nwg-look
+      dconf-editor
+
       # Desktop
       rose-pine-hyprcursor
       hyprsunset
@@ -149,6 +159,8 @@
       # Fonts
       nerd-fonts.symbols-only
       iosevka-bin
+      (iosevka-bin.override { variant = "Aile"; })
+      (iosevka-bin.override { variant = "Etoile"; })
       roboto
       roboto-serif
       roboto-slab

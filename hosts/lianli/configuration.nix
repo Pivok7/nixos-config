@@ -1,5 +1,4 @@
 {
-  pkgs,
   pkgs-unstable,
   home-manager,
   ...
@@ -105,6 +104,8 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
+
+  fonts.enableDefaultPackages = true;
 
   environment.systemPackages = [ ];
 
