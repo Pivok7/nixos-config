@@ -10,7 +10,7 @@
     };
     nur-pivok = {
       url = "github:Pivok7/nur-packages";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 
@@ -25,17 +25,24 @@
     let
       system = "x86_64-linux";
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+      overlay-nur-pivok = {
+        nixpkgs.overlays = [
+          (final: prev: {
+            nur-pivok = nur-pivok.packages."${prev.system}";
+          })
+        ];
+      };
     in
     {
       nixosConfigurations.family-pc = nixpkgs.lib.nixosSystem {
         modules = [
+	  overlay-nur-pivok
           ./hosts/family-pc/configuration.nix
         ];
 
         specialArgs = {
           inherit pkgs-unstable;
           inherit home-manager;
-          inherit nur-pivok;
         };
       };
 

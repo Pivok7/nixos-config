@@ -55,15 +55,15 @@
     "nur-pivok": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-unstable"
         ]
       },
       "locked": {
-        "lastModified": 1763108454,
-        "narHash": "sha256-6c5MZtIJqDuLRu1oXpcN1HjJfByfci8YPK1akdcqBWU=",
+        "lastModified": 1763305472,
+        "narHash": "sha256-YZrSuF2FMUXKKn/F2d4Vo2NjmgCHSn/PsozZQJWbhP8=",
         "owner": "Pivok7",
         "repo": "nur-packages",
-        "rev": "cd4b06858b00cf4b248647241ca351c4aba194ff",
+        "rev": "6483dfe5313119bc191ae03d36f76fc8da12e5a5",
         "type": "github"
       },
       "original": {

@@ -99,6 +99,10 @@
 
       # Fonts
       iosevka-bin
+
+      # Nur Pivok
+      nur-pivok.makker
+      nur-pivok.uncom
     ])
     ++ (with pkgs-unstable; [
       tor-browser
