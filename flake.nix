@@ -48,6 +48,7 @@
 
       nixosConfigurations.lianli = nixpkgs.lib.nixosSystem {
         modules = [
+	  overlay-nur-pivok
           ./hosts/lianli/configuration.nix
         ];
         specialArgs = {

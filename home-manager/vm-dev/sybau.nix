@@ -3,8 +3,6 @@
   ...
 }:
 {
-  home.stateVersion = "25.05";
-
   imports = [
     ../../modules/home/default.nix
   ];
@@ -55,4 +53,6 @@
       openssl
     ]
   );
+
+  home.stateVersion = "25.05";
 }

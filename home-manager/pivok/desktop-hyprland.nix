@@ -5,8 +5,6 @@
   ...
 }:
 {
-  home.stateVersion = "25.05";
-
   imports = [
     ../../modules/home/default.nix
   ];
@@ -85,6 +83,10 @@
     defaultVideoPlayer = true;
     defaultAudioPlayer = true;
   };
+  modHomeMedia.zathura = {
+    enable = true;
+    defaultPdfViewer = true;
+  };
 
   modHomeTools.latex = {
     enable = true;
@@ -144,17 +146,20 @@
       unzip
       openssl
 
-      # Media
-      zathura
-
       # Fonts
       nerd-fonts.symbols-only
       iosevka-bin
       roboto
       roboto-serif
       roboto-slab
+
+      # Nur Pivok
+      nur-pivok.makker
+      nur-pivok.uncom
     ])
     ++ (with pkgs-unstable; [
       tor-browser
     ]);
+
+  home.stateVersion = "25.05";
 }

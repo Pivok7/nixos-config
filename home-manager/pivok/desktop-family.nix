@@ -4,8 +4,6 @@
   ...
 }:
 {
-  home.stateVersion = "25.05";
-
   imports = [
     ../../modules/home/default.nix
   ];
@@ -107,4 +105,6 @@
     ++ (with pkgs-unstable; [
       tor-browser
     ]);
+
+  home.stateVersion = "25.05";
 }
