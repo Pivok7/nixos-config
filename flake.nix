@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur-pivok = {
-      url = "github:Pivok7/nur-packages";
+      url = "github:Pivok7/nur-packages/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
