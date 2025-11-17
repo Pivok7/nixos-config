@@ -13,6 +13,7 @@ in
   };
 
   config = lib.mkIf (cfg.enable) {
+    services.blueman.enable = true;
     hardware.bluetooth = {
       enable = true;
       powerOnBoot = true;
