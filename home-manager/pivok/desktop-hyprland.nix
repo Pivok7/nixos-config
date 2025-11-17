@@ -71,6 +71,7 @@
     wallpaper = "/home/pivok/Obrazy/wallpaper.png";
   };
   modHomeDesktop.screenshot.grimSlurpSwappy.enable = true;
+  modHomeDesktop.launcher.wofi.enable = true;
 
   modHomeTui.kitty.enable = true;
   modHomeTui.nushell = {
