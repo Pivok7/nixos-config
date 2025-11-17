@@ -11,7 +11,7 @@
 
   # GTK4 Setup
   dconf.settings."org/gnome/desktop/interface" = {
-    gtk-theme = lib.mkForce "Adwaita";
+    gtk-theme = lib.mkForce "Adwaita-dark";
     icon-theme = lib.mkForce "Papirus";
     cursor-theme = lib.mkForce "phinger-cursors-dark";
     font-name = lib.mkForce "Iosevka Etoile 11";
@@ -20,6 +20,10 @@
 
   gtk = {
     enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
     iconTheme = {
       name = "Papirus";
       package = pkgs.papirus-icon-theme;
@@ -38,10 +42,8 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "Breeze";
     style = {
-      name = "Breeze";
-      package = pkgs.kdePackages.breeze;
+      name = "breeze";
     };
   };
 
