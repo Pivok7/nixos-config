@@ -80,6 +80,7 @@
       # Creative
       inkscape
       gimp
+      libresprite
 
       # Tui
       lazygit
@@ -91,6 +92,7 @@
       zip
       unzip
       openssl
+      ffmpeg
 
       # Games
       prismlauncher
