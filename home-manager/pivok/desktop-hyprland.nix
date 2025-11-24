@@ -67,7 +67,10 @@
   };
 
   modHomeDesktop.hypridle.enable = true;
-  modHomeDesktop.hyprlock.enable = true;
+  modHomeDesktop.hyprlock = {
+    enable = true;
+    font = "Iosevka Etoile";
+  };
   modHomeDesktop.hyprpaper = {
     enable = true;
     wallpaper = "/home/pivok/Obrazy/wallpaper.png";
@@ -75,7 +78,10 @@
   modHomeDesktop.screenshot.grimSlurpSwappy.enable = true;
   modHomeDesktop.launcher.wofi.enable = true;
 
-  modHomeTui.kitty.enable = true;
+  modHomeTui.kitty = {
+    enable = true;
+    font.size = 20.0;
+  };
   modHomeTui.nushell = {
     enable = true;
     hyprsunset.enable = true;

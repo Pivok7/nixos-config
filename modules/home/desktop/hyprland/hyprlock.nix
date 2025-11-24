@@ -34,7 +34,7 @@ let
     label {
         monitor =
         text = cmd[update:18000000] echo "<b> "$(date +'%A, %-d %B %Y')" </b>"
-        font_size = 34
+        font_size = 40
         font_family = ${cfg.font} 
 
         position = 0, -150
@@ -46,7 +46,7 @@ let
     label {
         monitor =
         text = cmd[update:1000] echo "<b><big> $(date +"%H:%M:%S") </big></b>" # 24H
-        font_size = 94
+        font_size = 110
         font_family = ${cfg.font} 
 
         position = 0, 0
@@ -58,7 +58,7 @@ let
     label {
         monitor =
         text =    $USER
-        font_size = 22
+        font_size = 26
         font_family = ${cfg.font}
 
         position = 0, 100

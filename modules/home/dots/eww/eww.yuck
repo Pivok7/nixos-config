@@ -270,11 +270,10 @@
 	:x "0%"
         :y "0%"
         :width "100%"
-        :height "3.3%"
+        :height "2.6%"
         :anchor "top center"
     )
 
-    :reserve (struts :side "top" :distance "3.3%")
     :exclusive true
 
     (bar)
