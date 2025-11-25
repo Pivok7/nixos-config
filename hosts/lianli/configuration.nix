@@ -27,9 +27,9 @@
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
   modUnfree.steam.enable = true;
   modUnfree.discord.enable = true;
+  modUnfree.reaper.enable = true;
 
   # Bootloader.
   boot.loader.timeout = 3;

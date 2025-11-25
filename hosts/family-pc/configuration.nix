@@ -29,7 +29,6 @@
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
   modUnfree.nvidia.enable = true;
   modUnfree.steam.enable = true;
   modUnfree.discord.enable = true;

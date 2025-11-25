@@ -3,6 +3,6 @@
 }:
 {
   predicates = [
-    "discord"
+    "reaper"
   ];
 }

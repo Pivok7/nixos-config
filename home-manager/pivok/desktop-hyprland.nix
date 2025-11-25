@@ -150,7 +150,7 @@
       # Creative
       gimp
       inkscape
-      ardour
+      reaper
 
       # Tui
       lazygit
