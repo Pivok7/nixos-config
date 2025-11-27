@@ -173,13 +173,14 @@
       roboto
       roboto-serif
       roboto-slab
-
-      # Nur Pivok
-      nur-pivok.makker
-      nur-pivok.uncom
     ])
     ++ (with pkgs-unstable; [
       tor-browser
+    ])
+    ++ (with pkgs.nur-pivok; [
+      makker
+      uncom
+      bandcamp-dl
     ]);
 
   home.stateVersion = "25.05";
