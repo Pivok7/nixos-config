@@ -54,7 +54,7 @@
     ];
   };
 
-  # Enable OpenGL
+  # Enable GPU graphics
   hardware.graphics = {
     enable = true;
     enable32Bit = true;

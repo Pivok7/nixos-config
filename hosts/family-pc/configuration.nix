@@ -33,7 +33,7 @@
   modUnfree.steam.enable = true;
   modUnfree.discord.enable = true;
 
-  # Bootloader.
+  # Bootloader
   boot.loader.timeout = 2;
   boot.loader.grub = {
     enable = true;
@@ -70,7 +70,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  # Enable OpenGL
+  # Enable GPU graphics
   hardware.graphics = {
     enable = true;
   };
