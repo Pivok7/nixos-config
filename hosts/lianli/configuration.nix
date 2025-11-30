@@ -84,7 +84,7 @@
     ];
   };
 
-  # Set display manager and auto login
+  # Set display manager
   services.displayManager.ly = {
     enable = true;
   };

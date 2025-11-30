@@ -49,8 +49,12 @@
 
   programs.git = {
     enable = true;
-    userName = "Pivok";
-    userEmail = "pivoc@protonmail.com";
+    settings = {
+      user = {
+        name = "Pivok";
+        email = "pivoc@protonmail.com";
+      };
+    };
   };
 
   modHomeDots.hyprland.enable = true;
@@ -80,7 +84,6 @@
 
   modHomeTui.kitty = {
     enable = true;
-    font.size = 20.0;
   };
   modHomeTui.nushell = {
     enable = true;
