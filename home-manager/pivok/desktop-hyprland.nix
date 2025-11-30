@@ -55,6 +55,9 @@
         email = "pivoc@protonmail.com";
       };
     };
+    extraConfig = {
+      pull.rebase = false;
+    };
   };
 
   modHomeDots.hyprland.enable = true;
@@ -84,6 +87,7 @@
 
   modHomeTui.kitty = {
     enable = true;
+    font.size = 20.0;
   };
   modHomeTui.nushell = {
     enable = true;

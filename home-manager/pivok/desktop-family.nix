@@ -10,8 +10,12 @@
 
   programs.git = {
     enable = true;
-    userName = "Pivok";
-    userEmail = "pivoc@protonmail.com";
+    settings = {
+      user = {
+        name = "Pivok";
+        email = "pivoc@protonmail.com";
+      };
+    };
     extraConfig = {
       pull.rebase = false;
     };

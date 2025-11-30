@@ -9,8 +9,12 @@
 
   programs.git = {
     enable = true;
-    userName = "Sybauinator3000";
-    userEmail = "krystiankap39@gmail.com";
+    settings = {
+      user = {
+        name = "Sybauinator3000";
+        email = "krystiankap39@gmail.com";
+      };
+    };
     extraConfig = {
       pull.rebase = false;
     };
