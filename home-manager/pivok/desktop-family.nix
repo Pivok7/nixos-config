@@ -15,8 +15,6 @@
         name = "Pivok";
         email = "pivoc@protonmail.com";
       };
-    };
-    extraConfig = {
       pull.rebase = false;
     };
   };

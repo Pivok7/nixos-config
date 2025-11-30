@@ -14,8 +14,6 @@
         name = "Sybauinator3000";
         email = "krystiankap39@gmail.com";
       };
-    };
-    extraConfig = {
       pull.rebase = false;
     };
   };
