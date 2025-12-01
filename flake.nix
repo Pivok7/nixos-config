@@ -2,6 +2,7 @@
   description = "My Flake";
 
   inputs = {
+    nixpkgs-25-05.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager = {
@@ -16,6 +17,7 @@
 
   outputs =
     {
+      nixpkgs-25-05,
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
@@ -24,6 +26,7 @@
     }:
     let
       system = "x86_64-linux";
+      pkgs-25-05 = nixpkgs-25-05.legacyPackages.${system};
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
       overlay-nur-pivok = {
         nixpkgs.overlays = [
@@ -36,7 +39,7 @@
     {
       nixosConfigurations.family-pc = nixpkgs.lib.nixosSystem {
         modules = [
-	  overlay-nur-pivok
+          overlay-nur-pivok
           ./hosts/family-pc/configuration.nix
         ];
 
@@ -48,10 +51,11 @@
 
       nixosConfigurations.lianli = nixpkgs.lib.nixosSystem {
         modules = [
-	  overlay-nur-pivok
+          overlay-nur-pivok
           ./hosts/lianli/configuration.nix
         ];
         specialArgs = {
+          inherit pkgs-25-05;
           inherit pkgs-unstable;
           inherit home-manager;
         };

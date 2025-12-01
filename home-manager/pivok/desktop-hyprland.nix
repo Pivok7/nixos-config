@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs-25-05,
   pkgs,
   pkgs-unstable,
   ...

@@ -1,4 +1,5 @@
 {
+  pkgs-25-05,
   pkgs-unstable,
   home-manager,
   ...
@@ -22,7 +23,10 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit pkgs-unstable; };
+    extraSpecialArgs = {
+      inherit pkgs-25-05;
+      inherit pkgs-unstable;
+    };
     users.pivok = import ../../home-manager/pivok/desktop-hyprland.nix;
   };
 
