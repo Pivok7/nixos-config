@@ -1,10 +1,13 @@
 {
+  inputs,
   pkgs,
-  pkgs-unstable,
   home-manager,
   ...
 }:
-
+let
+  pkgs-25-05 = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+  pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+in
 {
   networking.hostName = "vm-dev";
 
@@ -23,7 +26,10 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit pkgs-unstable; };
+    extraSpecialArgs = {
+      inherit pkgs-25-05;
+      inherit pkgs-unstable;
+    };
     users.sybau = import ../../home-manager/vm-dev/sybau.nix;
   };
 

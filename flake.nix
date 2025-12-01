@@ -17,21 +17,15 @@
 
   outputs =
     {
-      nixpkgs-25-05,
       nixpkgs,
-      nixpkgs-unstable,
       home-manager,
-      nur-pivok,
       ...
-    }:
+    }@inputs:
     let
-      system = "x86_64-linux";
-      pkgs-25-05 = nixpkgs-25-05.legacyPackages.${system};
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
       overlay-nur-pivok = {
         nixpkgs.overlays = [
           (final: prev: {
-            nur-pivok = nur-pivok.packages."${prev.system}";
+            nur-pivok = inputs.nur-pivok.packages."${prev.system}";
           })
         ];
       };
@@ -42,9 +36,8 @@
           overlay-nur-pivok
           ./hosts/family-pc/configuration.nix
         ];
-
         specialArgs = {
-          inherit pkgs-unstable;
+	  inherit inputs;
           inherit home-manager;
         };
       };
@@ -55,8 +48,7 @@
           ./hosts/lianli/configuration.nix
         ];
         specialArgs = {
-          inherit pkgs-25-05;
-          inherit pkgs-unstable;
+	  inherit inputs;
           inherit home-manager;
         };
       };
@@ -66,7 +58,7 @@
           ./hosts/vm-dev/configuration.nix
         ];
         specialArgs = {
-          inherit pkgs-unstable;
+	  inherit inputs;
           inherit home-manager;
         };
       };

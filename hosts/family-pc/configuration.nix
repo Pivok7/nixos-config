@@ -1,11 +1,13 @@
 {
+  inputs,
   config,
-  pkgs,
-  pkgs-unstable,
   home-manager,
   ...
 }:
-
+let
+  pkgs-25-05 = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+  pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+in
 {
   networking.hostName = "family-pc";
 
@@ -24,7 +26,10 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit pkgs-unstable; };
+    extraSpecialArgs = {
+      inherit pkgs-25-05;
+      inherit pkgs-unstable;
+    };
     users.pivok = import ../../home-manager/pivok/desktop-family.nix;
   };
 

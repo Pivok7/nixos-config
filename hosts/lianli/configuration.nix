@@ -1,10 +1,12 @@
 {
-  pkgs-25-05,
-  pkgs-unstable,
+  inputs,
   home-manager,
   ...
 }:
-
+let
+  pkgs-25-05 = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+  pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+in
 {
   networking.hostName = "lianli";
 
