@@ -22,10 +22,11 @@
       ...
     }@inputs:
     let
+      d = "d";
       overlay-nur-pivok = {
         nixpkgs.overlays = [
           (final: prev: {
-            nur-pivok = inputs.nur-pivok.packages."${prev.system}";
+            nur-pivok = inputs.nur-pivok.packages."${prev.stdenv.hostPlatform.system}";
           })
         ];
       };
