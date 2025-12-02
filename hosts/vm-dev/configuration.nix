@@ -5,7 +5,7 @@
   ...
 }:
 let
-  pkgs-25-05 = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+  pkgs-25-05 = inputs.nixpkgs-25-05.legacyPackages.x86_64-linux;
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
 in
 {
