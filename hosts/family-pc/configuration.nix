@@ -118,7 +118,6 @@ in
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "pivok";
 
-  # Docker
   virtualisation.docker.enable = true;
 
   # Packages installed in system profile

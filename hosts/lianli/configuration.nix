@@ -35,6 +35,7 @@ in
   # Allow unfree packages
   modUnfree.steam.enable = true;
   modUnfree.discord.enable = true;
+  modUnfree.open-webui.enable = true;
   modUnfree.reaper.enable = true;
 
   # Bootloader.
@@ -103,8 +104,8 @@ in
   modSys.bluetooth.enable = true;
   modSys.wine.enable = true;
   modSys.steam.enable = true;
+  modSys.open-webui.enable = true;
 
-  # Enable essential services
   virtualisation.docker.enable = true;
 
   environment.sessionVariables = {

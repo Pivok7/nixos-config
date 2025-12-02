@@ -178,6 +178,9 @@
       roboto
       roboto-serif
       roboto-slab
+
+      # AI
+      ollama-rocm
     ])
     ++ (with pkgs-unstable; [
       tor-browser
