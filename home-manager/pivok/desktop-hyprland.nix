@@ -170,6 +170,7 @@
       # Utils
       wget
       dash
+      ffmpeg
       zip
       unzip
       openssl
