@@ -156,6 +156,7 @@
       gimp
       inkscape
       reaper
+      libresprite
 
       # Tui
       lazygit
