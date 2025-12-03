@@ -82,6 +82,7 @@
   };
   modHomeDesktop.screenshot.grimSlurpSwappy.enable = true;
   modHomeDesktop.launcher.wofi.enable = true;
+  modHomeDesktop.udiskie.enable = true;
 
   modHomeTui.kitty = {
     enable = true;
@@ -144,7 +145,6 @@
       wofi
       wlogout
       swaynotificationcenter
-      udiskie
 
       # Gui
       blueman
