@@ -22,7 +22,6 @@
       ...
     }@inputs:
     let
-      d = "d";
       overlay-nur-pivok = {
         nixpkgs.overlays = [
           (final: prev: {
