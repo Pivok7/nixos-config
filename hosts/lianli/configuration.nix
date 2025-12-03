@@ -104,6 +104,7 @@ in
   modSys.bluetooth.enable = true;
   modSys.wine.enable = true;
   modSys.steam.enable = true;
+  modSys.udisks2.enable = true;
   modSys.open-webui.enable = true;
 
   virtualisation.docker.enable = true;
