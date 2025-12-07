@@ -18,6 +18,7 @@ in
     modHomeDev.fmt.python.enable = true;
     home.packages = with pkgs; [
       python3
+      uv
     ];
   };
 }
