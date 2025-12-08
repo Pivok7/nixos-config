@@ -94,6 +94,12 @@ in
   # Set display manager
   services.displayManager.ly = {
     enable = true;
+    settings = {
+      session_log = ".ly-session.log";
+      animation = "doom";
+      bigclock = "en";
+      min_refresh_delta = "20";
+    };
   };
 
   # Enable essential services
