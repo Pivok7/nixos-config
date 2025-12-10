@@ -170,10 +170,11 @@
       # Utils
       wget
       dash
-      ffmpeg
+      killall
       zip
       unzip
       openssl
+      ffmpeg
 
       # Fonts
       nerd-fonts.symbols-only
