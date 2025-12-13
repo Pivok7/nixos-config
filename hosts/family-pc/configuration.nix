@@ -33,6 +33,12 @@ in
     users.pivok = import ../../home-manager/pivok/desktop-family.nix;
   };
 
+  # CUDA cache
+  nix.settings = {
+    substituters = [ "https://cache.nixos-cuda.org" ];
+    trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ];
+  };
+
   # Allow unfree packages
   modUnfree.nvidia.enable = true;
   modUnfree.steam.enable = true;
@@ -74,6 +80,8 @@ in
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+  # For GPU pass-through
+  hardware.nvidia-container-toolkit.enable = true;
 
   # Enable GPU graphics
   hardware.graphics = {
