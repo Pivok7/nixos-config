@@ -10,4 +10,5 @@ return {
     vim.lsp.enable("texlab"),
     vim.lsp.enable("ts_ls"),
     vim.lsp.enable("tailwindcss"),
+    vim.lsp.enable("slangd"),
 }

@@ -1,6 +1,7 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
+	tag = "v0.10.0",
         dependencies = { "nvim-lua/plenary.nvim" },
 
         config = function()

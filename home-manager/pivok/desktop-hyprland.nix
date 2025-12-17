@@ -95,6 +95,7 @@
 
   modHomeDev.bundle.favourite.enable = true;
   modHomeDev.bundle.web.enable = true;
+  modHomeDev.bundle.slang.enable = true;
 
   modHomeMedia.nomacs = {
     enable = true;
