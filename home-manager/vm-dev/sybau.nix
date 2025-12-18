@@ -53,6 +53,9 @@
       zip
       unzip
       openssl
+
+      # AI
+      opencode
     ]
   );
 

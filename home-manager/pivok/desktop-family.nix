@@ -96,6 +96,7 @@
       unzip
       openssl
       ffmpeg
+      obs-studio
 
       # Games
       prismlauncher
@@ -103,6 +104,9 @@
       # Fonts
       nerd-fonts.symbols-only
       iosevka-bin
+
+      # AI
+      opencode
     ])
     ++ (with pkgs-unstable; [
       tor-browser

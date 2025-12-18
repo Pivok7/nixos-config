@@ -133,8 +133,6 @@
     ];
   };
 
-  modHomeGaming.rpcs3.enable = true;
-
   home.packages =
     (with pkgs; [
       nwg-look
@@ -176,6 +174,7 @@
       unzip
       openssl
       ffmpeg
+      obs-studio
 
       # Fonts
       nerd-fonts.symbols-only
@@ -188,6 +187,9 @@
 
       # AI
       ollama-rocm
+
+      # Gaming
+      rpcs3
     ])
     ++ (with pkgs-unstable; [
       tor-browser
