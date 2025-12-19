@@ -7,6 +7,7 @@
 let
   pkgs-25-05 = inputs.nixpkgs-25-05.legacyPackages.x86_64-linux;
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+  nix-flatpak = inputs.nix-flatpak;
 in
 {
   networking.hostName = "family-pc";
@@ -21,6 +22,7 @@ in
     ./hardware-configuration.nix
     ../../modules/default.nix
     home-manager.nixosModules.home-manager
+    "${nix-flatpak}/modules/nixos.nix"
   ];
 
   home-manager = {
@@ -121,6 +123,14 @@ in
   services.displayManager.autoLogin.user = "pivok";
 
   virtualisation.docker.enable = true;
+
+  # Flatpak
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "org.vinegarhq.Sober"
+    ];
+  };
 
   # Packages installed in system profile
   environment.systemPackages = [ ];
