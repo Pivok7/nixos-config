@@ -125,6 +125,7 @@ in
   virtualisation.docker.enable = true;
 
   # Flatpak
+  services.flatpak.update.onActivation = true;
   services.flatpak = {
     enable = true;
     packages = [
