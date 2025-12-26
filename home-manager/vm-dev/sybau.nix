@@ -46,13 +46,13 @@
       # Tui
       lazygit
       btop
-      tmux
 
       # Utils
       wget
       zip
       unzip
       openssl
+      gnumake
 
       # AI
       opencode

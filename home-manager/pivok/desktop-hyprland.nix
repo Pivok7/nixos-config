@@ -164,7 +164,6 @@
       lazygit
       btop
       kew
-      tmux
 
       # Utils
       wget

@@ -87,7 +87,6 @@
       # Tui
       lazygit
       btop
-      tmux
       kew
 
       # Utils
