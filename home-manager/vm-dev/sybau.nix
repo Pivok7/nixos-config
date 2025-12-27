@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   ...
 }:
 {
@@ -53,11 +54,10 @@
       unzip
       openssl
       gnumake
-
-      # AI
-      opencode
     ]
-  );
+  ) ++ (with pkgs-unstable; [
+      opencode
+  ]);
 
   home.stateVersion = "25.05";
 }

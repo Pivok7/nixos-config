@@ -103,12 +103,10 @@
       # Fonts
       nerd-fonts.symbols-only
       iosevka-bin
-
-      # AI
-      opencode
     ])
     ++ (with pkgs-unstable; [
       tor-browser
+      opencode
     ])
     ++ (with pkgs.nur-pivok; [
       makker
