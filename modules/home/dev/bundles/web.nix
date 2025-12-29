@@ -17,12 +17,15 @@ in
     modHomeDev.lsp = {
       typescript.enable = true;
       tailwind.enable = true;
+      astro.enable = true;
     };
     modHomeDev.fmt.web.enable = true;
     home.packages = with pkgs; [
       live-server
       typescript
       tailwindcss_4
+      nodejs
+      bun
     ];
   };
 }
