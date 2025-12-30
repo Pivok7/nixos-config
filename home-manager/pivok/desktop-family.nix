@@ -87,7 +87,6 @@
       # Tui
       lazygit
       btop
-      kew
 
       # Utils
       wget
@@ -96,6 +95,7 @@
       openssl
       ffmpeg
       obs-studio
+      glow
 
       # Games
       prismlauncher
