@@ -190,6 +190,7 @@
       rpcs3
     ])
     ++ (with pkgs-unstable; [
+      opencode
       kew
       tor-browser
     ])

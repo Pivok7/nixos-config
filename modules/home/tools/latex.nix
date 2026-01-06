@@ -30,7 +30,7 @@ in
         if cfg.lsp.enable then
           [
             pkgs.texlab
-	    pkgs.tree-sitter
+            pkgs.tree-sitter
             pkgs.nodejs
           ]
         else
