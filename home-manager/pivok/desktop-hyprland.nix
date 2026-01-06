@@ -163,7 +163,6 @@
       # Tui
       lazygit
       btop
-      kew
 
       # Utils
       wget
@@ -191,6 +190,7 @@
       rpcs3
     ])
     ++ (with pkgs-unstable; [
+      kew
       tor-browser
     ])
     ++ (with pkgs.nur-pivok; [

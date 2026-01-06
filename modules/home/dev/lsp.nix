@@ -26,7 +26,7 @@ in
   config = {
     home.packages = lib.concatLists [
       (if cfg.nix.enable then [ pkgs.nixd ] else [ ])
-      (if cfg.c.enable then [ pkgs-25-05.clang-tools ] else [ ])
+      (if cfg.c.enable then [ pkgs.clang-tools ] else [ ])
       (if cfg.zig.enable then [ pkgs-unstable.zls ] else [ ])
       (if cfg.rust.enable then [ pkgs.rust-analyzer ] else [ ])
       (if cfg.python.enable then [ pkgs.pyright ] else [ ])
