@@ -12,6 +12,8 @@ let
     inherit (pkgs.texlive)
       scheme-small
       babel-polish
+      biblatex
+      biber
       ;
   };
 in
