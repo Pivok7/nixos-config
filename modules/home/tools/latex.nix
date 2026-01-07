@@ -11,6 +11,11 @@ let
   tex = pkgs.texlive.combine {
     inherit (pkgs.texlive)
       scheme-small
+      collection-langeuropean
+      collection-langgreek
+      collection-langother
+      collection-langpolish
+      collection-langcyrillic
       biblatex
       biber
       ;
