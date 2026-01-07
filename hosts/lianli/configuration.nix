@@ -35,7 +35,6 @@ in
   # Allow unfree packages
   modUnfree.steam.enable = true;
   modUnfree.discord.enable = true;
-  modUnfree.open-webui.enable = true;
   modUnfree.reaper.enable = true;
 
   # Bootloader.
@@ -111,7 +110,6 @@ in
   modSys.wine.enable = true;
   modSys.steam.enable = true;
   modSys.udisks2.enable = true;
-  modSys.open-webui.enable = true;
 
   virtualisation.docker.enable = true;
 

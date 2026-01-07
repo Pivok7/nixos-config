@@ -183,9 +183,6 @@
       roboto-serif
       roboto-slab
 
-      # AI
-      ollama-rocm
-
       # Gaming
       rpcs3
     ])

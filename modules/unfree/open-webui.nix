@@ -1,8 +1,0 @@
-{
-  ...
-}:
-{
-  predicates = [
-    "open-webui"
-  ];
-}

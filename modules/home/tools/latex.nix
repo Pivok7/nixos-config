@@ -11,7 +11,6 @@ let
   tex = pkgs.texlive.combine {
     inherit (pkgs.texlive)
       scheme-small
-      babel-polish
       biblatex
       biber
       ;
