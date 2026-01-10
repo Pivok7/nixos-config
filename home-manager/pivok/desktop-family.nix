@@ -78,6 +78,7 @@
       libreoffice
       keepassxc
       qbittorrent
+      syncthing
 
       # Creative
       inkscape
