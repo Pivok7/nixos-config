@@ -153,6 +153,7 @@
       libreoffice
       keepassxc
       qbittorrent
+      syncthing
 
       # Creative
       gimp
