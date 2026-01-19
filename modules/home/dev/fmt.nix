@@ -19,7 +19,7 @@ in
 
   config = {
     home.packages = lib.concatLists [
-      (if cfg.nix.enable then [ pkgs.nixfmt-rfc-style ] else [ ])
+      (if cfg.nix.enable then [ pkgs.nixfmt ] else [ ])
       (if cfg.rust.enable then [ pkgs.rustfmt ] else [ ])
       (if cfg.python.enable then [ pkgs.black ] else [ ])
       (if cfg.lua.enable then [ pkgs.stylua ] else [ ])

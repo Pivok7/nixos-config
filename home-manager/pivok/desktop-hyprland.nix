@@ -174,6 +174,7 @@
       openssl
       ffmpeg
       obs-studio
+      glow
 
       # Fonts
       nerd-fonts.symbols-only
