@@ -8,8 +8,17 @@ return {
     vim.lsp.enable("rust_analyzer"),
     vim.lsp.enable("zls"),
     vim.lsp.enable("texlab"),
+    vim.lsp.enable("tynimist"),
     vim.lsp.enable("ts_ls"),
     vim.lsp.enable("tailwindcss"),
     vim.lsp.enable("slangd"),
     vim.lsp.enable("astro"),
+
+    vim.lsp.config("tinymist", {
+	cmd = { "tinymist" },
+	filetypes = { "typst" },
+	settings = {
+	    -- ...
+	}
+    })
 }

@@ -40,7 +40,15 @@
   modHomeMedia.vlc.enable = true;
   modHomeMedia.zathura.enable = true;
 
-  modHomeTools.latex.enable = true;
+  modHomeTools.latex = {
+    enable = true;
+    lsp.enable = true;
+  };
+
+  modHomeTools.typst = {
+    enable = true;
+    lsp.enable = true;
+  };
 
   modHomeBrowser.firefox = {
     enable = true;
