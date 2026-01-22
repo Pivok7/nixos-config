@@ -10,7 +10,7 @@ let
 in
 {
   options.modHomeMedia.vlc = {
-    enable = lib.mkEnableOption "Setup vlc";
+    enable = lib.mkEnableOption "Enable vlc";
     defaultVideoPlayer = lib.mkEnableOption "Set as default video viewer";
     defaultAudioPlayer = lib.mkEnableOption "Set as default audio viewer";
   };

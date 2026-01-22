@@ -14,7 +14,7 @@ let
 in
 {
   options.modHomeMedia.zathura = {
-    enable = lib.mkEnableOption "Setup zathura";
+    enable = lib.mkEnableOption "Enable zathura";
     defaultPdfViewer = lib.mkEnableOption "Set as default pdf viewer";
 
     clipboard = lib.mkOption {

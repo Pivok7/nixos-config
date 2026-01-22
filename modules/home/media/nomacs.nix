@@ -10,7 +10,7 @@ let
 in
 {
   options.modHomeMedia.nomacs = {
-    enable = lib.mkEnableOption "Setup nomacs";
+    enable = lib.mkEnableOption "Enable nomacs";
     defaultViewer = lib.mkEnableOption "Set as default image viewer";
   };
 

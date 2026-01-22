@@ -10,7 +10,7 @@ let
 in
 {
   options.modHomeMedia.mpv = {
-    enable = lib.mkEnableOption "Setup mpv";
+    enable = lib.mkEnableOption "Enable mpv";
     defaultVideoPlayer = lib.mkEnableOption "Set as default video viewer";
     defaultAudioPlayer = lib.mkEnableOption "Set as default audio viewer";
   };
