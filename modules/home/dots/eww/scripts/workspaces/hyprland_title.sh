@@ -1,5 +1,10 @@
 title() {
-    hyprctl activewindow | grep "title: " | sed 's/^[^:]*: *//'
+    hyprctl activewindow \
+    | grep "title: " \
+    | tr -d '\n' \
+    | sed 's/^[^:]*: *//' \
+    | head -c 50 \
+    | sed 's/$/ \n/'
 }
 
 HYPRLAND_SIGNATURE_ACTUAL=$(ls -td /run/user/1000/hypr/*/ | head -n1 | xargs basename)

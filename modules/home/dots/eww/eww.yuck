@@ -236,7 +236,7 @@
 
 (deflisten music
     :initial ""
-    "playerctl --follow metadata --format '{{ title }}' || true"
+    "playerctl --follow metadata --format '{{ title }}'"
 )
 
 (deflisten music_status
