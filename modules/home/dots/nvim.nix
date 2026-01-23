@@ -28,10 +28,8 @@ in
       (if cfg.ripgrep.enable then [ pkgs.ripgrep ] else [ ])
     ];
 
-    home.file = {
-      ".config/nvim" = {
-        source = ./nvim;
-      };
+    home.file.".config/nvim" = {
+      source = ./nvim;
     };
   };
 }

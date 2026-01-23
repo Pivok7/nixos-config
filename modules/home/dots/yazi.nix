@@ -18,16 +18,14 @@ in
     home.packages = lib.concatLists [
       [
         pkgs.yazi
-	pkgs.ripgrep
-	pkgs.fd
+        pkgs.ripgrep
+        pkgs.fd
       ]
       (if cfg.dragAndDrop.enable then [ pkgs.dragon-drop ] else [ ])
     ];
 
-    home.file = {
-      ".config/yazi" = {
-        source = ./yazi;
-      };
+    home.file.".config/yazi" = {
+      source = ./yazi;
     };
   };
 }

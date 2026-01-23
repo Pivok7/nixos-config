@@ -21,10 +21,8 @@ in
       pkgs.networkmanagerapplet
     ];
 
-    home.file = {
-      ".config/eww" = {
-        source = ./eww;
-      };
+    home.file.".config/eww" = {
+      source = ./eww;
     };
   };
 }

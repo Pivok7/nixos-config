@@ -27,6 +27,8 @@ in
       pkgs.nushell
     ];
 
-    home.file.".config/nushell/config.nu".text = lib.trim nushellConfig;
+    home.file.".config/nushell/config.nu" = {
+      text = lib.trim nushellConfig;
+    };
   };
 }

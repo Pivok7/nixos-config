@@ -13,10 +13,8 @@ in
   };
 
   config = lib.mkIf (cfg.enable) {
-    home.file = {
-      ".config/hypr/hyprland.conf" = {
-        source = ./hyprland.conf;
-      };
+    home.file.".config/hypr/hyprland.conf" = {
+      source = ./hyprland.conf;
     };
   };
 }

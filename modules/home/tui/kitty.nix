@@ -63,11 +63,11 @@ in
         description = "Set cursor color";
       };
       trail = {
-	  enable = lib.mkOption {
-	    type = lib.types.bool;
-	    default = true;
-	    description = "Enable cursor trail animation";
-	  };
+        enable = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+          description = "Enable cursor trail animation";
+        };
       };
     };
     opacity = lib.mkOption {
@@ -82,6 +82,8 @@ in
       pkgs.kitty
     ];
 
-    home.file.".config/kitty/kitty.conf".text = lib.trim kittyConfig;
+    home.file.".config/kitty/kitty.conf" = {
+      text = lib.trim kittyConfig;
+    };
   };
 }
