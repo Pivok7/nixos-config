@@ -7,6 +7,7 @@
 let
   pkgs-25-05 = inputs.nixpkgs-25-05.legacyPackages.x86_64-linux;
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
+  my-modules = inputs.my-modules;
 in
 {
   networking.hostName = "vm-dev";
@@ -19,7 +20,7 @@ in
 
   imports = [
     ./hardware-configuration.nix
-    ../../modules/default.nix
+    "${my-modules}"
     home-manager.nixosModules.home-manager
   ];
 

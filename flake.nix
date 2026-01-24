@@ -12,6 +12,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    my-modules = {
+      url = "git+https://codeberg.org/Pivok/nix-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nur-pivok = {
       url = "github:Pivok7/nur-packages/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";

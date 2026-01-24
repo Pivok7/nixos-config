@@ -21,6 +21,26 @@
         "type": "github"
       }
     },
+    "my-modules": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769291902,
+        "narHash": "sha256-/KfASR1HE7lhrVM+t1D7FL5dAtHjDrGNlmYTQnW7/1Q=",
+        "ref": "refs/heads/main",
+        "rev": "0a4a37639964d0a95d1e99a28cdeefa76fed1479",
+        "revCount": 1,
+        "type": "git",
+        "url": "https://codeberg.org/Pivok/nix-modules"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/Pivok/nix-modules"
+      }
+    },
     "nix-flatpak": {
       "locked": {
         "lastModified": 1739444422,
@@ -92,6 +112,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "my-modules": "my-modules",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",

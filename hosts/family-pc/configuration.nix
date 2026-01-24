@@ -8,6 +8,7 @@ let
   pkgs-25-05 = inputs.nixpkgs-25-05.legacyPackages.x86_64-linux;
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
   nix-flatpak = inputs.nix-flatpak;
+  my-modules = inputs.my-modules;
 in
 {
   networking.hostName = "family-pc";
@@ -20,8 +21,8 @@ in
 
   imports = [
     ./hardware-configuration.nix
-    ../../modules/default.nix
     home-manager.nixosModules.home-manager
+    "${my-modules}"
     "${nix-flatpak}/modules/nixos.nix"
   ];
 
