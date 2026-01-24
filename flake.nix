@@ -2,7 +2,6 @@
   description = "My Flake";
 
   inputs = {
-    nixpkgs-25-05.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
@@ -41,7 +40,7 @@
           ./hosts/family-pc/configuration.nix
         ];
         specialArgs = {
-	  inherit inputs;
+          inherit inputs;
           inherit home-manager;
         };
       };
@@ -52,7 +51,7 @@
           ./hosts/lianli/configuration.nix
         ];
         specialArgs = {
-	  inherit inputs;
+          inherit inputs;
           inherit home-manager;
         };
       };
@@ -62,7 +61,7 @@
           ./hosts/vm-dev/configuration.nix
         ];
         specialArgs = {
-	  inherit inputs;
+          inherit inputs;
           inherit home-manager;
         };
       };
