@@ -5,7 +5,6 @@
   ...
 }:
 let
-  pkgs-25-05 = inputs.nixpkgs-25-05.legacyPackages.x86_64-linux;
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
   nix-flatpak = inputs.nix-flatpak;
   my-modules = inputs.my-modules;
@@ -22,7 +21,7 @@ in
   imports = [
     ./hardware-configuration.nix
     home-manager.nixosModules.home-manager
-    "${my-modules}"
+    "${my-modules}/system"
     "${nix-flatpak}/modules/nixos.nix"
   ];
 
@@ -30,16 +29,18 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {
-      inherit pkgs-25-05;
       inherit pkgs-unstable;
+      inherit my-modules;
     };
     users.pivok = import ../../home-manager/pivok/desktop-family.nix;
   };
 
   # Allow unfree packages
-  modUnfree.nvidia.enable = true;
-  modUnfree.steam.enable = true;
-  modUnfree.discord.enable = true;
+  modSys.unfreePred = {
+    nvidia.enable = true;
+    steam.enable = true;
+    discord.enable = true;
+  };
 
   # Bootloader
   boot.loader.timeout = 2;

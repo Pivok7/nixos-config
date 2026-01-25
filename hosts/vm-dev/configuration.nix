@@ -5,7 +5,6 @@
   ...
 }:
 let
-  pkgs-25-05 = inputs.nixpkgs-25-05.legacyPackages.x86_64-linux;
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
   my-modules = inputs.my-modules;
 in
@@ -20,7 +19,7 @@ in
 
   imports = [
     ./hardware-configuration.nix
-    "${my-modules}"
+    "${my-modules}/system"
     home-manager.nixosModules.home-manager
   ];
 
@@ -28,8 +27,8 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {
-      inherit pkgs-25-05;
       inherit pkgs-unstable;
+      inherit my-modules;
     };
     users.sybau = import ../../home-manager/vm-dev/sybau.nix;
   };

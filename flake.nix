@@ -13,7 +13,8 @@
     };
 
     my-modules = {
-      url = "git+https://codeberg.org/Pivok/nix-modules";
+      #url = "github:Pivok7/nixos-config?dir=modules";
+      url = "path:./modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

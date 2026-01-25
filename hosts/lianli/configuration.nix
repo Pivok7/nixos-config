@@ -4,7 +4,6 @@
   ...
 }:
 let
-  pkgs-25-05 = inputs.nixpkgs-25-05.legacyPackages.x86_64-linux;
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
   my-modules = inputs.my-modules;
 in
@@ -19,7 +18,7 @@ in
 
   imports = [
     ./hardware-configuration.nix
-    "${my-modules}"
+    "${my-modules}/system"
     home-manager.nixosModules.home-manager
   ];
 
@@ -27,16 +26,18 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {
-      inherit pkgs-25-05;
       inherit pkgs-unstable;
+      inherit my-modules;
     };
     users.pivok = import ../../home-manager/pivok/desktop-hyprland.nix;
   };
 
   # Allow unfree packages
-  modUnfree.steam.enable = true;
-  modUnfree.discord.enable = true;
-  modUnfree.reaper.enable = true;
+  modSys.unfreePred = {
+    steam.enable = true;
+    discord.enable = true;
+    reaper.enable = true;
+  };
 
   # Bootloader.
   boot.loader.timeout = 3;
