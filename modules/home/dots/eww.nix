@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.modHomeDots.eww;
+  cfg = config.modHome.dots.eww;
 in
 {
-  options.modHomeDots.eww = {
+  options.modHome.dots.eww = {
     enable = lib.mkEnableOption "Setup eww";
   };
 

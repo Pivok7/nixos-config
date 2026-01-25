@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.modHomeDev.bundle.slang;
+  cfg = config.modHome.dev.bundle.slang;
 in
 {
-  options.modHomeDev.bundle.slang = {
+  options.modHome.dev.bundle.slang = {
     enable = lib.mkEnableOption "Shader slang bundle";
   };
 

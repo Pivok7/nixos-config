@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.modHomeDots.neovim;
+  cfg = config.modHome.dots.neovim;
 in
 {
-  options.modHomeDots.neovim = {
+  options.modHome.dots.neovim = {
     enable = lib.mkEnableOption "Setup Neovim";
     defaultEditor = lib.mkEnableOption "Make Neovim the default editor";
     clipboardWl.enable = lib.mkEnableOption "Enable system clipboard on wayland";

@@ -8,14 +8,14 @@
 }:
 
 let
-  cfg = config.modHomeBrowser.firefox;
+  cfg = config.modHome.browser.firefox;
   extensions = import ./firefox/extensions.nix {
     inherit lib;
     inherit cfg;
   };
 in
 {
-  options.modHomeBrowser.firefox = {
+  options.modHome.browser.firefox = {
     enable = lib.mkEnableOption "Setup firefox";
     bookmarks = {
       enable = lib.mkEnableOption "Enable bookmarks";

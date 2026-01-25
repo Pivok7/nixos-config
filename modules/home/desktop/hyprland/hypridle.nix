@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.modHomeDesktop.hypridle;
+  cfg = config.modHome.desktop.hypridle;
 
   timePrintMin = val: ''${if val > 60 then (toString (val / 60)) + "mins" else ""}'';
   timePrintSec = val: ''${if lib.mod val 60 > 0 then (toString (lib.mod val 60)) + "secs" else ""}'';
@@ -37,7 +37,7 @@ let
   '';
 in
 {
-  options.modHomeDesktop.hypridle = {
+  options.modHome.desktop.hypridle = {
     enable = lib.mkEnableOption "Setup hypridle";
     timeout = {
       lock = lib.mkOption {

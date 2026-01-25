@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.modHomeMedia.vlc;
+  cfg = config.modHome.media.vlc;
 in
 {
-  options.modHomeMedia.vlc = {
+  options.modHome.media.vlc = {
     enable = lib.mkEnableOption "Enable vlc";
     defaultVideoPlayer = lib.mkEnableOption "Set as default video viewer";
     defaultAudioPlayer = lib.mkEnableOption "Set as default audio viewer";

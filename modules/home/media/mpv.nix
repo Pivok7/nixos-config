@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.modHomeMedia.mpv;
+  cfg = config.modHome.media.mpv;
 in
 {
-  options.modHomeMedia.mpv = {
+  options.modHome.media.mpv = {
     enable = lib.mkEnableOption "Enable mpv";
     defaultVideoPlayer = lib.mkEnableOption "Set as default video viewer";
     defaultAudioPlayer = lib.mkEnableOption "Set as default audio viewer";

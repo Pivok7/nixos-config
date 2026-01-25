@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.modHomeDesktop.hyprpaper;
+  cfg = config.modHome.desktop.hyprpaper;
 
   hyprpaperConfig = ''
     ipc = ${if cfg.ipc then "on" else "off"}
@@ -16,7 +16,7 @@ let
   '';
 in
 {
-  options.modHomeDesktop.hyprpaper = {
+  options.modHome.desktop.hyprpaper = {
     enable = lib.mkEnableOption "Setup hyprpaper";
     wallpaper = lib.mkOption {
       type = lib.types.str;

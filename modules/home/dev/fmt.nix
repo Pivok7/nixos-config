@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.modHomeDev.fmt;
+  cfg = config.modHome.dev.fmt;
 in
 {
-  options.modHomeDev.fmt = {
+  options.modHome.dev.fmt = {
     nix.enable = lib.mkEnableOption "Enable Nix formatter";
     rust.enable = lib.mkEnableOption "Enable Rust formatter";
     python.enable = lib.mkEnableOption "Enable Python formatter";

@@ -5,10 +5,10 @@
 }:
 
 let
-  cfg = config.modHomeDots.hyprland;
+  cfg = config.modHome.dots.hyprland;
 in
 {
-  options.modHomeDots.hyprland = {
+  options.modHome.dots.hyprland = {
     enable = lib.mkEnableOption "Setup hyrpland";
   };
 

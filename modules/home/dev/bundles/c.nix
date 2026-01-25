@@ -6,15 +6,15 @@
 }:
 
 let
-  cfg = config.modHomeDev.bundle.c;
+  cfg = config.modHome.dev.bundle.c;
 in
 {
-  options.modHomeDev.bundle.c = {
+  options.modHome.dev.bundle.c = {
     enable = lib.mkEnableOption "C/C++ bundle";
   };
 
   config = lib.mkIf (cfg.enable) {
-    modHomeDev.lsp.c.enable = true;
+    modHome.dev.lsp.c.enable = true;
     home.packages = with pkgs; [
       gcc
       gnumake

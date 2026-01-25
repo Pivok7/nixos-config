@@ -5,14 +5,14 @@
 }:
 
 let
-  cfg = config.modHomeBrowser.librewolf;
+  cfg = config.modHome.browser.librewolf;
   extensions = import ./firefox/extensions.nix {
     inherit lib;
     inherit cfg;
   };
 in
 {
-  options.modHomeBrowser.librewolf = {
+  options.modHome.browser.librewolf = {
     enable = lib.mkEnableOption "Setup Librewolf";
     bookmarks = {
       enable = lib.mkEnableOption "Enable bookmarks";

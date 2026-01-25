@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.modHomeTui.kitty;
+  cfg = config.modHome.tui.kitty;
 
   kittyConfig = ''
     # Font
@@ -37,7 +37,7 @@ let
   '';
 in
 {
-  options.modHomeTui.kitty = {
+  options.modHome.tui.kitty = {
     enable = lib.mkEnableOption "Setup kitty";
     font = {
       name = lib.mkOption {

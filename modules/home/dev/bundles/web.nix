@@ -6,20 +6,20 @@
 }:
 
 let
-  cfg = config.modHomeDev.bundle.web;
+  cfg = config.modHome.dev.bundle.web;
 in
 {
-  options.modHomeDev.bundle.web = {
+  options.modHome.dev.bundle.web = {
     enable = lib.mkEnableOption "Web development bundle";
   };
 
   config = lib.mkIf (cfg.enable) {
-    modHomeDev.lsp = {
+    modHome.dev.lsp = {
       typescript.enable = true;
       tailwind.enable = true;
       astro.enable = true;
     };
-    modHomeDev.fmt.web.enable = true;
+    modHome.dev.fmt.web.enable = true;
     home.packages = with pkgs; [
       live-server
       typescript

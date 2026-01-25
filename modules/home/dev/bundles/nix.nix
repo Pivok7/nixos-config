@@ -5,15 +5,15 @@
 }:
 
 let
-  cfg = config.modHomeDev.bundle.nix;
+  cfg = config.modHome.dev.bundle.nix;
 in
 {
-  options.modHomeDev.bundle.nix = {
+  options.modHome.dev.bundle.nix = {
     enable = lib.mkEnableOption "Nix bundle";
   };
 
   config = lib.mkIf (cfg.enable) {
-    modHomeDev.lsp.nix.enable = true;
-    modHomeDev.fmt.nix.enable = true;
+    modHome.dev.lsp.nix.enable = true;
+    modHome.dev.fmt.nix.enable = true;
   };
 }

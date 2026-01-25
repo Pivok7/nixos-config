@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.modHomeDots.yazi;
+  cfg = config.modHome.dots.yazi;
 in
 {
-  options.modHomeDots.yazi = {
+  options.modHome.dots.yazi = {
     enable = lib.mkEnableOption "Setup yazi";
     dragAndDrop.enable = lib.mkEnableOption "Enable drag and drop";
   };

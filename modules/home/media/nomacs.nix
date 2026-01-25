@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.modHomeMedia.nomacs;
+  cfg = config.modHome.media.nomacs;
 in
 {
-  options.modHomeMedia.nomacs = {
+  options.modHome.media.nomacs = {
     enable = lib.mkEnableOption "Enable nomacs";
     defaultViewer = lib.mkEnableOption "Set as default image viewer";
   };

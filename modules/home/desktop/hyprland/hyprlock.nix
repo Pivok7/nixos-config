@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.modHomeDesktop.hyprlock;
+  cfg = config.modHome.desktop.hyprlock;
 
   hyprlockConfig = ''
     general {
@@ -68,7 +68,7 @@ let
   '';
 in
 {
-  options.modHomeDesktop.hyprlock = {
+  options.modHome.desktop.hyprlock = {
     enable = lib.mkEnableOption "Setup hyprpaper";
     font = lib.mkOption {
       type = lib.types.str;

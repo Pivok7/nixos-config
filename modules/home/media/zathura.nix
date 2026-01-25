@@ -6,14 +6,14 @@
 }:
 
 let
-  cfg = config.modHomeMedia.zathura;
+  cfg = config.modHome.media.zathura;
 
   zathuraConfig = ''
     set selection-clipboard clipboard
   '';
 in
 {
-  options.modHomeMedia.zathura = {
+  options.modHome.media.zathura = {
     enable = lib.mkEnableOption "Enable zathura";
     defaultPdfViewer = lib.mkEnableOption "Set as default pdf viewer";
 

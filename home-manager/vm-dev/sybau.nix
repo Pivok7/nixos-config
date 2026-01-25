@@ -20,25 +20,25 @@
     };
   };
 
-  modHomeDots.neovim = {
+  modHome.dots.neovim = {
     enable = true;
     defaultEditor = true;
     clipboardWl.enable = true;
     ripgrep.enable = true;
   };
-  modHomeDots.yazi = {
+  modHome.dots.yazi = {
     enable = true;
     dragAndDrop.enable = true;
   };
 
-  modHomeTui.kitty.enable = true;
-  modHomeTui.nushell.enable = true;
+  modHome.tui.kitty.enable = true;
+  modHome.tui.nushell.enable = true;
 
-  modHomeDev.bundle.web.enable = true;
-  modHomeDev.bundle.rust.enable = true;
+  modHome.dev.bundle.web.enable = true;
+  modHome.dev.bundle.rust.enable = true;
 
-  modHomeMedia.nomacs.enable = true;
-  modHomeMedia.vlc.enable = true;
+  modHome.media.nomacs.enable = true;
+  modHome.media.vlc.enable = true;
 
   programs.firefox.enable = true;
 

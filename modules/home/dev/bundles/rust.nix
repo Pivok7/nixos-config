@@ -6,16 +6,16 @@
 }:
 
 let
-  cfg = config.modHomeDev.bundle.rust;
+  cfg = config.modHome.dev.bundle.rust;
 in
 {
-  options.modHomeDev.bundle.rust = {
+  options.modHome.dev.bundle.rust = {
     enable = lib.mkEnableOption "Rust bundle";
   };
 
   config = lib.mkIf (cfg.enable) {
-    modHomeDev.lsp.rust.enable = true;
-    modHomeDev.fmt.rust.enable = true;
+    modHome.dev.lsp.rust.enable = true;
+    modHome.dev.fmt.rust.enable = true;
     home.packages = with pkgs; [
       rustc
       cargo

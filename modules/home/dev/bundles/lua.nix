@@ -5,15 +5,15 @@
 }:
 
 let
-  cfg = config.modHomeDev.bundle.lua;
+  cfg = config.modHome.dev.bundle.lua;
 in
 {
-  options.modHomeDev.bundle.lua = {
+  options.modHome.dev.bundle.lua = {
     enable = lib.mkEnableOption "Lua bundle";
   };
 
   config = lib.mkIf (cfg.enable) {
-    modHomeDev.lsp.lua.enable = true;
-    modHomeDev.fmt.lua.enable = true;
+    modHome.dev.lsp.lua.enable = true;
+    modHome.dev.fmt.lua.enable = true;
   };
 }

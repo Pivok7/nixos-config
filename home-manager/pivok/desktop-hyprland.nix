@@ -59,65 +59,65 @@
     };
   };
 
-  modHomeDots.hyprland.enable = true;
-  modHomeDots.eww.enable = true;
-  modHomeDots.neovim = {
+  modHome.dots.hyprland.enable = true;
+  modHome.dots.eww.enable = true;
+  modHome.dots.neovim = {
     enable = true;
     defaultEditor = true;
     clipboardWl.enable = true;
     ripgrep.enable = true;
   };
-  modHomeDots.yazi = {
+  modHome.dots.yazi = {
     enable = true;
     dragAndDrop.enable = true;
   };
 
-  modHomeDesktop.hypridle.enable = true;
-  modHomeDesktop.hyprlock = {
+  modHome.desktop.hypridle.enable = true;
+  modHome.desktop.hyprlock = {
     enable = true;
     font = "Iosevka Etoile";
   };
-  modHomeDesktop.hyprpaper = {
+  modHome.desktop.hyprpaper = {
     enable = true;
     wallpaper = "/home/pivok/Obrazy/wallpaper.png";
   };
-  modHomeDesktop.screenshot.grimSlurpSwappy.enable = true;
-  modHomeDesktop.launcher.wofi.enable = true;
-  modHomeDesktop.udiskie.enable = true;
+  modHome.desktop.screenshot.grimSlurpSwappy.enable = true;
+  modHome.desktop.launcher.wofi.enable = true;
+  modHome.desktop.udiskie.enable = true;
 
-  modHomeTui.kitty = {
+  modHome.tui.kitty = {
     enable = true;
     font.size = 20.0;
   };
-  modHomeTui.nushell = {
+  modHome.tui.nushell = {
     enable = true;
     hyprsunset.enable = true;
   };
 
-  modHomeDev.bundle.favourite.enable = true;
-  modHomeDev.bundle.web.enable = true;
-  modHomeDev.bundle.slang.enable = true;
+  modHome.dev.bundle.favourite.enable = true;
+  modHome.dev.bundle.web.enable = true;
+  modHome.dev.bundle.slang.enable = true;
 
-  modHomeMedia.nomacs = {
+  modHome.media.nomacs = {
     enable = true;
     defaultViewer = true;
   };
-  modHomeMedia.mpv = {
+  modHome.media.mpv = {
     enable = true;
     defaultVideoPlayer = true;
     defaultAudioPlayer = true;
   };
-  modHomeMedia.zathura = {
+  modHome.media.zathura = {
     enable = true;
     defaultPdfViewer = true;
   };
 
-  modHomeTools.latex = {
+  modHome.tools.latex = {
     enable = true;
     lsp.enable = true;
   };
 
-  modHomeBrowser.librewolf = {
+  modHome.browser.librewolf = {
     enable = true;
     bookmarks = {
       enable = true;

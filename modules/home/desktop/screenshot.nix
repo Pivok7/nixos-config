@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.modHomeDesktop.screenshot;
+  cfg = config.modHome.desktop.screenshot;
 in
 {
-  options.modHomeDesktop.screenshot = {
+  options.modHome.desktop.screenshot = {
     grimSlurpSwappy.enable = lib.mkEnableOption "Enable grim, slurp and swappy screenshot pack";
   };
 

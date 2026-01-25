@@ -7,10 +7,10 @@
 }:
 
 let
-  cfg = config.modHomeDev.lsp;
+  cfg = config.modHome.dev.lsp;
 in
 {
-  options.modHomeDev.lsp = {
+  options.modHome.dev.lsp = {
     nix.enable = lib.mkEnableOption "Enable nix LSP";
     c.enable = lib.mkEnableOption "Enable C/C++ LSP";
     zig.enable = lib.mkEnableOption "Enable Zig LSP";

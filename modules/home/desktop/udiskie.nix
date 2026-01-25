@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.modHomeDesktop.udiskie;
+  cfg = config.modHome.desktop.udiskie;
 
   udiskieConfig = ''
     program_options:
@@ -17,7 +17,7 @@ let
   '';
 in
 {
-  options.modHomeDesktop.udiskie = {
+  options.modHome.desktop.udiskie = {
     enable = lib.mkEnableOption "Enable udiskie";
     tray = lib.mkOption {
       type = lib.types.str;

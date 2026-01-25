@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.modHomeTools.typst;
+  cfg = config.modHome.tools.typst;
 in
 {
-  options.modHomeTools.typst = {
+  options.modHome.tools.typst = {
     enable = lib.mkEnableOption "Enable typst";
     lsp.enable = lib.mkEnableOption "Enable typst LSP";
   };

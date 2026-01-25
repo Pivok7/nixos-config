@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.modHomeDesktop.launcher.wofi;
+  cfg = config.modHome.desktop.launcher.wofi;
 
   wofiConfig = ''
     window {
@@ -53,7 +53,7 @@ let
   '';
 in
 {
-  options.modHomeDesktop.launcher.wofi = {
+  options.modHome.desktop.launcher.wofi = {
     enable = lib.mkEnableOption "Setup wofi";
     font = {
       name = lib.mkOption {

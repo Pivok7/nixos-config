@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.modHomeTools.latex;
+  cfg = config.modHome.tools.latex;
 
   tex = pkgs.texlive.combine {
     inherit (pkgs.texlive)
@@ -22,7 +22,7 @@ let
   };
 in
 {
-  options.modHomeTools.latex = {
+  options.modHome.tools.latex = {
     enable = lib.mkEnableOption "LaTeX essentials";
     lsp.enable = lib.mkEnableOption "Enable LaTeX LSP";
   };

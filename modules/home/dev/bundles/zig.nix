@@ -6,15 +6,15 @@
 }:
 
 let
-  cfg = config.modHomeDev.bundle.zig;
+  cfg = config.modHome.dev.bundle.zig;
 in
 {
-  options.modHomeDev.bundle.zig = {
+  options.modHome.dev.bundle.zig = {
     enable = lib.mkEnableOption "Zig bundle";
   };
 
   config = lib.mkIf (cfg.enable) {
-    modHomeDev.lsp.zig.enable = true;
+    modHome.dev.lsp.zig.enable = true;
     home.packages = with pkgs-unstable; [
       zig
     ];
