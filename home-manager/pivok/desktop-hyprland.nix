@@ -117,6 +117,11 @@
     lsp.enable = true;
   };
 
+  modHome.tools.typst = {
+    enable = true;
+    lsp.enable = true;
+  };
+
   modHome.browser.librewolf = {
     enable = true;
     addons = [
