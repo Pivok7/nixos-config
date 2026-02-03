@@ -119,10 +119,6 @@
 
   modHome.browser.librewolf = {
     enable = true;
-    bookmarks = {
-      enable = true;
-      path = ../../modules/home/browser/firefox/bookmarks-lianli.html;
-    };
     addons = [
       "ublock"
       "clean-urls"

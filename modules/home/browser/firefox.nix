@@ -17,14 +17,6 @@ in
 {
   options.modHome.browser.firefox = {
     enable = lib.mkEnableOption "Setup firefox";
-    bookmarks = {
-      enable = lib.mkEnableOption "Enable bookmarks";
-      path = lib.mkOption {
-        type = lib.types.path;
-        default = ./firefox/bookmarks.html;
-        description = "Bookmarks path";
-      };
-    };
     addons = lib.mkOption {
       type = lib.types.listOf extensions.extensionsEnum;
       default = [ ];
@@ -66,16 +58,9 @@ in
         DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
         SearchBar = "unified"; # alternative: "separate"
 
-        # Bookmarks
-        NoDefaultBookmarks = !cfg.bookmarks.enable;
-
         # Preferences
         # Check about:config for options.
         Preferences = {
-          # Bookmarks pt2
-          "browser.bookmarks.file" = cfg.bookmarks.path;
-          "browser.places.importBookmarksHTML" = cfg.bookmarks.enable;
-
           "browser.aboutConfig.showWarning" = false;
           "browser.startup.page" = 1;
           "browser.startup.homepage" = "about:home";

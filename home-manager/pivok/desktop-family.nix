@@ -53,7 +53,6 @@
 
   modHome.browser.firefox = {
     enable = true;
-    bookmarks.enable = true;
     addons = [
       "ublock"
       "clean-urls"
@@ -67,7 +66,6 @@
 
   modHome.browser.librewolf = {
     enable = true;
-    bookmarks.enable = true;
     addons = [
       "ublock"
       "clean-urls"

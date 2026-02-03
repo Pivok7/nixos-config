@@ -14,14 +14,6 @@ in
 {
   options.modHome.browser.librewolf = {
     enable = lib.mkEnableOption "Setup Librewolf";
-    bookmarks = {
-      enable = lib.mkEnableOption "Enable bookmarks";
-      path = lib.mkOption {
-        type = lib.types.path;
-        default = ./firefox/bookmarks.html;
-        description = "Bookmarks path";
-      };
-    };
     addons = lib.mkOption {
       type = lib.types.listOf extensions.extensionsEnum;
       default = [ ];
@@ -44,13 +36,6 @@ in
       # Policies
       # Check about:policies#documentation for options.
       policies = {
-        # Bookmarks
-        NoDefaultBookmarks = !cfg.bookmarks.enable;
-        Preferences = {
-          "browser.bookmarks.file" = cfg.bookmarks.path;
-          "browser.places.importBookmarksHTML" = cfg.bookmarks.enable;
-        };
-
         # Extensions
         ExtensionSettings = {
           "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
