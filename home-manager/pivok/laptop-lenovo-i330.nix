@@ -31,6 +31,7 @@
   };
   modHome.desktop.screenshot.grimSlurpSwappy.enable = true;
   modHome.desktop.launcher.wofi.enable = true;
+  modHome.desktop.udiskie.enable = true;
   modHome.dots.eww.enable = true;
   modHome.dots.wlogout.enable = true;
 
@@ -47,7 +48,7 @@
 
   modHome.tui.kitty = {
     enable = true;
-    font.size = 17.0;
+    font.size = 18.0;
   };
   modHome.tui.nushell = {
     enable = true;
