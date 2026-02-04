@@ -61,6 +61,7 @@
 
   modHome.dots.hyprland.enable = true;
   modHome.dots.eww.enable = true;
+  modHome.dots.wlogout.enable = true;
   modHome.dots.neovim = {
     enable = true;
     defaultEditor = true;

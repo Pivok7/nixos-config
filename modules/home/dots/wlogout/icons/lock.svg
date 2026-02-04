@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="25.89892mm"
+   height="32.37365mm"
+   viewBox="0 0 25.89892 32.37365"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="lock.svg"
+   inkscape:export-filename="lock.svg"
+   inkscape:export-xdpi="980.7359"
+   inkscape:export-ydpi="980.7359"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="6.8896696"
+     inkscape:cx="48.913811"
+     inkscape:cy="61.178551"
+     inkscape:window-width="1139"
+     inkscape:window-height="1034"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1">
+    <rect
+       x="140.92535"
+       y="357.34644"
+       width="498.27179"
+       height="392.57779"
+       id="rect1" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-19.334474,-80.345248)"
+     style="fill:#82dc00;fill-opacity:1"
+     inkscape:export-filename="lock.svg"
+     inkscape:export-xdpi="980.7359"
+     inkscape:export-ydpi="980.7359">
+    <text
+       xml:space="preserve"
+       transform="matrix(2.8776578,0,0,2.8776578,-386.2017,-953.36901)"
+       id="text1"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);fill:#82dc00;fill-opacity:1"><tspan
+         x="140.92578"
+         y="368.44336"
+         id="tspan3"><tspan
+           style="font-size:12px;font-family:'Iosevka Etoile';-inkscape-font-specification:'Iosevka Etoile, Normal'"
+           id="tspan2"></tspan></tspan></text>
+  </g>
+</svg>

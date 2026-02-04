@@ -1,0 +1,24 @@
+{
+    "label" : "shutdown",
+    "action" : "poweroff",
+}
+{
+    "label" : "lock",
+    "action" : "loginctl lock-session",
+}
+{
+    "label" : "reboot",
+    "action" : "reboot",
+}
+{
+    "label" : "suspend",
+    "action" : "systemctl suspend",
+}
+{
+    "label" : "logout",
+    "action" : "pkill -KILL -u $USER",
+}
+{
+    "label" : "hibernate",
+    "action" : "systemctl hibernate",
+}

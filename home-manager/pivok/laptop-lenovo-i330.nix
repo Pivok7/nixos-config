@@ -32,6 +32,7 @@
   modHome.desktop.screenshot.grimSlurpSwappy.enable = true;
   modHome.desktop.launcher.wofi.enable = true;
   modHome.dots.eww.enable = true;
+  modHome.dots.wlogout.enable = true;
 
   modHome.dots.neovim = {
     enable = true;

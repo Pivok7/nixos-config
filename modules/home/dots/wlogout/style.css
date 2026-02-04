@@ -1,0 +1,75 @@
+@define-color fg #ebdbb2;
+@define-color bg #1d2021;
+
+@define-color black #282828;
+@define-color red #ff493a;
+@define-color orange #ff8800;
+@define-color yellow #e9bc00;
+@define-color green #82dc00;
+@define-color aqua #00ef5f;
+@define-color blue #00f3d4;
+@define-color purple #c18fff;
+
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+    background-color: rgba(12, 12, 12, 0.9);
+}
+
+grid {
+    border-radius: 30px;
+    margin: 40px 80px;
+    padding: 10px;
+    background-color: @bg;
+}
+
+button {
+    border-radius: 20px;
+    border-width: 3px;
+    border-color: @black;
+    outline-style: none;
+    margin: 10px;
+    background-color: @black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+}
+
+button:focus,
+button:active,
+button:hover {
+    border-color: @color;
+}
+
+#shutdown {
+    color: @red;
+    background-image: image(url("icons/shutdown.png"));
+}
+
+#reboot {
+    color: @orange;
+    background-image: image(url("icons/reboot.png"));
+}
+
+#logout {
+    color: @yellow;
+    background-image: image(url("icons/logout.png"));
+}
+
+#lock {
+    color: @green;
+    background-image: image(url("icons/lock.png"));
+}
+
+#suspend {
+    color: @aqua;
+    background-image: image(url("icons/suspend.png"));
+}
+
+#hibernate {
+    color: @blue;
+    background-image: image(url("icons/hibernate.png"));
+}
