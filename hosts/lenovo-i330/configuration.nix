@@ -19,6 +19,7 @@ in
 
   imports = [
     ./hardware-configuration.nix
+    ./key_remap.nix
     home-manager.nixosModules.home-manager
     "${my-modules}/system"
   ];
@@ -73,9 +74,6 @@ in
     LC_TIME = "pl_PL.UTF-8";
   };
 
-  # Custom keyboard layout
-  services.keyd.enable = true;
-
   # Set display manager
   services.displayManager.ly = {
     enable = true;
@@ -107,14 +105,13 @@ in
   # Configure console keymap
   console.keyMap = "pl2";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account
   users.users.pivok = {
     isNormalUser = true;
     description = "Pivok";
     extraGroups = [
       "networkmanager"
       "wheel"
-      "keyd"
     ];
   };
 
