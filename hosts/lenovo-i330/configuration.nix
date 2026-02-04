@@ -84,6 +84,12 @@ in
 
   # Desktop environments
 
+  # Hyprland
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   # Gnome
   services.desktopManager.gnome.enable = true;
   services.gnome.core-apps.enable = false;
