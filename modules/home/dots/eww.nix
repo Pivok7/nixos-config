@@ -14,11 +14,12 @@ in
   };
 
   config = lib.mkIf (cfg.enable) {
-    home.packages = [
-      pkgs.eww
-      pkgs.socat
-      pkgs.playerctl
-      pkgs.networkmanagerapplet
+    home.packages = with pkgs; [
+      eww
+      socat
+      playerctl
+      pwvucontrol
+      networkmanagerapplet
     ];
 
     home.file.".config/eww" = {

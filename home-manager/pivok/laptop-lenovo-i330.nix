@@ -32,7 +32,6 @@
   modHome.desktop.screenshot.grimSlurpSwappy.enable = true;
   modHome.desktop.launcher.wofi.enable = true;
   modHome.desktop.udiskie.enable = true;
-  modHome.dots.eww.enable = true;
   modHome.dots.wlogout.enable = true;
 
   modHome.dots.neovim = {
@@ -104,6 +103,13 @@
       wofi
       wlogout
       swaynotificationcenter
+
+      # Eww deps
+      eww
+      socat
+      playerctl
+      pwvucontrol
+      networkmanagerapplet
 
       # Gui
       discord

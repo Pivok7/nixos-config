@@ -150,7 +150,6 @@
 
       # Gui
       blueman
-      pwvucontrol
       lact
       discord
       libreoffice
