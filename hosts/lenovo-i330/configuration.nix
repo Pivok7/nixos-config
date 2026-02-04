@@ -1,13 +1,11 @@
 {
   inputs,
-  config,
   home-manager,
   ...
 }:
 let
   pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
-  nix-flatpak = inputs.nix-flatpak;
   my-modules = inputs.my-modules;
 in
 {
@@ -75,11 +73,8 @@ in
     LC_TIME = "pl_PL.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "pl";
-    variant = "";
-  };
+  # Custom keyboard layout
+  services.keyd.enable = true;
 
   # Set display manager
   services.displayManager.ly = {
@@ -89,8 +84,25 @@ in
     };
   };
 
-  # Set desktop environment
+  # Desktop environments
+  # Cosmic
   services.desktopManager.cosmic.enable = true;
+  environment.cosmic.excludePackages = with pkgs; [
+    cosmic-screenshot
+    cosmic-player
+    cosmic-term
+    cosmic-edit
+  ];
+
+  # Gnome
+  services.desktopManager.gnome.enable = true;
+  services.gnome.core-apps.enable = false;
+  services.gnome.core-developer-tools.enable = false;
+  services.gnome.games.enable = false;
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+    gnome-user-docs
+  ];
 
   # Configure console keymap
   console.keyMap = "pl2";
@@ -99,11 +111,14 @@ in
   users.users.pivok = {
     isNormalUser = true;
     description = "Pivok";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "keyd"
+    ];
   };
 
-  environment.systemPackages = [];
+  environment.systemPackages = [ ];
 
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
