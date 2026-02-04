@@ -20,6 +20,19 @@
     };
   };
 
+  modHome.desktop.hypridle.enable = true;
+  modHome.desktop.hyprlock = {
+    enable = true;
+    font = "Iosevka Etoile";
+  };
+  modHome.desktop.hyprpaper = {
+    enable = true;
+    wallpaper = "/home/pivok/Obrazy/wallpaper.png";
+  };
+  modHome.desktop.screenshot.grimSlurpSwappy.enable = true;
+  modHome.desktop.launcher.wofi.enable = true;
+  modHome.dots.eww.enable = true;
+
   modHome.dots.neovim = {
     enable = true;
     defaultEditor = true;
@@ -83,6 +96,13 @@
 
   home.packages =
     (with pkgs; [
+      # Desktop
+      rose-pine-hyprcursor
+      hyprsunset
+      wofi
+      wlogout
+      swaynotificationcenter
+
       # Gui
       discord
       libreoffice
