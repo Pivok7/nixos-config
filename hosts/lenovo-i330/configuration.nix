@@ -83,14 +83,6 @@ in
   };
 
   # Desktop environments
-  # Cosmic
-  services.desktopManager.cosmic.enable = true;
-  environment.cosmic.excludePackages = with pkgs; [
-    cosmic-screenshot
-    cosmic-player
-    cosmic-term
-    cosmic-edit
-  ];
 
   # Gnome
   services.desktopManager.gnome.enable = true;
@@ -115,7 +107,7 @@ in
     ];
   };
 
-  environment.systemPackages = [ ];
+  environment.systemPackages = with pkgs; [ nautilus ];
 
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
