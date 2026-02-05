@@ -29,6 +29,14 @@ return {
                     ["<C-Space>"] = cmp.mapping.complete(),
                     ["<C-e>"] = cmp.mapping.abort(),
                     ["<CR>"] = cmp.mapping.confirm({ select = false }),
+
+		    -- Allows arrows to fall back without interacting with cmp
+                    ["<Up>"] = cmp.mapping(function(fallback)
+                        fallback()
+		    end, { "i", "c" }),
+                    ["<Down>"] = cmp.mapping(function(fallback)
+                        fallback()
+                    end, { "i", "c" }),
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
