@@ -124,6 +124,7 @@
       libresprite
 
       # Tui
+      foot
       lazygit
       btop
 
