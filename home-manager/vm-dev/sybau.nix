@@ -45,6 +45,9 @@
   home.packages = (
     with pkgs;
     [
+      # Gui
+      zed-editor
+
       # Tui
       lazygit
       btop

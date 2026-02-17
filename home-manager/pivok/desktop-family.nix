@@ -86,17 +86,16 @@
       keepassxc
       qbittorrent
       syncthing
+      zed-editor
 
       # Creative
       inkscape
       gimp
       libresprite
 
-      # Tui
+      # Utils
       lazygit
       btop
-
-      # Utils
       wget
       zip
       unzip
