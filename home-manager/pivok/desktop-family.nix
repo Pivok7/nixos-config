@@ -103,6 +103,7 @@
       ffmpeg
       obs-studio
       glow
+      ccrypt
 
       # Games
       prismlauncher
