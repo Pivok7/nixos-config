@@ -36,6 +36,7 @@
 
   modHome.dev.bundle.favourite.enable = true;
   modHome.dev.bundle.web.enable = true;
+  modHome.dev.bundle.slang.enable = true;
 
   modHome.media.nomacs.enable = true;
   modHome.media.vlc.enable = true;
