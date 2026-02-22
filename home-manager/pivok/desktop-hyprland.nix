@@ -151,7 +151,6 @@
       # Gui
       blueman
       lact
-      discord
       libreoffice
       keepassxc
       qbittorrent

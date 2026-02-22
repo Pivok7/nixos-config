@@ -39,7 +39,6 @@ in
   modSys.unfreePred = {
     nvidia.enable = true;
     steam.enable = true;
-    discord.enable = true;
   };
 
   # Bootloader

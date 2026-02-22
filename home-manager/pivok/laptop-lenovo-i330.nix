@@ -112,7 +112,6 @@
       networkmanagerapplet
 
       # Gui
-      discord
       libreoffice
       keepassxc
       qbittorrent

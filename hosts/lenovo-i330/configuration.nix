@@ -34,10 +34,6 @@ in
     users.pivok = import ../../home-manager/pivok/laptop-lenovo-i330.nix;
   };
 
-  modSys.unfreePred = {
-    discord.enable = true;
-  };
-
   # Bootloader.
   boot.loader.timeout = 2;
   boot.loader.systemd-boot = {

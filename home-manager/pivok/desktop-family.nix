@@ -82,7 +82,6 @@
     (with pkgs; [
       # Gui
       ungoogled-chromium
-      discord
       libreoffice
       keepassxc
       qbittorrent

@@ -35,7 +35,6 @@ in
   # Allow unfree packages
   modSys.unfreePred = {
     steam.enable = true;
-    discord.enable = true;
     reaper.enable = true;
   };
 
