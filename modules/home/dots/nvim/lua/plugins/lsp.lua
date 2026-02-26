@@ -13,6 +13,7 @@ return {
     vim.lsp.enable("tailwindcss"),
     vim.lsp.enable("slangd"),
     vim.lsp.enable("astro"),
+    vim.lsp.enable("omnisharp"),
 
     vim.lsp.config("tinymist", {
 	cmd = { "tinymist" },

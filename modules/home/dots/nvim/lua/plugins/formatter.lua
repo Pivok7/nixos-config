@@ -11,6 +11,7 @@ return {
                 rust = { "rustfmt", lsp_format = "fallback" },
                 zig = { "zigfmt" },
                 python = { "black" },
+                cs = { "csharpier" },
 
                 html = { "prettier" },
                 css = { "prettier" },

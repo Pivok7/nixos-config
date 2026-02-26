@@ -15,6 +15,7 @@ in
     python.enable = lib.mkEnableOption "Enable Python formatter";
     lua.enable = lib.mkEnableOption "Enable Lua formatter";
     web.enable = lib.mkEnableOption "Enable Typescript formatter";
+    csharp.enable = lib.mkEnableOption "Enable C# formatter";
   };
 
   config = {
@@ -24,6 +25,7 @@ in
       (if cfg.python.enable then [ pkgs.black ] else [ ])
       (if cfg.lua.enable then [ pkgs.stylua ] else [ ])
       (if cfg.web.enable then [ pkgs.nodePackages.prettier ] else [ ])
+      (if cfg.csharp.enable then [ pkgs.csharpier ] else [ ])
     ];
   };
 }

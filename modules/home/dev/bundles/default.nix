@@ -2,6 +2,7 @@
 {
   imports = [
     ./c.nix
+    ./csharp.nix
     ./lua.nix
     ./nix.nix
     ./python.nix

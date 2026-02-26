@@ -20,6 +20,7 @@ in
     typescript.enable = lib.mkEnableOption "Enable Typescript LSP";
     tailwind.enable = lib.mkEnableOption "Enable Tailwind LSP";
     astro.enable = lib.mkEnableOption "Enable Astro LSP";
+    csharp.enable = lib.mkEnableOption "Enable C# LSP";
   };
 
   config = {
@@ -33,6 +34,7 @@ in
       (if cfg.typescript.enable then [ pkgs.typescript-language-server ] else [ ])
       (if cfg.tailwind.enable then [ pkgs.tailwindcss-language-server ] else [ ])
       (if cfg.astro.enable then [ pkgs.astro-language-server ] else [ ])
+      (if cfg.csharp.enable then [ pkgs.omnisharp-roslyn ] else [ ])
     ];
   };
 }
