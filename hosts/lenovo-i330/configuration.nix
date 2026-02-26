@@ -109,6 +109,9 @@ in
     ];
   };
 
+  # Enable essential services
+  modSys.wine.enable = true;
+
   environment.systemPackages = with pkgs; [ nautilus ];
 
   # Before changing this value read the documentation for this option
