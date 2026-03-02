@@ -138,9 +138,6 @@
 
   home.packages =
     (with pkgs; [
-      nwg-look
-      dconf-editor
-
       # Desktop
       rose-pine-hyprcursor
       hyprsunset
@@ -150,6 +147,7 @@
 
       # Gui
       blueman
+      easyeffects
       lact
       libreoffice
       keepassxc
