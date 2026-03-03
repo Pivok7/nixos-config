@@ -22,7 +22,7 @@ in
     home.packages = lib.concatLists [
       (if cfg.nix.enable then [ pkgs.nixfmt ] else [ ])
       (if cfg.rust.enable then [ pkgs.rustfmt ] else [ ])
-      (if cfg.python.enable then [ pkgs.black ] else [ ])
+      (if cfg.python.enable then [ pkgs.ruff ] else [ ])
       (if cfg.lua.enable then [ pkgs.stylua ] else [ ])
       (if cfg.web.enable then [ pkgs.nodePackages.prettier ] else [ ])
       (if cfg.csharp.enable then [ pkgs.csharpier ] else [ ])

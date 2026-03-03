@@ -29,7 +29,7 @@ in
       (if cfg.c.enable then [ pkgs.clang-tools ] else [ ])
       (if cfg.zig.enable then [ pkgs-unstable.zls ] else [ ])
       (if cfg.rust.enable then [ pkgs.rust-analyzer ] else [ ])
-      (if cfg.python.enable then [ pkgs.pyright ] else [ ])
+      (if cfg.python.enable then [ pkgs.ty ] else [ ])
       (if cfg.lua.enable then [ pkgs.lua-language-server ] else [ ])
       (if cfg.typescript.enable then [ pkgs.typescript-language-server ] else [ ])
       (if cfg.tailwind.enable then [ pkgs.tailwindcss-language-server ] else [ ])
