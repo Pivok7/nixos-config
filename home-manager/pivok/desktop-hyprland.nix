@@ -153,6 +153,7 @@
       keepassxc
       qbittorrent
       syncthing
+      zed-editor
 
       # Creative
       gimp
