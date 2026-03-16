@@ -139,7 +139,6 @@
   home.packages =
     (with pkgs; [
       # Desktop
-      rose-pine-hyprcursor
       hyprsunset
       wofi
       wlogout
@@ -197,6 +196,7 @@
       makker
       uncom
       bandcamp-dl
+      hyprcursor-phinger
     ]);
 
   home.stateVersion = "25.05";
