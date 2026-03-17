@@ -99,7 +99,6 @@
   home.packages =
     (with pkgs; [
       # Desktop
-      rose-pine-hyprcursor
       hyprsunset
       wofi
       wlogout
@@ -151,6 +150,7 @@
     ++ (with pkgs.nur-pivok; [
       makker
       uncom
+      hyprcursor-phinger
     ]);
 
   home.stateVersion = "25.11";
