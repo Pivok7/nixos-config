@@ -136,6 +136,7 @@
       ffmpeg
       obs-studio
       glow
+      brightnessctl
 
       # Fonts
       nerd-fonts.symbols-only
