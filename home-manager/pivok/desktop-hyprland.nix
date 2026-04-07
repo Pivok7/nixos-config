@@ -103,7 +103,7 @@
     enable = true;
     defaultViewer = true;
   };
-  modHome.media.mpv = {
+  modHome.media.vlc = {
     enable = true;
     defaultVideoPlayer = true;
     defaultAudioPlayer = true;
@@ -121,6 +121,14 @@
   modHome.tools.typst = {
     enable = true;
     lsp.enable = true;
+  };
+
+  modHome.browser.firefox = {
+    enable = true;
+    addons = [
+      "ublock"
+      "clean-urls"
+    ];
   };
 
   modHome.browser.librewolf = {
@@ -185,6 +193,7 @@
       roboto-slab
 
       # Gaming
+      prismlauncher
       rpcs3
     ])
     ++ (with pkgs-unstable; [
