@@ -4,7 +4,6 @@
   ...
 }:
 let
-  pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
   my-modules = inputs.my-modules;
 in
@@ -112,7 +111,7 @@ in
   # Enable essential services
   modSys.wine.enable = true;
 
-  environment.systemPackages = with pkgs; [ nautilus ];
+  environment.systemPackages = [ ];
 
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).

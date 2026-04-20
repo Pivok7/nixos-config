@@ -123,7 +123,10 @@ in
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "pivok";
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    rootless.enable = true;
+  };
 
   # Flatpak
   services.flatpak.update.onActivation = true;
