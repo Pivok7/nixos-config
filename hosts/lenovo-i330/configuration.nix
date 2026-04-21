@@ -4,6 +4,7 @@
   ...
 }:
 let
+  pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
   my-modules = inputs.my-modules;
 in
@@ -105,11 +106,17 @@ in
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
   };
 
   # Enable essential services
   modSys.wine.enable = true;
+
+  virtualisation.docker = {
+    enable = true;
+    rootless.enable = true;
+  };
 
   environment.systemPackages = [ ];
 

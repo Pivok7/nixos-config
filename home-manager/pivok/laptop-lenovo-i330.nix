@@ -126,6 +126,7 @@
       foot
       lazygit
       btop
+      zellij
 
       # Utils
       wget
