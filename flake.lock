@@ -21,6 +21,26 @@
         "type": "github"
       }
     },
+    "hyprcursor-phinger": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1763845612,
+        "narHash": "sha256-78zH5GrYa35bEkzeVnl8uXFbZ/zsiSHayjxZlNt+Xe8=",
+        "owner": "jappie3",
+        "repo": "hyprcursor-phinger",
+        "rev": "1207a845501a28e0e00d4a8e935ee0c9cab30650",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jappie3",
+        "repo": "hyprcursor-phinger",
+        "type": "github"
+      }
+    },
     "my-modules": {
       "inputs": {
         "nixpkgs": [
@@ -70,11 +90,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1767640445,
-        "narHash": "sha256-UWYqmD7JFBEDBHWYcqE6s6c77pWdcU/i+bwD6XxMb8A=",
+        "lastModified": 1776877367,
+        "narHash": "sha256-EHq1/OX139R1RvBzOJ0aMRT3xnWyqtHBRUBuO1gFzjI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9f0c42f8bc7151b8e7e5840fb3bd454ad850d8c5",
+        "rev": "0726a0ecb6d4e08f6adced58726b95db924cef57",
         "type": "github"
       },
       "original": {
@@ -90,11 +110,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773692652,
-        "narHash": "sha256-nH6KpyfNvlg7g4hz89vz+oFP0eWUiqxE8J03UNESjyk=",
+        "lastModified": 1777143089,
+        "narHash": "sha256-wSd758eWrekMmU8Bzs5OgolSOgBcxqyXFAOvH13BTWA=",
         "owner": "Pivok7",
         "repo": "nur-packages",
-        "rev": "c777b017721c961bdfe0efc437b4981d8a46fa07",
+        "rev": "1869d1eea53809010b7929b71be8fa051b754930",
         "type": "github"
       },
       "original": {
@@ -107,6 +127,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "hyprcursor-phinger": "hyprcursor-phinger",
         "my-modules": "my-modules",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",

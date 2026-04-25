@@ -1,6 +1,4 @@
 {
-  description = "My Flake";
-
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
@@ -22,6 +20,11 @@
       url = "github:Pivok7/nur-packages/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    hyprcursor-phinger = {
+      url = "github:jappie3/hyprcursor-phinger";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
@@ -40,46 +43,48 @@
       };
     in
     {
-      nixosConfigurations.family-pc = nixpkgs.lib.nixosSystem {
-        modules = [
-          overlay-nur-pivok
-          ./hosts/family-pc/configuration.nix
-        ];
-        specialArgs = {
-          inherit inputs;
-          inherit home-manager;
+      nixosConfigurations = {
+        family-pc = nixpkgs.lib.nixosSystem {
+          modules = [
+            overlay-nur-pivok
+            ./hosts/family-pc/configuration.nix
+          ];
+          specialArgs = {
+            inherit inputs;
+            inherit home-manager;
+          };
         };
-      };
 
-      nixosConfigurations.lianli = nixpkgs.lib.nixosSystem {
-        modules = [
-          overlay-nur-pivok
-          ./hosts/lianli/configuration.nix
-        ];
-        specialArgs = {
-          inherit inputs;
-          inherit home-manager;
+        lianli = nixpkgs.lib.nixosSystem {
+          modules = [
+            overlay-nur-pivok
+            ./hosts/lianli/configuration.nix
+          ];
+          specialArgs = {
+            inherit inputs;
+            inherit home-manager;
+          };
         };
-      };
 
-      nixosConfigurations.lenovo-i330 = nixpkgs.lib.nixosSystem {
-        modules = [
-          overlay-nur-pivok
-          ./hosts/lenovo-i330/configuration.nix
-        ];
-        specialArgs = {
-          inherit inputs;
-          inherit home-manager;
+        lenovo-i330 = nixpkgs.lib.nixosSystem {
+          modules = [
+            overlay-nur-pivok
+            ./hosts/lenovo-i330/configuration.nix
+          ];
+          specialArgs = {
+            inherit inputs;
+            inherit home-manager;
+          };
         };
-      };
 
-      nixosConfigurations.vm-dev = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/vm-dev/configuration.nix
-        ];
-        specialArgs = {
-          inherit inputs;
-          inherit home-manager;
+        vm-dev = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./hosts/vm-dev/configuration.nix
+          ];
+          specialArgs = {
+            inherit inputs;
+            inherit home-manager;
+          };
         };
       };
     };

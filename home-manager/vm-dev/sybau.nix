@@ -1,12 +1,12 @@
 {
   pkgs,
   pkgs-unstable,
-  my-modules,
+  inputs,
   ...
 }:
 {
   imports = [
-    "${my-modules}/home"
+    "${inputs.my-modules}/home"
   ];
 
   programs.git = {

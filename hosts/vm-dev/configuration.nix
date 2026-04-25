@@ -1,12 +1,11 @@
 {
-  inputs,
   pkgs,
+  inputs,
   home-manager,
   ...
 }:
 let
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
-  my-modules = inputs.my-modules;
 in
 {
   networking.hostName = "vm-dev";
@@ -19,7 +18,7 @@ in
 
   imports = [
     ./hardware-configuration.nix
-    "${my-modules}/system"
+    "${inputs.my-modules}/system"
     home-manager.nixosModules.home-manager
   ];
 
@@ -28,7 +27,7 @@ in
     useUserPackages = true;
     extraSpecialArgs = {
       inherit pkgs-unstable;
-      inherit my-modules;
+      inherit inputs;
     };
     users.sybau = import ../../home-manager/vm-dev/sybau.nix;
   };

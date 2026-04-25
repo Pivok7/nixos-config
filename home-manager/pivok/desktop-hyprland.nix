@@ -2,12 +2,13 @@
   lib,
   pkgs,
   pkgs-unstable,
-  my-modules,
+  inputs,
   ...
 }:
 {
   imports = [
-    "${my-modules}/home"
+    "${inputs.my-modules}/home"
+    inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
   ];
 
   # GTK4 Setup
@@ -58,6 +59,8 @@
       pull.rebase = false;
     };
   };
+
+  programs.hyprcursor-phinger.enable = true;
 
   modHome.dots.hyprland.enable = true;
   modHome.dots.eww.enable = true;
@@ -205,7 +208,6 @@
       makker
       uncom
       bandcamp-dl
-      hyprcursor-phinger
     ]);
 
   home.stateVersion = "25.05";

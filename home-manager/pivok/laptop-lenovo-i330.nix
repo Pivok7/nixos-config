@@ -1,12 +1,13 @@
 {
   pkgs,
   pkgs-unstable,
-  my-modules,
+  inputs,
   ...
 }:
 {
   imports = [
-    "${my-modules}/home"
+    "${inputs.my-modules}/home"
+    inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
   ];
 
   programs.git = {
@@ -19,6 +20,8 @@
       pull.rebase = false;
     };
   };
+
+  programs.hyprcursor-phinger.enable = true;
 
   modHome.desktop.hypridle.enable = true;
   modHome.desktop.hyprlock = {
@@ -152,7 +155,6 @@
     ++ (with pkgs.nur-pivok; [
       makker
       uncom
-      hyprcursor-phinger
     ]);
 
   home.stateVersion = "25.11";

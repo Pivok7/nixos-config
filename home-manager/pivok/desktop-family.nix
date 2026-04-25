@@ -1,12 +1,12 @@
 {
   pkgs,
   pkgs-unstable,
-  my-modules,
+  inputs,
   ...
 }:
 {
   imports = [
-    "${my-modules}/home"
+    "${inputs.my-modules}/home"
   ];
 
   programs.git = {
@@ -57,11 +57,7 @@
     addons = [
       "ublock"
       "clean-urls"
-      "dark-reader"
-      "bandcamp-volume"
-      "bandcamp-killer"
       "youtube-dislike"
-      "youtube-unhook"
     ];
   };
 

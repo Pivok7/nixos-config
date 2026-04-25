@@ -5,7 +5,6 @@
 }:
 let
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
-  my-modules = inputs.my-modules;
 in
 {
   networking.hostName = "lianli";
@@ -18,7 +17,7 @@ in
 
   imports = [
     ./hardware-configuration.nix
-    "${my-modules}/system"
+    "${inputs.my-modules}/system"
     home-manager.nixosModules.home-manager
   ];
 
@@ -27,7 +26,7 @@ in
     useUserPackages = true;
     extraSpecialArgs = {
       inherit pkgs-unstable;
-      inherit my-modules;
+      inherit inputs;
     };
     users.pivok = import ../../home-manager/pivok/desktop-hyprland.nix;
   };

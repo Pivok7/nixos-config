@@ -1,12 +1,11 @@
 {
+  pkgs,
   inputs,
   home-manager,
   ...
 }:
 let
-  pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
-  my-modules = inputs.my-modules;
 in
 {
   networking.hostName = "lenovo-i330";
@@ -21,7 +20,7 @@ in
     ./hardware-configuration.nix
     ./key_remap.nix
     home-manager.nixosModules.home-manager
-    "${my-modules}/system"
+    "${inputs.my-modules}/system"
   ];
 
   home-manager = {
@@ -29,7 +28,7 @@ in
     useUserPackages = true;
     extraSpecialArgs = {
       inherit pkgs-unstable;
-      inherit my-modules;
+      inherit inputs;
     };
     users.pivok = import ../../home-manager/pivok/laptop-lenovo-i330.nix;
   };

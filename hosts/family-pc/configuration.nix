@@ -6,8 +6,6 @@
 }:
 let
   pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux;
-  nix-flatpak = inputs.nix-flatpak;
-  my-modules = inputs.my-modules;
 in
 {
   networking.hostName = "family-pc";
@@ -21,8 +19,8 @@ in
   imports = [
     ./hardware-configuration.nix
     home-manager.nixosModules.home-manager
-    "${my-modules}/system"
-    "${nix-flatpak}/modules/nixos.nix"
+    "${inputs.my-modules}/system"
+    "${inputs.nix-flatpak}/modules/nixos.nix"
   ];
 
   home-manager = {
@@ -30,7 +28,7 @@ in
     useUserPackages = true;
     extraSpecialArgs = {
       inherit pkgs-unstable;
-      inherit my-modules;
+      inherit inputs;
     };
     users.pivok = import ../../home-manager/pivok/desktop-family.nix;
   };
