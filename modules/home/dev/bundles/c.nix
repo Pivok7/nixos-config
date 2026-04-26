@@ -18,9 +18,7 @@ in
     home.packages = with pkgs; [
       gcc
       gnumake
-      cmake
-      meson
-      ninja
+      bear
     ];
   };
 }
