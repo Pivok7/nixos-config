@@ -1,4 +1,5 @@
 {
+  pkgs,
   inputs,
   home-manager,
   ...
@@ -50,6 +51,17 @@ in
         sortKey = "z_windows";
       };
     };
+  };
+  # Boot splash screen
+  boot.plymouth = {
+    enable = true;
+    theme = "rings";
+    themePackages = with pkgs; [
+      # By default we would install all themes
+      (adi1090x-plymouth-themes.override {
+        selected_themes = [ "rings" ];
+      })
+    ];
   };
 
   fileSystems."/mnt/Windows" = {
