@@ -33,13 +33,26 @@ in
     users.pivok = import ../../home-manager/pivok/laptop-lenovo-i330.nix;
   };
 
-  # Bootloader.
-  boot.loader.timeout = 2;
-  boot.loader.systemd-boot = {
-    enable = true;
-    configurationLimit = 20;
+  # Bootloader
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    timeout = 2;
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 20;
+    };
   };
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Boot splash screen
+  boot.plymouth = {
+    enable = true;
+    theme = "hexagon_2";
+    themePackages = with pkgs; [
+      # By default we would install all themes
+      (adi1090x-plymouth-themes.override {
+        selected_themes = [ "hexagon_2" ];
+      })
+    ];
+  };
   systemd.tpm2.enable = false;
 
   # Enable GPU
