@@ -11,8 +11,8 @@ return {
     vim.lsp.enable("tinymist"),
     vim.lsp.enable("ts_ls"),
     vim.lsp.enable("tailwindcss"),
+    vim.lsp.enable("svelte"),
     vim.lsp.enable("slangd"),
-    vim.lsp.enable("astro"),
     vim.lsp.enable("omnisharp"),
 
     vim.lsp.config("tinymist", {

@@ -19,7 +19,7 @@ in
     lua.enable = lib.mkEnableOption "Enable Lua LSP";
     typescript.enable = lib.mkEnableOption "Enable Typescript LSP";
     tailwind.enable = lib.mkEnableOption "Enable Tailwind LSP";
-    astro.enable = lib.mkEnableOption "Enable Astro LSP";
+    svelte.enable = lib.mkEnableOption "Enable Svelte LSP";
     csharp.enable = lib.mkEnableOption "Enable C# LSP";
   };
 
@@ -33,7 +33,7 @@ in
       (if cfg.lua.enable then [ pkgs.lua-language-server ] else [ ])
       (if cfg.typescript.enable then [ pkgs.typescript-language-server ] else [ ])
       (if cfg.tailwind.enable then [ pkgs.tailwindcss-language-server ] else [ ])
-      (if cfg.astro.enable then [ pkgs.astro-language-server ] else [ ])
+      (if cfg.svelte.enable then [ pkgs.svelte-language-server ] else [ ])
       (if cfg.csharp.enable then [ pkgs.omnisharp-roslyn ] else [ ])
     ];
   };
