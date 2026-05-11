@@ -3,7 +3,7 @@ return {
     build = ":TSUpdate",
 
     config = function()
-        require("nvim-treesitter.configs").setup({
+        require("nvim-treesitter.config").setup({
             ensure_installed = { "lua" },
             auto_install = true,
             highlight = { enable = true },
