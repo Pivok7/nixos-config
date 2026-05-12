@@ -17,6 +17,7 @@ return {
                 css = { "prettier" },
                 javascript = { "prettier" },
                 typescript = { "prettier" },
+                svelte = { "prettier" },
 
                 nix = { "nixfmt" },
             },
