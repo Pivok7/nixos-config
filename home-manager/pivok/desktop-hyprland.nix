@@ -11,7 +11,7 @@
     inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
   ];
 
-  # GTK4 Setup
+  # GTK
   dconf.settings."org/gnome/desktop/interface" = {
     gtk-theme = lib.mkForce "Adwaita-dark";
     icon-theme = lib.mkForce "Papirus";
@@ -42,6 +42,7 @@
     };
   };
 
+  # QT
   qt = {
     enable = true;
     style = {
@@ -63,8 +64,6 @@
   programs.hyprcursor-phinger.enable = true;
 
   modHome.dots.hyprland.enable = true;
-  modHome.dots.eww.enable = true;
-  modHome.dots.wlogout.enable = true;
   modHome.dots.neovim = {
     enable = true;
     defaultEditor = true;
@@ -76,17 +75,7 @@
     dragAndDrop.enable = true;
   };
 
-  modHome.desktop.hypridle.enable = true;
-  modHome.desktop.hyprlock = {
-    enable = true;
-    font = "Iosevka Etoile";
-  };
-  modHome.desktop.hyprpaper = {
-    enable = true;
-    wallpaper = "/home/pivok/Obrazy/wallpaper.png";
-  };
   modHome.desktop.screenshot.grimSlurpSwappy.enable = true;
-  modHome.desktop.launcher.wofi.enable = true;
   modHome.desktop.udiskie.enable = true;
 
   modHome.tui.kitty = {
@@ -149,14 +138,9 @@
 
   home.packages =
     (with pkgs; [
-      # Desktop
-      hyprsunset
-      wofi
-      wlogout
-      swaynotificationcenter
-
       # Gui
       blueman
+      pwvucontrol
       easyeffects
       lact
       libreoffice
@@ -176,6 +160,7 @@
       btop
 
       # Utils
+      hyprsunset
       wget
       dash
       killall
@@ -203,6 +188,7 @@
       opencode
       kew
       tor-browser
+      noctalia-shell
     ])
     ++ (with pkgs.nur-pivok; [
       makker
