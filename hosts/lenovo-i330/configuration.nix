@@ -87,6 +87,8 @@ in
     enable = true;
     settings = {
       session_log = ".ly-session.log";
+      animation = "colormix";
+      bigclock = "en";
     };
   };
 
