@@ -8,7 +8,7 @@ return {
                 lua = { "stylua" },
                 c = { "clang_format" },
                 cpp = { "clang_format" },
-                rust = { "rustfmt", lsp_format = "fallback" },
+                rust = { "rustfmt" },
                 zig = { "zigfmt" },
                 python = { "ruff_format" },
                 cs = { "csharpier" },
@@ -39,7 +39,7 @@ return {
         }
 
         conform.formatters.latexindent = {
-	    append_args = { "-y=defaultIndent: '    '" }
+            append_args = { "-y=defaultIndent: '    '" },
         }
 
         vim.keymap.set("n", "<leader>ff", function()
