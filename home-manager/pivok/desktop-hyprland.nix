@@ -90,6 +90,8 @@
   modHome.dev.bundle.favourite.enable = true;
   modHome.dev.bundle.web.enable = true;
   modHome.dev.bundle.slang.enable = true;
+  modHome.dev.bundle.latex.enable = true;
+  modHome.dev.bundle.typst.enable = true;
 
   modHome.media.nomacs = {
     enable = true;
@@ -103,16 +105,6 @@
   modHome.media.zathura = {
     enable = true;
     defaultPdfViewer = true;
-  };
-
-  modHome.tools.latex = {
-    enable = true;
-    lsp.enable = true;
-  };
-
-  modHome.tools.typst = {
-    enable = true;
-    lsp.enable = true;
   };
 
   modHome.browser.firefox = {

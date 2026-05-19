@@ -21,6 +21,8 @@ in
     tailwind.enable = lib.mkEnableOption "Enable Tailwind LSP";
     svelte.enable = lib.mkEnableOption "Enable Svelte LSP";
     csharp.enable = lib.mkEnableOption "Enable C# LSP";
+    latex.enable = lib.mkEnableOption "Enable LaTeX LSP";
+    typst.enable = lib.mkEnableOption "Enable Typst LSP";
   };
 
   config = {
@@ -35,6 +37,18 @@ in
       (if cfg.tailwind.enable then [ pkgs.tailwindcss-language-server ] else [ ])
       (if cfg.svelte.enable then [ pkgs.svelte-language-server ] else [ ])
       (if cfg.csharp.enable then [ pkgs.omnisharp-roslyn ] else [ ])
+      (
+        if cfg.latex.enable then
+          with pkgs;
+          [
+            texlab
+            tree-sitter
+            nodejs
+          ]
+        else
+          [ ]
+      )
+      (if cfg.typst.enable then [ pkgs.tinymist ] else [ ])
     ];
   };
 }

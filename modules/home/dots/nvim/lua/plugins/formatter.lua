@@ -19,6 +19,9 @@ return {
                 typescript = { "prettier" },
                 svelte = { "prettier" },
 
+                tex = { "latexindent" },
+                typst = { "typstyle" },
+
                 nix = { "nixfmt" },
             },
         })
@@ -33,6 +36,10 @@ return {
 
         conform.formatters.prettier = {
             append_args = { "--tab-width", "4" },
+        }
+
+        conform.formatters.latexindent = {
+	    append_args = { "-y=defaultIndent: '    '" }
         }
 
         vim.keymap.set("n", "<leader>ff", function()
