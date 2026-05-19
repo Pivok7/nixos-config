@@ -10,6 +10,37 @@
     inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
   ];
 
+  # GTK
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+    iconTheme = {
+      name = "Papirus";
+      package = pkgs.papirus-icon-theme;
+    };
+    cursorTheme = {
+      name = "Phinger";
+      package = pkgs.phinger-cursors;
+    };
+    font = {
+      name = "Iosevka Etoile";
+      package = pkgs.iosevka-bin.override {
+        variant = "Etoile";
+      };
+    };
+  };
+
+  # QT
+  qt = {
+    enable = true;
+    style = {
+      name = "breeze";
+    };
+  };
+
   programs.git = {
     enable = true;
     settings = {
@@ -28,14 +59,8 @@
     enable = true;
     font = "Iosevka Etoile";
   };
-  modHome.desktop.hyprpaper = {
-    enable = true;
-    wallpaper = "/home/pivok/Obrazy/wallpaper.png";
-  };
   modHome.desktop.screenshot.grimSlurpSwappy.enable = true;
-  modHome.desktop.launcher.wofi.enable = true;
   modHome.desktop.udiskie.enable = true;
-  modHome.dots.wlogout.enable = true;
 
   modHome.dots.neovim = {
     enable = true;
@@ -101,24 +126,12 @@
 
   home.packages =
     (with pkgs; [
-      # Desktop
-      hyprsunset
-      wofi
-      wlogout
-      swaynotificationcenter
-
-      # Eww deps
-      eww
-      socat
-      playerctl
-      pwvucontrol
-      networkmanagerapplet
-
       # Gui
       libreoffice
       keepassxc
       qbittorrent
       syncthing
+      pwvucontrol
 
       # Creative
       gimp
@@ -141,6 +154,7 @@
       obs-studio
       glow
       brightnessctl
+      hyprsunset
 
       # Fonts
       nerd-fonts.symbols-only
@@ -151,6 +165,7 @@
     ++ (with pkgs-unstable; [
       opencode
       tor-browser
+      noctalia-shell
     ])
     ++ (with pkgs.nur-pivok; [
       makker
