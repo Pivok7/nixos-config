@@ -161,6 +161,7 @@
 
       # Utils
       hyprsunset
+      playerctl
       wget
       dash
       killall
