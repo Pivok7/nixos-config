@@ -119,6 +119,7 @@
   home.packages =
     (with pkgs; [
       # Gui
+      blueman
       libreoffice
       keepassxc
       qbittorrent
