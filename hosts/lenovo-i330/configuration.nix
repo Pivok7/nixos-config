@@ -118,6 +118,7 @@ in
   modSys.wine.enable = true;
   modSys.pipewire.enable = true;
   modSys.bluetooth.enable = true;
+  services.upower.enable = true;
 
   virtualisation.docker = {
     enable = true;
