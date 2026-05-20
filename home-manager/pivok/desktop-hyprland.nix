@@ -143,6 +143,7 @@
 
       # Creative
       gimp
+      krita
       inkscape
       reaper
       libresprite
