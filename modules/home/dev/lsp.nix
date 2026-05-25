@@ -42,7 +42,6 @@ in
           with pkgs;
           [
             texlab
-            tree-sitter
             nodejs
           ]
         else
