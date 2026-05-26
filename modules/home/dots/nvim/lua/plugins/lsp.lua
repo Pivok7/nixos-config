@@ -14,6 +14,7 @@ return {
     vim.lsp.enable("svelte"),
     vim.lsp.enable("slangd"),
     vim.lsp.enable("omnisharp"),
+    vim.lsp.enable("nushell"),
 
     vim.lsp.config("tinymist", {
 	cmd = { "tinymist" },
