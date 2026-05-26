@@ -23,7 +23,7 @@ in
     };
 
     home.packages = lib.concatLists [
-      [ pkgs.gcc ]
+      [ pkgs.gcc pkgs.tree-sitter ]
       (if cfg.clipboardWl.enable then [ pkgs.wl-clipboard ] else [ ])
       (if cfg.ripgrep.enable then [ pkgs.ripgrep ] else [ ])
     ];
