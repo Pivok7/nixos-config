@@ -8,6 +8,9 @@ prepend_keymap = [
 	{ on = "!",	run = 'shell "$SHELL" --block --confirm', desc = "Open shell here" },
 	{ on = "<C-n>", run = "plugin dragon", desc = "Drag file(s) with dragon" },
 	{ on = "=", run = "plugin what-size", desc = "Calc size of selection or cwd" },
+
+	{ on = [ "c", "a", "a" ], run = "plugin compress", desc = "Archive selected files" },
+	{ on = [ "c", "a", "p" ], run = "plugin compress -p", desc = "Archive selected files (password)" },
 ]
 
 # Changed default keybinds
