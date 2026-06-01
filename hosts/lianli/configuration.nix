@@ -54,16 +54,16 @@ in
     };
   };
   # Boot splash screen
-  boot.plymouth = {
-    enable = true;
-    theme = "rings";
-    themePackages = with pkgs; [
-      # By default we would install all themes
-      (adi1090x-plymouth-themes.override {
-        selected_themes = [ "rings" ];
-      })
-    ];
-  };
+  #boot.plymouth = {
+  #  enable = true;
+  #  theme = "rings";
+  #  themePackages = with pkgs; [
+  #    # By default we would install all themes
+  #    (adi1090x-plymouth-themes.override {
+  #      selected_themes = [ "rings" ];
+  #    })
+  #  ];
+  #};
 
   fileSystems."/mnt/Windows" = {
     device = "/dev/disk/by-uuid/10866BEE866BD2B0";
