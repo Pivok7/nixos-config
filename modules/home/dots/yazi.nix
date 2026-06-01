@@ -20,7 +20,6 @@ in
         pkgs.yazi
         pkgs.ripgrep
         pkgs.fd
-        pkgs.zoxide
         pkgs.jq
       ]
       (if cfg.dragAndDrop.enable then [ pkgs.dragon-drop ] else [ ])
