@@ -11,6 +11,7 @@ let
       "nvidia-x11"
       "nvidia-settings"
       "nvidia-persistanced"
+      "nvidia-kernel-modules"
     ];
     steam = [
       "steam"
