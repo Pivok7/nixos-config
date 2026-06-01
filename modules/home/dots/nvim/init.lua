@@ -3,7 +3,7 @@ require("core.keymaps")
 
 require("plugins.lsp-config")
 require("plugins.autocompletion")
-require("plugins.treesitter") -- TODO: fix
+require("plugins.treesitter")
 require("plugins.formatter")
 require("plugins.bufferline")
 require("plugins.lualine")
@@ -15,4 +15,4 @@ require("plugins.misc.indent-blankline")
 require("plugins.misc.autopairs")
 require("plugins.misc.hlsearch")
 require("plugins.misc.todo-comments")
---require("plugins.misc.colorizer") TODO: Send PR with fix
+require("plugins.misc.colorizer")
