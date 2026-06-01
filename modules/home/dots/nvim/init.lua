@@ -3,6 +3,7 @@ require("core.keymaps")
 
 require("plugins.lsp-config")
 require("plugins.autocompletion")
+require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.formatter")
 require("plugins.bufferline")
