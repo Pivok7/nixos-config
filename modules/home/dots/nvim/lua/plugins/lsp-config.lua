@@ -1,0 +1,21 @@
+vim.pack.add({"https://github.com/neovim/nvim-lspconfig"})
+
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("nixd")
+vim.lsp.enable("clangd")
+vim.lsp.enable("ty")
+vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("zls")
+vim.lsp.enable("texlab")
+vim.lsp.enable("tinymist")
+vim.lsp.enable("ts_ls")
+vim.lsp.enable("tailwindcss")
+vim.lsp.enable("svelte")
+vim.lsp.enable("slangd")
+vim.lsp.enable("omnisharp")
+vim.lsp.enable("nushell")
+
+vim.lsp.config("tinymist", {
+    cmd = { "tinymist" },
+    filetypes = { "typst" },
+})

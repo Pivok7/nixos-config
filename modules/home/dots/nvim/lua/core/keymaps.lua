@@ -17,16 +17,12 @@ vim.keymap.set({ "t" }, "<Esc>", "<C-\\><C-n>", { silent = true })
 -- Select all
 vim.keymap.set("n", "<leader><C-a>", "vgg{oG}", { desc = "Select all" }, opts)
 
--- Delete single character without copying into register
+-- Delete selection without copying into register
 vim.keymap.set({ "n", "v" }, "x", '"_x', opts)
 
 -- Vertical scroll and center
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
-
--- Tabs
-vim.keymap.set("n", "<leader>wq", "<cmd>Bdelete!<CR>", { desc = "Close current tab" }, opts)
-vim.keymap.set("n", "<leader>wn", "<cmd>enew <CR>", { desc = "Open new tab" }, opts)
 
 -- Open terminal
 --vim.keymap.set('n', '<leader>/', '<C-w>s <C-w>k <C-w>_ <C-w>j 12<C-w>+ :terminal <CR>', {desc = 'Open terminal'}, opts)
@@ -69,7 +65,6 @@ vim.keymap.set("n", "<leader>vl", function()
 end, { desc = "Toggle virtual text mode" })
 
 -- Toggle virtual text
-
 vim.keymap.set("n", "<leader>vt", function()
     virtual_text_active = not virtual_text_active
     update_virtual_text()

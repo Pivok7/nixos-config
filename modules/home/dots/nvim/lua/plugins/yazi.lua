@@ -1,21 +1,13 @@
-return {
-    "mikavilpas/yazi.nvim",
-    event = "VeryLazy",
-    dependencies = { "folke/snacks.nvim" },
+vim.pack.add({
+    "https://github.com/mikavilpas/yazi.nvim",
+    "https://github.com/nvim-lua/plenary.nvim",
+})
 
-    keys = {
-        {
-            "<leader>e",
-            mode = { "n", "v" },
-            "<cmd>Yazi<cr>",
-            desc = "Open yazi",
-        },
+require("yazi").setup({
+    open_for_directories = false,
+    keymaps = {
+	show_help = "<f1>",
     },
+})
 
-    opts = {
-        open_for_directories = false,
-        keymaps = {
-            show_help = "<f1>",
-        },
-    },
-}
+vim.keymap.set({ "n", "v" }, "<leader>e", "<cmd>Yazi<cr>", { desc = "Open yazi" })

@@ -1,49 +1,46 @@
-return {
-    "stevearc/conform.nvim",
-    opts = {},
-    config = function()
-        local conform = require("conform")
-        conform.setup({
-            formatters_by_ft = {
-                lua = { "stylua" },
-                c = { "clang_format" },
-                cpp = { "clang_format" },
-                rust = { "rustfmt" },
-                zig = { "zigfmt" },
-                python = { "ruff_format" },
-                cs = { "csharpier" },
+vim.pack.add({"https://github.com/stevearc/conform.nvim"})
 
-                html = { "prettier" },
-                css = { "prettier" },
-                javascript = { "prettier" },
-                typescript = { "prettier" },
-                svelte = { "prettier" },
+vim.keymap.set("n", "<leader>ff", function()
+    require("conform").format()
+end)
 
-                tex = { "latexindent" },
-                typst = { "typstyle" },
+require("conform").setup({
+    formatters_by_ft = {
+	lua = { "stylua" },
+	c = { "clang_format" },
+	cpp = { "clang_format" },
+	rust = { "rustfmt" },
+	zig = { "zigfmt" },
+	python = { "ruff_format" },
+	cs = { "csharpier" },
 
-                nix = { "nixfmt" },
-            },
-        })
+	html = { "prettier" },
+	css = { "prettier" },
+	javascript = { "prettier" },
+	typescript = { "prettier" },
+	svelte = { "prettier" },
 
-        conform.formatters.stylua = {
-            append_args = { "--indent-type", "Spaces", "--indent-width", "4" },
-        }
+	tex = { "latexindent" },
+	typst = { "typstyle" },
 
-        conform.formatters.clang_format = {
-            append_args = { "--style", "{BasedOnStyle: llvm, IndentWidth: 4}" },
-        }
+	nix = { "nixfmt" },
+    },
 
-        conform.formatters.prettier = {
-            append_args = { "--tab-width", "4" },
-        }
+    formatters = {
+	stylua = {
+	    append_args = { "--indent-type", "Spaces", "--indent-width", "4" },
+	},
 
-        conform.formatters.latexindent = {
-            append_args = { "-y=defaultIndent: '    '" },
-        }
+	clang_format = {
+	    append_args = { "--style", "{BasedOnStyle: llvm, IndentWidth: 4}" },
+	},
 
-        vim.keymap.set("n", "<leader>ff", function()
-            conform.format()
-        end)
-    end,
-}
+	prettier = {
+	    append_args = { "--tab-width", "4" },
+	},
+
+	latexindent = {
+	    append_args = { "-y=defaultIndent: '    '" },
+	},
+    },
+})
