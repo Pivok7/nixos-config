@@ -82,6 +82,7 @@
       libresprite
 
       # Utils
+      distrobox
       lazygit
       btop
       wget

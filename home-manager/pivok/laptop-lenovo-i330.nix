@@ -138,6 +138,7 @@
       zellij
 
       # Utils
+      distrobox
       wget
       killall
       zip

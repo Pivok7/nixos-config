@@ -154,6 +154,7 @@
 
       # Utils
       hyprsunset
+      distrobox
       playerctl
       wget
       dash
