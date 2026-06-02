@@ -76,16 +76,6 @@
             inherit home-manager;
           };
         };
-
-        vm-dev = nixpkgs.lib.nixosSystem {
-          modules = [
-            ./hosts/vm-dev/configuration.nix
-          ];
-          specialArgs = {
-            inherit inputs;
-            inherit home-manager;
-          };
-        };
       };
     };
 }
