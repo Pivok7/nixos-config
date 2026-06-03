@@ -47,8 +47,6 @@ cmp.setup({
         matching = { disallow_symbol_nonprefix_matching = false },
     }),
 
-    experimental = { ghost_text = true },
-
     enabled = function()
         return vim.g.cmptoggle
     end,
