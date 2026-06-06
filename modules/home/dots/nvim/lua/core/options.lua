@@ -16,6 +16,7 @@ vim.o.winborder = "rounded" -- Rounded snippets windows
 
 vim.diagnostic.config({ virtual_text = true }) -- Required for LSP messages
 vim.diagnostic.config({ virtual_lines = false }) -- Use virtual lines
+vim.diagnostic.config({ jump = { float = true }}) -- Show box with error
 
 vim.g.cmptoggle = true -- Set cmp autocompletion on as default
 
