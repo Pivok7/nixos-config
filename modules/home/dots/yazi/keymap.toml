@@ -13,4 +13,8 @@ prepend_keymap = [
 	{ on = [ "c", "a", "p" ], run = "plugin compress -p", desc = "Archive selected files (password)" },
 
 	{ on = "<Enter>",   run = "plugin smart-enter", desc = "Enter selected directory" },
+
+	# Don't wrap cursor
+	{ on = "<Up>",   run = "arrow -1", desc = "Previous file" },
+	{ on = "<Down>", run = "arrow 1", desc = "Next file" },
 ]
