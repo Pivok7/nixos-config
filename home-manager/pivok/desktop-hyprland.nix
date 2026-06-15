@@ -144,6 +144,7 @@
       # Creative
       gimp
       krita
+      blender
       inkscape
       reaper
       libresprite

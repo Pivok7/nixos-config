@@ -78,6 +78,7 @@
 
       # Creative
       inkscape
+      blender
       gimp
       libresprite
 
