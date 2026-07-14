@@ -124,11 +124,12 @@ in
   modSys.steam.enable = true;
   modSys.udisks2.enable = true;
 
-  virtualisation.docker.enable = true;
-
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
+
+  virtualisation.docker.enable = true;
+  services.syncthing.enable = true;
 
   environment.systemPackages = [ ];
 

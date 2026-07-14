@@ -122,10 +122,8 @@ in
   modSys.udisks2.enable = true;
   services.upower.enable = true;
 
-  virtualisation.docker = {
-    enable = true;
-    rootless.enable = true;
-  };
+  virtualisation.docker.enable = true;
+  services.syncthing.enable = true;
 
   environment.systemPackages = [ ];
 

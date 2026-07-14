@@ -121,11 +121,6 @@ in
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "pivok";
 
-  virtualisation.docker = {
-    enable = true;
-    rootless.enable = true;
-  };
-
   # Flatpak
   services.flatpak.update.onActivation = true;
   services.flatpak = {
@@ -134,6 +129,9 @@ in
       "org.vinegarhq.Sober"
     ];
   };
+
+  virtualisation.docker.enable = true;
+  services.syncthing.enable = true;
 
   # Packages installed in system profile
   environment.systemPackages = [ ];
