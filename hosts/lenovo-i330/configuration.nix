@@ -123,7 +123,12 @@ in
   services.upower.enable = true;
 
   virtualisation.docker.enable = true;
-  services.syncthing.enable = true;
+  services.syncthing = {
+    enable = true;
+    user = "pivok";
+    dataDir = "/home/pivok/Sync";
+    configDir = "/home/pivok/.config/syncthing";
+  };
 
   environment.systemPackages = [ ];
 
