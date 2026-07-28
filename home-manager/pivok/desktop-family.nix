@@ -75,6 +75,7 @@
       qbittorrent
       syncthing
       zed-editor
+      kdePackages.skanlite
 
       # Creative
       inkscape
