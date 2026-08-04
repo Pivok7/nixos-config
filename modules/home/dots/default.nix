@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./ghostty.nix
     ./hyprland.nix
     ./nvim.nix
     ./wlogout.nix

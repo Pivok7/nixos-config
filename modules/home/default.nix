@@ -6,6 +6,6 @@
     ./dev/default.nix
     ./dots/default.nix
     ./media/default.nix
-    ./tui/default.nix
+    ./term/default.nix
   ];
 }

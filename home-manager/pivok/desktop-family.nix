@@ -30,10 +30,10 @@
     enable = true;
     dragAndDrop.enable = true;
   };
-  modHome.dots.ghostty.enable = true;
 
-  modHome.tui.kitty.enable = true;
-  modHome.tui.nushell.enable = true;
+  modHome.term.ghostty.enable = true;
+  modHome.term.kitty.enable = true;
+  modHome.term.nushell.enable = true;
 
   modHome.dev.bundle.favourite.enable = true;
   modHome.dev.bundle.web.enable = true;

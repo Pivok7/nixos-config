@@ -1,7 +1,8 @@
 { ... }:
 {
   imports = [
-    ./nushell.nix
+    ./ghostty.nix
     ./kitty.nix
+    ./nushell.nix
   ];
 }

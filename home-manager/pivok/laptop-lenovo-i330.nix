@@ -72,13 +72,16 @@
     enable = true;
     dragAndDrop.enable = true;
   };
-  modHome.dots.ghostty.enable = true;
 
-  modHome.tui.kitty = {
+  modHome.term.ghostty = {
+    enable = true;
+    gtkStyle = false;
+  };
+  modHome.term.kitty = {
     enable = true;
     font.size = 18.0;
   };
-  modHome.tui.nushell = {
+  modHome.term.nushell = {
     enable = true;
     hyprsunset.enable = true;
   };

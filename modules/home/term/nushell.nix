@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.modHome.tui.nushell;
+  cfg = config.modHome.term.nushell;
 
   nushellConfig = ''
     $env.config.show_banner = false
@@ -17,7 +17,7 @@ let
   '';
 in
 {
-  options.modHome.tui.nushell = {
+  options.modHome.term.nushell = {
     enable = lib.mkEnableOption "Setup nushell";
     hyprsunset.enable = lib.mkEnableOption "Add hsct alias";
   };
