@@ -74,6 +74,7 @@
     enable = true;
     dragAndDrop.enable = true;
   };
+  modHome.dots.ghostty.enable = true;
 
   modHome.desktop.screenshot.grimSlurpSwappy.enable = true;
   modHome.desktop.udiskie.enable = true;

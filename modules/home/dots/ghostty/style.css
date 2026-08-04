@@ -1,0 +1,14 @@
+titlebar {
+  margin: 0;
+  padding: 0;
+}
+
+tabbar tabbox {
+    margin: 0;
+    padding: 0;
+}
+
+tabbar tabbox tab label {
+    font-family: Iosevka;
+    font-size: 20px;
+}

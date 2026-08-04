@@ -72,6 +72,7 @@
     enable = true;
     dragAndDrop.enable = true;
   };
+  modHome.dots.ghostty.enable = true;
 
   modHome.tui.kitty = {
     enable = true;

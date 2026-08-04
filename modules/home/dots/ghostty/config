@@ -1,0 +1,14 @@
+font-family = Iosevka
+font-family-bold = Iosevka Semibold
+font-size = 18
+
+command = nu
+confirm-close-surface = false
+mouse-scroll-multiplier = 1
+
+theme = Ayu
+background-opacity = 0.95
+
+gtk-custom-css = ./style.css
+gtk-wide-tabs = false
+window-decoration = server
