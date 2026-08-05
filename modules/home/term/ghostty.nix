@@ -14,7 +14,7 @@ let
 
     command = ${cfg.shell}
     confirm-close-surface = false
-    mouse-scroll-multiplier = 1
+    mouse-scroll-multiplier = precision:${toString cfg.scrollMultiplier.precision}, discrete:${toString cfg.scrollMultiplier.discrete}
 
     theme = Ayu
     background-opacity = ${toString cfg.opacity} 
@@ -70,6 +70,18 @@ in
       type = lib.types.bool;
       default = true;
       description = "Enable gtk style";
+    };
+    scrollMultiplier = {
+      precision = lib.mkOption {
+        type = lib.types.float;
+        default = 1.0;
+        description = "Set scroll multiplier for precision devices";
+      };
+      discrete = lib.mkOption {
+        type = lib.types.int;
+        default = 3;
+        description = "Set scroll multiplier for discrete devices";
+      };
     };
   };
 
