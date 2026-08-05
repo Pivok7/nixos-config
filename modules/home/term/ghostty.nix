@@ -74,7 +74,7 @@ in
     scrollMultiplier = {
       precision = lib.mkOption {
         type = lib.types.float;
-        default = 1.0;
+        default = 0.1;
         description = "Set scroll multiplier for precision devices";
       };
       discrete = lib.mkOption {
