@@ -10,14 +10,14 @@ let
 
   ghosttyConfig = ''
     font-family = ${cfg.font.name}
-    font-size = ${toString cfg.font.size} 
+    font-size = ${toString cfg.font.size}
 
     command = ${cfg.shell}
     confirm-close-surface = false
     mouse-scroll-multiplier = precision:${toString cfg.scrollMultiplier.precision}, discrete:${toString cfg.scrollMultiplier.discrete}
 
     theme = Ayu
-    background-opacity = ${toString cfg.opacity} 
+    background-opacity = ${toString cfg.opacity}
 
     gtk-wide-tabs = false
     window-decoration = server
