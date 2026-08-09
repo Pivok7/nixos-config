@@ -76,10 +76,7 @@ in
         };
 
         # Extensions
-        ExtensionSettings = {
-          "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
-        }
-        // extensions.extensionsList;
+        policies = extensions.extensionsList;
       };
     };
   };

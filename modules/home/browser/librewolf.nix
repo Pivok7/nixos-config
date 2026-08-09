@@ -33,15 +33,8 @@ in
         "privacy.clearOnShutdown_v2.historyFormDataAndDownloads" = true;
       };
 
-      # Policies
-      # Check about:policies#documentation for options.
-      policies = {
-        # Extensions
-        ExtensionSettings = {
-          "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
-        }
-        // extensions.extensionsList;
-      };
+      # Extensions
+      policies = extensions.extensionsList;
     };
   };
 }

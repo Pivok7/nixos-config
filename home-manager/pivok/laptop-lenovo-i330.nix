@@ -111,7 +111,7 @@
     enable = true;
     addons = [
       "ublock"
-      "clean-urls"
+      "privacy-badger"
       "dark-reader"
       "bandcamp-volume"
       "bandcamp-killer"
