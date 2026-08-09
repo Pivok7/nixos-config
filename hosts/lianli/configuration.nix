@@ -39,6 +39,12 @@ in
     rpcs3.enable = true;
   };
 
+  # Allow deprecated
+  nixpkgs.config.permittedInsecurePackages = [
+    # Logseq
+    "electron-39.8.10"
+  ];
+
   # Bootloader.
   boot.loader.timeout = 3;
   boot.loader.efi.canTouchEfiVariables = true;

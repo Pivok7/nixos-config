@@ -115,6 +115,12 @@ in
     ];
   };
 
+  # Allow deprecated
+  nixpkgs.config.permittedInsecurePackages = [
+    # Logseq
+    "electron-39.8.10"
+  ];
+
   # Enable essential services
   modSys.wine.enable = true;
   modSys.pipewire.enable = true;

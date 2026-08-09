@@ -83,6 +83,7 @@
       blender
       gimp
       libresprite
+      logseq
 
       # Utils
       distrobox

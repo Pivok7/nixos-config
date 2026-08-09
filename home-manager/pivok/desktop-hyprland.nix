@@ -149,6 +149,7 @@
       inkscape
       reaper
       libresprite
+      logseq
 
       # Tui
       lazygit

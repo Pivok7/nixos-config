@@ -134,6 +134,7 @@
       gimp
       inkscape
       libresprite
+      logseq
 
       # Tui
       foot

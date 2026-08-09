@@ -39,6 +39,12 @@ in
     steam.enable = true;
   };
 
+  # Allow deprecated
+  nixpkgs.config.permittedInsecurePackages = [
+    # Logseq
+    "electron-39.8.10"
+  ];
+
   # Bootloader
   boot.loader.timeout = 2;
   boot.loader.grub = {
