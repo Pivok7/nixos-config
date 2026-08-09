@@ -110,11 +110,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777199202,
-        "narHash": "sha256-y6Pn3NKjf/3ie4IcFTG6hH+N+qwaJnvAhZSAWtyounQ=",
+        "lastModified": 1786272759,
+        "narHash": "sha256-VoGrzGcwhCEOwvadxNAjp1y7CgsbNn6+Nk7Eh8WbHSc=",
         "owner": "Pivok7",
         "repo": "nur-packages",
-        "rev": "108064771833b9584b3a35f0ab4e324c84b8c723",
+        "rev": "b2219c87627130feac2ca3ef9c125846d651e937",
         "type": "github"
       },
       "original": {

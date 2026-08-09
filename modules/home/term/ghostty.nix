@@ -1,7 +1,7 @@
 {
   config,
   lib,
-  pkgs-unstable,
+  pkgs,
   ...
 }:
 
@@ -87,7 +87,7 @@ in
 
   config = lib.mkIf (cfg.enable) {
     home.packages = [
-      pkgs-unstable.ghostty
+      pkgs.nur-pivok.ghostty
     ];
 
     home.file.".config/ghostty/config.ghostty" = {
