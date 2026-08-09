@@ -32,7 +32,6 @@
   };
 
   modHome.term.ghostty.enable = true;
-  modHome.term.kitty.enable = true;
   modHome.term.nushell.enable = true;
 
   modHome.dev.bundle.favourite.enable = true;

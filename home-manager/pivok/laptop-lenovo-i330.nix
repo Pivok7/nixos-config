@@ -77,10 +77,6 @@
     enable = true;
     gtkStyle = false;
   };
-  modHome.term.kitty = {
-    enable = true;
-    font.size = 18.0;
-  };
   modHome.term.nushell = {
     enable = true;
     hyprsunset.enable = true;

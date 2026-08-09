@@ -79,10 +79,6 @@
   modHome.desktop.udiskie.enable = true;
 
   modHome.term.ghostty.enable = true;
-  modHome.term.kitty = {
-    enable = true;
-    font.size = 20.0;
-  };
   modHome.term.nushell = {
     enable = true;
     hyprsunset.enable = true;
