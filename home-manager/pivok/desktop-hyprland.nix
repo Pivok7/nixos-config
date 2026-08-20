@@ -78,7 +78,10 @@
   modHome.desktop.screenshot.grimSlurpSwappy.enable = true;
   modHome.desktop.udiskie.enable = true;
 
-  modHome.term.ghostty.enable = true;
+  modHome.term.ghostty = {
+    enable = true;
+    font.size = 20;
+  };
   modHome.term.nushell = {
     enable = true;
     hyprsunset.enable = true;
