@@ -7,6 +7,7 @@
     ./lua.nix
     ./nix.nix
     ./python.nix
+    ./rocq.nix
     ./rust.nix
     ./slang.nix
     ./typst.nix

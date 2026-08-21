@@ -21,7 +21,6 @@ in
     };
     modHome.dev.fmt.web.enable = true;
     home.packages = with pkgs; [
-      live-server
       typescript
       nodejs
     ];

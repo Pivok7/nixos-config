@@ -23,6 +23,7 @@ in
     csharp.enable = lib.mkEnableOption "Enable C# LSP";
     latex.enable = lib.mkEnableOption "Enable LaTeX LSP";
     typst.enable = lib.mkEnableOption "Enable Typst LSP";
+    rocq.enable = lib.mkEnableOption "Enable Rocq LSP";
   };
 
   config = {
@@ -48,6 +49,7 @@ in
           [ ]
       )
       (if cfg.typst.enable then [ pkgs.tinymist ] else [ ])
+      (if cfg.rocq.enable then [ pkgs.rocqPackages.vsrocq-language-server ] else [ ])
     ];
   };
 }

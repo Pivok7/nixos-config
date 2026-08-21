@@ -92,6 +92,7 @@
   modHome.dev.bundle.slang.enable = true;
   modHome.dev.bundle.latex.enable = true;
   modHome.dev.bundle.typst.enable = true;
+  modHome.dev.bundle.rocq.enable = true;
 
   modHome.media.nomacs = {
     enable = true;
