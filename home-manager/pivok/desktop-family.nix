@@ -39,6 +39,7 @@
   modHome.dev.bundle.slang.enable = true;
   modHome.dev.bundle.latex.enable = true;
   modHome.dev.bundle.typst.enable = true;
+  modHome.dev.bundle.rocq.enable = true;
 
   modHome.media.nomacs.enable = true;
   modHome.media.vlc.enable = true;
@@ -68,7 +69,6 @@
 
   home.packages =
     (with pkgs; [
-      # Gui
       ungoogled-chromium
       libreoffice
       keepassxc
@@ -85,7 +85,6 @@
       logseq
 
       # Utils
-      distrobox
       lazygit
       btop
       wget
@@ -95,7 +94,8 @@
       ffmpeg
       obs-studio
       glow
-      ccrypt
+      radicle-tui
+      radicle-desktop
 
       # Games
       prismlauncher

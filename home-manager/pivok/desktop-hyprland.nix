@@ -131,7 +131,6 @@
 
   home.packages =
     (with pkgs; [
-      # Gui
       blueman
       pwvucontrol
       easyeffects
@@ -151,16 +150,11 @@
       libresprite
       logseq
 
-      # Tui
-      lazygit
-      btop
-
       # Utils
       hyprsunset
       distrobox
       playerctl
       wget
-      dash
       killall
       zip
       unzip
@@ -168,6 +162,10 @@
       ffmpeg
       obs-studio
       glow
+      lazygit
+      btop
+      radicle-tui
+      radicle-desktop
 
       # Fonts
       nerd-fonts.symbols-only

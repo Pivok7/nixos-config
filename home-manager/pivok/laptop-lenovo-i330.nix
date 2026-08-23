@@ -118,7 +118,6 @@
 
   home.packages =
     (with pkgs; [
-      # Gui
       blueman
       libreoffice
       keepassxc
@@ -132,12 +131,6 @@
       libresprite
       logseq
 
-      # Tui
-      foot
-      lazygit
-      btop
-      zellij
-
       # Utils
       distrobox
       wget
@@ -150,6 +143,11 @@
       glow
       brightnessctl
       hyprsunset
+      lazygit
+      btop
+      foot
+      radicle-tui
+      radicle-desktop
 
       # Fonts
       nerd-fonts.symbols-only
