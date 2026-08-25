@@ -1,10 +1,10 @@
 require("core.options")
 require("core.keymaps")
-require("core.treesitter")
 
 require("plugins.lsp-config")
 require("plugins.autocompletion")
 require("plugins.telescope")
+require("plugins.treesitter")
 require("plugins.formatter")
 require("plugins.bufferline")
 require("plugins.lualine")
