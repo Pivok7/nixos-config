@@ -76,6 +76,7 @@
       syncthing
       zed-editor
       kdePackages.skanlite
+      telegram-desktop
 
       # Creative
       inkscape
