@@ -15,6 +15,7 @@ in
 
   config = lib.mkIf (cfg.enable) {
     modHome.dev.lsp = {
+      html.enable = true;
       typescript.enable = true;
       tailwind.enable = true;
       svelte.enable = true;

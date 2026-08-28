@@ -1,9 +1,5 @@
 vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" })
 
-vim.lsp.config("tinymist", {
-    cmd = { "tinymist" },
-    filetypes = { "typst" },
-})
 
 local servers = {
     lua_ls = "lua-language-server",
@@ -15,6 +11,7 @@ local servers = {
     texlab = "texlab",
     tinymist = "tinymist",
     ts_ls = "typescript-language-server",
+    superhtml = "superhtml",
     tailwindcss = "tailwindcss-language-server",
     svelte = "svelteserver",
     slangd = "slangd",

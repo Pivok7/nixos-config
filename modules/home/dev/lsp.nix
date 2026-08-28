@@ -17,6 +17,7 @@ in
     rust.enable = lib.mkEnableOption "Enable Rust LSP";
     python.enable = lib.mkEnableOption "Enable Python LSP";
     lua.enable = lib.mkEnableOption "Enable Lua LSP";
+    html.enable = lib.mkEnableOption "Enable HTML LSP";
     typescript.enable = lib.mkEnableOption "Enable Typescript LSP";
     tailwind.enable = lib.mkEnableOption "Enable Tailwind LSP";
     svelte.enable = lib.mkEnableOption "Enable Svelte LSP";
@@ -34,6 +35,7 @@ in
       (if cfg.rust.enable then [ pkgs.rust-analyzer ] else [ ])
       (if cfg.python.enable then [ pkgs.ty ] else [ ])
       (if cfg.lua.enable then [ pkgs.lua-language-server ] else [ ])
+      (if cfg.html.enable then [ pkgs.superhtml ] else [ ])
       (if cfg.typescript.enable then [ pkgs.typescript-language-server ] else [ ])
       (if cfg.tailwind.enable then [ pkgs.tailwindcss-language-server ] else [ ])
       (if cfg.svelte.enable then [ pkgs.svelte-language-server ] else [ ])
