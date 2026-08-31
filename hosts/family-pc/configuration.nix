@@ -113,7 +113,6 @@ in
     extraGroups = [
       "networkmanager"
       "wheel"
-      "docker"
     ];
   };
 
@@ -137,6 +136,7 @@ in
   };
 
   virtualisation.docker.enable = true;
+
   services.syncthing = {
     enable = true;
     user = "pivok";
