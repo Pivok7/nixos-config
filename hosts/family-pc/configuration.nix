@@ -81,8 +81,6 @@ in
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
-  # For GPU pass-through
-  hardware.nvidia-container-toolkit.enable = true;
 
   # Enable GPU graphics
   hardware.graphics = {
