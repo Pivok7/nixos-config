@@ -43,16 +43,6 @@
 
   modHome.media.nomacs.enable = true;
   modHome.media.vlc.enable = true;
-  modHome.media.zathura.enable = true;
-
-  modHome.browser.firefox = {
-    enable = true;
-    addons = [
-      "ublock"
-      "privacy-badger"
-      "youtube-dislike"
-    ];
-  };
 
   modHome.browser.librewolf = {
     enable = true;
