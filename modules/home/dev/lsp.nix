@@ -37,7 +37,7 @@ in
       (if cfg.lua.enable then [ pkgs.lua-language-server ] else [ ])
       (if cfg.html.enable then [ pkgs.superhtml ] else [ ])
       (if cfg.typescript.enable then [ pkgs.typescript-language-server ] else [ ])
-      (if cfg.tailwind.enable then [ pkgs.tailwindcss-language-server ] else [ ])
+      (if cfg.tailwind.enable then [ pkgs-unstable.tailwindcss-language-server ] else [ ])
       (if cfg.svelte.enable then [ pkgs.svelte-language-server ] else [ ])
       (if cfg.csharp.enable then [ pkgs.omnisharp-roslyn ] else [ ])
       (
