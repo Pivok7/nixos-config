@@ -50,7 +50,7 @@ in
         else
           [ ]
       )
-      (if cfg.typst.enable then [ pkgs.tinymist ] else [ ])
+      (if cfg.typst.enable then [ pkgs-unstable.tinymist ] else [ ])
       (if cfg.rocq.enable then [ pkgs.rocqPackages.vsrocq-language-server ] else [ ])
     ];
   };

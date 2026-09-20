@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgs-unstable,
   ...
 }:
 
@@ -27,7 +28,7 @@ in
       (if cfg.lua.enable then [ pkgs.stylua ] else [ ])
       (if cfg.web.enable then [ pkgs.prettier ] else [ ])
       (if cfg.csharp.enable then [ pkgs.csharpier ] else [ ])
-      (if cfg.typst.enable then [ pkgs.typstyle ] else [ ])
+      (if cfg.typst.enable then [ pkgs-unstable.typstyle ] else [ ])
     ];
   };
 }

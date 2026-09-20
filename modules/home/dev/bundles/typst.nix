@@ -1,7 +1,7 @@
 {
   config,
   lib,
-  pkgs,
+  pkgs-unstable,
   ...
 }:
 
@@ -16,7 +16,7 @@ in
   config = lib.mkIf (cfg.enable) {
     modHome.dev.lsp.typst.enable = true;
     modHome.dev.fmt.typst.enable = true;
-    home.packages = with pkgs; [
+    home.packages = with pkgs-unstable; [
       typst
     ];
   };
