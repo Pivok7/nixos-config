@@ -124,7 +124,6 @@
       "dark-reader"
       "bandcamp-volume"
       "bandcamp-killer"
-      "youtube-dislike"
       "youtube-unhook"
     ];
   };

@@ -6,7 +6,6 @@
     "dark-reader"
     "bandcamp-volume"
     "bandcamp-killer"
-    "youtube-dislike"
     "youtube-unhook"
   ];
 
@@ -28,9 +27,6 @@
     };
     "{1bac25ad-d6dd-44c9-bc95-628027e5e126}" = lib.mkIf (lib.elem "bandcamp-killer" cfg.addons) {
       install_url = "https://addons.mozilla.org/firefox/downloads/file/3499802/bandcamp_killer_1_0-1.0.xpi";
-    };
-    "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = lib.mkIf (lib.elem "youtube-dislike" cfg.addons) {
-      install_url = "https://addons.mozilla.org/firefox/downloads/file/4371820/return_youtube_dislikes-3.0.0.18.xpi";
     };
     "myallychou@gmail.com" = lib.mkIf (lib.elem "youtube-unhook" cfg.addons) {
       install_url = "https://addons.mozilla.org/firefox/downloads/file/4263531/youtube_recommended_videos-1.6.7.xpi";
