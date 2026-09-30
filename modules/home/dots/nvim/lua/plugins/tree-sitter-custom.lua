@@ -23,30 +23,6 @@ vim.api.nvim_create_autocmd("User", {
                 queries = "tree-sitter-ziggy-schema/queries",
             },
         }
-
-        require("nvim-treesitter.parsers").superhtml = {
-            install_info = {
-                url = "https://github.com/kristoff-it/superhtml",
-                location = "tree-sitter-superhtml",
-                queries = "tree-sitter-superhtml/queries",
-            },
-        }
-
-        require("nvim-treesitter.parsers").supermd = {
-            install_info = {
-                url = "https://github.com/kristoff-it/supermd",
-                location = "tree-sitter/supermd",
-                queries = "tree-sitter/supermd/queries",
-            },
-        }
-
-        require("nvim-treesitter.parsers").supermd_inline = {
-            install_info = {
-                url = "https://github.com/kristoff-it/supermd",
-                location = "tree-sitter/supermd-inline",
-                queries = "tree-sitter/supermd-inline/queries",
-            },
-        }
     end,
 })
 
@@ -57,7 +33,5 @@ vim.filetype.add({
     extension = {
         ziggy = "ziggy",
         ["ziggy-schema"] = "ziggy_schema",
-        smd = "supermd",
-        shtml = "superhtml",
     },
 })

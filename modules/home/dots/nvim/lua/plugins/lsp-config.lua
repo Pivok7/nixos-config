@@ -11,7 +11,6 @@ local servers = {
     texlab = "texlab",
     tinymist = "tinymist",
     ts_ls = "typescript-language-server",
-    superhtml = "superhtml",
     tailwindcss = "tailwindcss-language-server",
     svelte = "svelteserver",
     slangd = "slangd",
