@@ -36,7 +36,6 @@ in
   modSys.unfreePred = {
     steam.enable = true;
     reaper.enable = true;
-    rpcs3.enable = true;
   };
 
   # Allow deprecated

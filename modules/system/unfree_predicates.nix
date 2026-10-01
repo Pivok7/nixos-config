@@ -22,9 +22,6 @@ let
     reaper = [
       "reaper"
     ];
-    rpcs3 = [
-	"rpcs3"
-    ];
   };
 in
 {
@@ -42,7 +39,6 @@ in
         (if cfg.nvidia.enable then predicates.nvidia else [ ])
         ++ (if cfg.steam.enable then predicates.steam else [ ])
         ++ (if cfg.reaper.enable then predicates.reaper else [ ])
-        ++ (if cfg.rpcs3.enable then predicates.rpcs3 else [ ])
       );
   };
 }

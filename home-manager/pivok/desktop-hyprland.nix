@@ -177,7 +177,6 @@
 
       # Gaming
       prismlauncher
-      rpcs3
     ])
     ++ (with pkgs-unstable; [
       opencode
