@@ -139,6 +139,7 @@
       qbittorrent
       syncthing
       zed-editor
+      kdePackages.kdenlive
 
       # Creative
       gimp
@@ -151,7 +152,6 @@
 
       # Utils
       hyprsunset
-      distrobox
       playerctl
       wget
       killall
@@ -164,7 +164,6 @@
       lazygit
       btop
       radicle-tui
-      radicle-desktop
 
       # Fonts
       nerd-fonts.symbols-only

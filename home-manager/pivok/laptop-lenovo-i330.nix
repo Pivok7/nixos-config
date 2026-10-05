@@ -132,7 +132,6 @@
       logseq
 
       # Utils
-      distrobox
       wget
       killall
       zip
