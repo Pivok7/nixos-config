@@ -54,6 +54,7 @@
 
   programs.hyprcursor-phinger.enable = true;
 
+  modHome.dots.hyprland.enable = true;
   modHome.desktop.hypridle.enable = true;
   modHome.desktop.hyprlock = {
     enable = true;
