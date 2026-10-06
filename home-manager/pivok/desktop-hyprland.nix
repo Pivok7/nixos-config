@@ -61,9 +61,15 @@
     };
   };
 
+  modHome.desktop.hyprland = {
+    enable = true;
+    monitor.mode = "highrr";
+  };
+  modHome.desktop.screenshot.grimSlurpSwappy.enable = true;
+  modHome.desktop.udiskie.enable = true;
+
   programs.hyprcursor-phinger.enable = true;
 
-  modHome.dots.hyprland.enable = true;
   modHome.dots.neovim = {
     enable = true;
     defaultEditor = true;
@@ -74,9 +80,6 @@
     enable = true;
     dragAndDrop.enable = true;
   };
-
-  modHome.desktop.screenshot.grimSlurpSwappy.enable = true;
-  modHome.desktop.udiskie.enable = true;
 
   modHome.term.ghostty = {
     enable = true;
@@ -106,14 +109,6 @@
   modHome.media.zathura = {
     enable = true;
     defaultPdfViewer = true;
-  };
-
-  modHome.browser.firefox = {
-    enable = true;
-    addons = [
-      "ublock"
-      "privacy-badger"
-    ];
   };
 
   modHome.browser.librewolf = {
