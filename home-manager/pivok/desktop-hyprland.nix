@@ -141,7 +141,6 @@
       krita
       blender
       inkscape
-      reaper
       libresprite
       logseq
 
@@ -173,6 +172,7 @@
       prismlauncher
     ])
     ++ (with pkgs-unstable; [
+      audacity
       opencode
       kew
       tor-browser

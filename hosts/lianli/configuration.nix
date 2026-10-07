@@ -35,7 +35,6 @@ in
   # Allow unfree packages
   modSys.unfreePred = {
     steam.enable = true;
-    reaper.enable = true;
   };
 
   # Allow deprecated
