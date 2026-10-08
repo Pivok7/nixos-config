@@ -228,7 +228,6 @@ let
     hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
     hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
     hl.bind("PRINT", hl.dsp.exec_cmd(screenshot))
-    hl.bind(mainMod .. " + comma", hl.dsp.layout("swapcol l"))
 
     -- Move focus with mainMod + arrow keys
     hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
