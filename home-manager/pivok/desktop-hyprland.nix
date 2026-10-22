@@ -176,7 +176,7 @@
       opencode
       kew
       tor-browser
-      noctalia-shell
+      noctalia
     ])
     ++ (with pkgs.nur-pivok; [
       makker

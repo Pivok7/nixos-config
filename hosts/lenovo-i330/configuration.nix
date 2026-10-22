@@ -118,6 +118,7 @@ in
   nixpkgs.config.permittedInsecurePackages = [
     # Logseq
     "electron-39.8.10"
+    "radicle-node-1.10.3"
   ];
 
   # Enable essential services
