@@ -24,7 +24,7 @@ let
     -- Autostart
     -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
     hl.on("hyprland.start", function()
-        hl.exec_cmd("noctalia-shell -d")
+        hl.exec_cmd("noctalia -d")
         hl.exec_cmd("nm-applet")
         hl.exec_cmd("udiskie -t")
         -- Tip: add alias hsct='hyprctl hyprsunset temperature'
@@ -223,8 +223,8 @@ let
     -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
     hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
     hl.bind(mainMod .. " + C", hl.dsp.window.close())
-    hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("noctalia-shell ipc call sessionMenu toggle"))
-    hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("noctalia-shell ipc call launcher toggle"))
+    hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
+    hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
     hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
     hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
     hl.bind("PRINT", hl.dsp.exec_cmd(screenshot))
