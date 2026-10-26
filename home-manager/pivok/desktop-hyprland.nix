@@ -164,9 +164,6 @@
       iosevka-bin
       (iosevka-bin.override { variant = "Aile"; })
       (iosevka-bin.override { variant = "Etoile"; })
-      roboto
-      roboto-serif
-      roboto-slab
 
       # Gaming
       prismlauncher
