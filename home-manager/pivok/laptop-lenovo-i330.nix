@@ -144,9 +144,7 @@
       hyprsunset
       lazygit
       btop
-      foot
       radicle-tui
-      radicle-desktop
 
       # Fonts
       nerd-fonts.symbols-only
@@ -157,7 +155,7 @@
     ++ (with pkgs-unstable; [
       opencode
       tor-browser
-      noctalia-shell
+      noctalia
     ])
     ++ (with pkgs.nur-pivok; [
       makker
