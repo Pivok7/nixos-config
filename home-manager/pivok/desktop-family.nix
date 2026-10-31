@@ -63,7 +63,6 @@
       keepassxc
       qbittorrent
       syncthing
-      zed-editor
       kdePackages.skanlite
       telegram-desktop
 
@@ -85,7 +84,6 @@
       obs-studio
       glow
       radicle-tui
-      radicle-desktop
 
       # Games
       prismlauncher
@@ -99,6 +97,7 @@
       opencode
     ])
     ++ (with pkgs.nur-pivok; [
+      revo
       makker
       uncom
       bandcamp-dl

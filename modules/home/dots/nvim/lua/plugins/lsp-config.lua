@@ -1,6 +1,5 @@
 vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" })
 
-
 local servers = {
     lua_ls = "lua-language-server",
     nixd = "nixd",
@@ -17,7 +16,18 @@ local servers = {
     omnisharp = "omnisharp",
     nushell = "nu",
     vsrocq = "vsrocqtop",
+    revo = "revo",
 }
+
+vim.lsp.config("revo", {
+    cmd = { "revo", "lsp" },
+    filetypes = { "rv", "revo" },
+    root_markers = {
+        "lib.json",
+        "exe.json",
+        ".git",
+    },
+})
 
 -- Only enable LSP servers whose binaries are actually installed,
 -- so missing servers don't produce errors.

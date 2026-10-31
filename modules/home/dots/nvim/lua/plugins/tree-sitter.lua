@@ -30,6 +30,7 @@ require("nvim-treesitter").install({
     "rocq",
     "ziggy",
     "ziggy_schema",
+    "revo",
 })
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -62,6 +63,8 @@ vim.api.nvim_create_autocmd("FileType", {
         "ziggy",
         "ziggy_schema",
         "coq",
+        "rv",
+        "revo",
     },
     callback = function()
         pcall(vim.treesitter.start)
