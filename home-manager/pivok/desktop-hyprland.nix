@@ -176,6 +176,7 @@
       noctalia
     ])
     ++ (with pkgs.nur-pivok; [
+      revo
       makker
       uncom
       bandcamp-dl
